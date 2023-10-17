@@ -43,7 +43,7 @@ export default function Home() {
               adipiscing elit, sed do eiusmod tempor <br />
                 incididunt ut labore et dolore magna aliqua.
             </p>
-            <Button className="text-cf-blue-500 bg-white mt-14 text-3xl py-5 px-8">Register Today!</Button>
+            <Button className="text-cf-blue-500 bg-white mt-14 text-3xl sm:text-[1.75rem] py-5 px-8">Register Today!</Button>
           </div>
           <Image
             className="hidden lg:block"
@@ -132,8 +132,8 @@ export default function Home() {
             Register and Start Learning Today!
           </h2>
           <div className="flex flex-col sm:flex-row">
-            <Button className="w-64 text-white bg-cf-blue-900 text-3xl py-5 px-8 sm:mr-8 mb-2 sm:mb-0">Register Today!</Button>
-            <Button className="w-64 text-cf-blue-900 bg-white text-3xl py-5 px-8">Learn More</Button>
+            <Button className="w-72 text-white bg-cf-blue-900 text-3xl sm:text-[1.75rem] py-5 px-8 sm:mr-8 mb-2 sm:mb-0">Register Today!</Button>
+            <Button className="w-72 text-cf-blue-900 bg-white text-3xl sm:text-[1.75rem] py-5 px-8">Learn More</Button>
           </div>
         </div>
 
@@ -187,7 +187,7 @@ export default function Home() {
           <p className="text-white text-xl mb-12">
             Interested in offering this blockchain program to your students or employess?
           </p>
-          <Button className="text-cf-blue-900 bg-white text-3xl py-5 px-8 mr-8">Partner With Us Today</Button>
+          <Button className="text-cf-blue-900 bg-white text-3xl sm:text-[1.75rem] py-5 px-8 mr-8">Partner With Us Today</Button>
         </div>
       </section>
     </main>
