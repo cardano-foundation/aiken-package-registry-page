@@ -110,7 +110,7 @@ export default function Home() {
             Associate (CBCA) Course. No prior knowledge or experience of blockchain is needed.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-16 gap-6 sm:gap-8 lg:gap-16 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-16 gap-6 sm:gap-8 md:gap-9 lg:gap-16 w-full">
             {stats.map((stat, index) => (
               <StatCard
                 key={index}
@@ -127,7 +127,7 @@ export default function Home() {
       {/* Features section */}
       <section className="relative bg-cf-blue-500 pt-80 pb-12 sm:pt-64 sm:pb-40">
         {/* Floating CTA */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex flex-col justify-center items-center -mt-32 shadow-lg bg-cf-green-300 py-14 max-w-7xl px-6 sm:px-8 lg:px-12 w-full rounded-3xl">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex flex-col justify-center items-center -mt-32 shadow-lg bg-cf-green-600 py-14 max-w-7xl px-6 sm:px-8 lg:px-12 w-full rounded-3xl">
           <h2 className="text-4xl sm:text-5xl text-cf-blue-900 font-bold mb-12 text-center">
             Register and Start Learning Today!
           </h2>
@@ -145,7 +145,7 @@ export default function Home() {
             Interested in learning about Blockchain?
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12 sm:mt-20 gap-6 sm:gap-8 lg:gap-16 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12 sm:mt-20 gap-6 sm:gap-8 lg:gap-9 w-full">
             {features.map((feature, index) => (
               <FeatureCard
                 key={index}
@@ -165,7 +165,7 @@ export default function Home() {
             Who is the Course For?
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:mt-20 gap-6 sm:gap-8 lg:gap-16 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:mt-20 gap-6 sm:gap-8 lg:gap-9 w-full">
             {targets.map((target, index) => (
               <TargetCard
                 key={index}
