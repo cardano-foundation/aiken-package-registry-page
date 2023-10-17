@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Person from '../../public/images/person.jpeg'
 import ModuleImage from '../../public/images/module-image.jpeg'
 
-export default function Home() {
+export default function Overview() {
   const cards = [
     {
       title: 'Module 1',
@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <main className="">
-      <section className="relative isolate flex h-[80vh] items-center justify-center overflow-hidden bg-cf-blue-900">
+      <section className="relative isolate flex h-[70vh] items-center justify-center overflow-hidden bg-cf-blue-900">
         <div
           className="left-[calc(50% + 2rem)] absolute bottom-[calc(0%-56rem)] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#05A6EC] blur-[256px]"
           aria-hidden="true"
@@ -69,21 +69,22 @@ export default function Home() {
           aria-hidden="true"
         />
         <div className="relative z-10 flex max-w-2xl flex-col items-center text-center text-white">
-          <h1 className="mb-4 text-4xl font-bold">
+          <h1 className="mb-4 text-5xl font-bold">
             Cardano Blockchain Certified Associate (CBCA) Course Overview
           </h1>
         </div>
-        <div class="absolute h-screen w-full bg-[url('/noise-light.png')] bg-repeat opacity-25"></div>
+        <div className="absolute h-screen w-full bg-[url('/noise-light.png')] bg-repeat opacity-25"></div>
       </section>
       <section className="relative -mt-40 flex items-center justify-center overflow-hidden pb-10 pt-10">
-        <div className="mt-8 grid grid-cols-2 gap-8 xl:gap-8">
+        <div className="mt-8 grid grid-cols-2 gap-6">
           {cards.map((card, key) => (
-            <div
-              key={key}
-              className="max-w-sm rounded-lg border border-gray-200 bg-white shadow"
-            >
+            <div key={key} className="max-w-xs rounded-lg shadow">
               <a href="#">
-                <Image className="rounded-t-lg" src={card.image} alt="" />
+                <Image
+                  className="rounded-t-lg"
+                  src={card.image}
+                  alt={card.title}
+                />
               </a>
               <div className="p-5">
                 <a href="#">
@@ -119,7 +120,9 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="h-86 box-border w-3/4 rounded-md border-2 p-4 shadow-md">
+      </section>
+      <section className="flex items-center justify-center overflow-hidden">
+        <div className="h-86 mb-20 w-3/4 justify-center rounded-md border-2 border-solid p-4 shadow-sm">
           <div className="grid grid-cols-2 place-items-center gap-2">
             <div>
               <div className="mb-4 text-3xl font-bold text-cf-blue-600">
@@ -151,20 +154,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
-        <div className="h-46 w-3/4 items-center justify-center rounded-md bg-cf-yellow-600 p-4 shadow-lg">
+      <section className="relative items-center justify-center overflow-hidden bg-cf-blue-600 pb-10">
+        <div className="h-46 m-auto flex w-3/4 items-center justify-center rounded-md bg-cf-yellow-600 p-4 shadow-sm">
           <div className="grid grid-cols-2 place-items-center gap-2">
-            <div className="mb-4 text-sm">
+            <div className="mb-4 text-xl font-bold">
               Interested in learning about Blockchain? Download Cardano
               Blockchain Certified Associate (CBCA) Course Brochure
             </div>
-            <Button className="w-56 bg-cf-blue-900">Download Brochure</Button>
+            <Button className="w-64 bg-black text-sm text-white">Download Brochure</Button>
           </div>
         </div>
-      </section>
-      <section className="relative flex items-center justify-center overflow-hidden bg-cf-blue-600 pb-10 pt-10">
-        <div className="relative z-10 flex max-w-2xl flex-col items-center text-center text-white">
-          <h1 className="mb-4 text-4xl font-bold">
+        <div className="m-auto flex max-w-2xl flex-col items-center text-center text-white">
+          <h1 className="mt-5 text-center text-4xl font-bold">
             Course Creators and Contributors
           </h1>
           <div className="mt-8 grid grid-cols-3 gap-8 xl:gap-4">
