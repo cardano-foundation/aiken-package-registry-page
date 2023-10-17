@@ -145,7 +145,7 @@ export default function Overview() {
             </div>
             <div>
               <Image
-                src="/images/module.svg" // Path relative to the `public` folder
+                src="/images/module.svg"
                 alt="Example SVG"
                 width={200}
                 height={200}
