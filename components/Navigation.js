@@ -29,7 +29,7 @@ function classNames(...classes) {
 }
 
 const Navigation = () => {
-  const [clientWindowHeight, setClientWindowHeight] = useState(window.scrollY);
+  const [clientWindowHeight, setClientWindowHeight] = useState(0);
 
   const handleScroll = () => {
     setClientWindowHeight(window.scrollY);
