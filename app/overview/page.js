@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Button from '@/components/Button'
 import Link from 'next/link'
-import Person from '../../public/images/person.jpeg'
+import Person from '../../public/images/person.svg'
+import Person2 from '../../public/images/person-2.svg'
 import ModuleImage from '../../public/images/module-image.jpeg'
 
 export default function Overview() {
@@ -22,34 +23,34 @@ export default function Overview() {
 
   const people = [
     {
-      name: 'John',
-      position: 'Technical Blockchain Educator',
+      name: 'Matthias Benkort',
+      position: 'Technical Director of Open Source',
       image: Person,
     },
     {
-      name: 'John',
+      name: 'John Greene',
       position: 'Technical Blockchain Educator',
+      image: Person2,
+    },
+    {
+      name: 'Vanessa Hurhangee',
+      position: 'Education Manager',
+      image: Person2,
+    },
+    {
+      name: 'Thomas Mayfield',
+      position: 'Team Lead - Decentralized  Trust and Identity Solutions',
       image: Person,
     },
     {
-      name: 'John',
-      position: 'Technical Blockchain Educator',
-      image: Person,
+      name: 'Michiel Bellen',
+      position: 'Integrations  Core Team Lead',
+      image: Person2,
     },
     {
-      name: 'John',
-      position: 'Technical Blockchain Educator',
-      image: Person,
-    },
-    {
-      name: 'John',
-      position: 'Technical Blockchain Educator',
-      image: Person,
-    },
-    {
-      name: 'John',
-      position: 'Technical Blockchain Educator',
-      image: Person,
+      name: 'Denicio Bute',
+      position: 'Community Manager',
+      image: Person2,
     },
   ]
 
@@ -170,8 +171,8 @@ export default function Overview() {
           </h1>
           <div className="mt-8 grid grid-cols-3 gap-8 xl:gap-4">
             {people.map((person, key) => (
-              <div key={key} className="rounded-lg bg-cf-blue-200 p-1 shadow">
-                <div className="m-px mt-5 flex flex-col items-center pb-5">
+              <div key={key} className="rounded-lg bg-cf-blue-200 p-2 shadow">
+                <div className="m-px mt-5 flex flex-col items-center pb-1">
                   <Image
                     className="mb-3 h-20 w-20 rounded-full shadow-lg"
                     src={person.image}
@@ -180,7 +181,7 @@ export default function Overview() {
                   <h5 className="mb-1 text-xl font-medium dark:text-white">
                     {person.name}
                   </h5>
-                  <span className="text-sm">{person.position}</span>
+                  <span className="text-sm pt-1">{person.position}</span>
                 </div>
               </div>
             ))}
