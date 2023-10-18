@@ -122,7 +122,7 @@ export default function Overview() {
           ))}
         </div>
       </section>
-      <section className="flex items-center justify-center overflow-hidden">
+      <section className="flex items-center justify-center">
         <div className="h-86 mb-20 w-3/4 justify-center rounded-md border-2 border-solid p-4 shadow-sm">
           <div className="grid grid-cols-2 place-items-center gap-2">
             <div>
@@ -155,23 +155,25 @@ export default function Overview() {
           </div>
         </div>
       </section>
-      <section className="relative items-center justify-center overflow-hidden bg-cf-blue-600 pb-10">
-        <div className="h-46 m-auto flex w-3/4 items-center justify-center rounded-md bg-cf-yellow-600 p-4 shadow-sm">
+      <section className="relative items-center justify-center bg-cf-blue-600 pb-10">
+        <div className="absolute left-1/2 transform -translate-x-1/2  -mt-10 h-46 flex w-3/4 items-center justify-center rounded-md bg-cf-yellow-600 p-4 shadow-sm">
           <div className="grid grid-cols-2 place-items-center gap-2">
-            <div className="mb-4 text-xl font-bold">
+            <div className="mb-4 text-xl font-bold ">
               Interested in learning about Blockchain? Download Cardano
               Blockchain Certified Associate (CBCA) Course Brochure
             </div>
-            <Button className="w-64 bg-black text-sm text-white">Download Brochure</Button>
+            <Button className="w-64 bg-cf-blue-900 text-sm text-white">
+              Download Brochure
+            </Button>
           </div>
         </div>
         <div className="m-auto flex max-w-2xl flex-col items-center text-center text-white">
-          <h1 className="mt-5 text-center text-4xl font-bold">
+          <h1 className="mt-36 text-center text-4xl font-bold">
             Course Creators and Contributors
           </h1>
-          <div className="mt-8 grid grid-cols-3 gap-8 xl:gap-4">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
             {people.map((person, key) => (
-              <div key={key} className="rounded-lg bg-cf-blue-200 p-2 shadow">
+              <div key={key} className="rounded-lg bg-white/10 p-2 shadow">
                 <div className="m-px mt-5 flex flex-col items-center pb-1">
                   <Image
                     className="mb-3 h-20 w-20 rounded-full shadow-lg"
@@ -181,7 +183,7 @@ export default function Overview() {
                   <h5 className="mb-1 text-xl font-medium dark:text-white">
                     {person.name}
                   </h5>
-                  <span className="text-sm pt-1">{person.position}</span>
+                  <span className="pt-1 text-sm">{person.position}</span>
                 </div>
               </div>
             ))}
