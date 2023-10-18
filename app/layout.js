@@ -1,6 +1,7 @@
 import './globals.css'
 import { Chivo } from 'next/font/google'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 const chivo = Chivo({ subsets: ['latin'] })
 
@@ -13,10 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={chivo.className}>
-        <header>
-          <Navigation />
-        </header>
+        <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   )
