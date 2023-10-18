@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import Button from '@/components/Button'
 import Link from 'next/link'
-import Person from '../../public/images/person.svg'
-import Person2 from '../../public/images/person-2.svg'
 import ModuleImage from '../../public/images/module-image.jpeg'
+import PersonCard from '@/components/PersonCard'
 
 export default function Overview() {
   const cards = [
@@ -25,32 +24,32 @@ export default function Overview() {
     {
       name: 'Matthias Benkort',
       position: 'Technical Director of Open Source',
-      image: Person,
+      image: 'person.svg',
     },
     {
       name: 'John Greene',
       position: 'Technical Blockchain Educator',
-      image: Person2,
+      image: 'person.svg',
     },
     {
       name: 'Vanessa Hurhangee',
       position: 'Education Manager',
-      image: Person2,
+      image: 'person.svg',
     },
     {
       name: 'Thomas Mayfield',
       position: 'Team Lead - Decentralized  Trust and Identity Solutions',
-      image: Person,
+      image: 'person.svg',
     },
     {
       name: 'Michiel Bellen',
       position: 'Integrations  Core Team Lead',
-      image: Person2,
+      image: 'person.svg',
     },
     {
       name: 'Denicio Bute',
       position: 'Community Manager',
-      image: Person2,
+      image: 'person.svg',
     },
   ]
 
@@ -70,7 +69,7 @@ export default function Overview() {
           aria-hidden="true"
         />
         <div className="relative z-10 flex max-w-2xl flex-col items-center text-center text-white">
-          <h1 className="mb-4 text-5xl font-bold">
+          <h1 className="w-[800px] mb-4 text-6xl font-bold">
             Cardano Blockchain Certified Associate (CBCA) Course Overview
           </h1>
         </div>
@@ -155,37 +154,33 @@ export default function Overview() {
           </div>
         </div>
       </section>
-      <section className="relative items-center justify-center bg-cf-blue-600 pb-10">
-        <div className="absolute left-1/2 transform -translate-x-1/2  -mt-10 h-46 flex w-3/4 items-center justify-center rounded-md bg-cf-yellow-600 p-4 shadow-sm">
-          <div className="grid grid-cols-2 place-items-center gap-2">
+      {/* Course Creators and Contributors section */}
+      <section className="relative bg-cf-blue-600 py-12 sm:py-40">
+        {/* Floating Brochure Box */}
+        <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
+          <div className="flex flex-col sm:flex-row">
             <div className="mb-4 text-xl font-bold ">
               Interested in learning about Blockchain? Download Cardano
               Blockchain Certified Associate (CBCA) Course Brochure
             </div>
-            <Button className="w-64 bg-cf-blue-900 text-sm text-white">
+            <Button className="w-72 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:text-[1.75rem]">
               Download Brochure
             </Button>
           </div>
         </div>
-        <div className="m-auto flex max-w-2xl flex-col items-center text-center text-white">
-          <h1 className="mt-36 text-center text-4xl font-bold">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
+          <h2 className="mb-6 text-center text-6xl font-bold text-white">
             Course Creators and Contributors
-          </h1>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {people.map((person, key) => (
-              <div key={key} className="rounded-lg bg-white/10 p-2 shadow">
-                <div className="m-px mt-5 flex flex-col items-center pb-1">
-                  <Image
-                    className="mb-3 h-20 w-20 rounded-full shadow-lg"
-                    src={person.image}
-                    alt={person.name}
-                  />
-                  <h5 className="mb-1 text-xl font-medium dark:text-white">
-                    {person.name}
-                  </h5>
-                  <span className="pt-1 text-sm">{person.position}</span>
-                </div>
-              </div>
+          </h2>
+
+          <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
+            {people.map((person, index) => (
+              <PersonCard
+                key={index}
+                image={person.image}
+                name={person.name}
+                position={person.position}
+              />
             ))}
           </div>
         </div>
