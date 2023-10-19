@@ -68,6 +68,7 @@ module.exports = {
         },
         // one off colours
         'cf-offwhite': '#FBFBFB',
+        'cf-neutral-gray': '#61787B',
       }
     },
   },
