@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Button from '@/components/Button'
@@ -10,7 +10,7 @@ export default function Overview() {
   const [moduleOverview, setModuleOverview] = useState('Module 1')
 
   useEffect(() => {
-    console.log(moduleOverview, '???????');
+    console.log(moduleOverview)
   }, [moduleOverview])
 
   const cards = [
@@ -18,28 +18,17 @@ export default function Overview() {
       title: 'Module 1',
       description:
         'Introduces the foundation of blockchain, from the main components of a typical blockchain network',
-      link: 'link',
-      image: 'module-image.svg',
+      image: 'module-image.jpeg',
       overview_description:
-        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+        'Module 1: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
     },
     {
       title: 'Module 2',
       description:
         'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
-      link: 'link',
-      image: 'module-image.svg',
+      image: 'module-image.jpeg',
       overview_description:
-        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
-    },
-    {
-      title: 'Module 3',
-      description:
-        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
-      link: 'link',
-      image: 'module-image.svg',
-      overview_description:
-        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+        'Module 2: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
     },
   ]
 
@@ -76,6 +65,9 @@ export default function Overview() {
     },
   ]
 
+  // Find the card with the matching title
+  const selectedCard = cards.find((card) => card.title === moduleOverview)
+
   return (
     <main className="">
       <section className="relative isolate flex h-[70vh] items-center justify-center overflow-hidden bg-cf-blue-900">
@@ -101,7 +93,7 @@ export default function Overview() {
 
       {/* Module carousel  section */}
       <section className="relative -mt-40 flex items-center justify-center overflow-hidden pb-10 pt-10">
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {cards.map((card, index) => (
             <CarouselCard
               key={index}
@@ -120,23 +112,16 @@ export default function Overview() {
         <div className="h-86 mb-20 flex h-[560px] w-[1264px] items-center justify-center rounded-3xl border-2 border-solid p-4 shadow-sm ">
           <div className="grid grid-cols-1 place-items-center gap-10 p-20 sm:grid-cols-2">
             <div>
-              <div className="mb-10 text-5xl font-bold text-cf-blue-600">
-                Module 2 Overview
-              </div>
-              <div className="mb-4 text-xl font-extralight text-cf-gray-600">
-                Builds on the concepts introduced in module 1. It defines the
-                transactions models used in blockchain, including account-based,
-                Unspent Transaction Output and extended Unspent Transaction
-                Output.
-              </div>
-              <div className="mb-4 text-xl font-extralight text-cf-gray-600">
-                It examines the content of a block and the role of the block
-                producer. Module 2 also explains how the risks against
-                double-spending and Sybil attacks are mitigated, the causes of
-                soft and hard forks and the importance of incentive mechanisms.
-                It concludes with a look at layer 1 and layer 2 scaling
-                solutions.
-              </div>
+              {selectedCard && (
+                <div>
+                  <div className="mb-10 text-5xl font-bold text-cf-blue-600">
+                    {selectedCard.title}
+                  </div>
+                  <div className="mb-4 text-xl font-extralight text-cf-gray-600">
+                    {selectedCard.overview_description}
+                  </div>
+                </div>
+              )}
             </div>
             <div className="hidden items-center justify-center sm:block">
               <Image
@@ -154,13 +139,13 @@ export default function Overview() {
       <section className="relative bg-cf-blue-600 py-12 sm:py-40">
         {/* Floating Brochure Box */}
         <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
-          <div className="flex-col sm:flex-row grid grid-flow-row-dense grid-cols-3">
-            <div className="mb-4 text-4xl font-bold col-span-2">
+          <div className="grid grid-flow-row-dense grid-cols-3 flex-col sm:flex-row">
+            <div className="col-span-2 mb-4 text-4xl font-bold">
               Interested in learning about Blockchain? Download Cardano
               Blockchain Certified Associate (CBCA) Course Brochure
             </div>
-            <div className='flex items-center'>
-              <Button className="py-12 w-full bg-cf-blue-900 text-3xl text-white sm:text-[1.75rem] col-span-1">
+            <div className="flex items-center">
+              <Button className="col-span-1 w-full bg-cf-blue-900 py-12 text-3xl text-white sm:text-[1.75rem]">
                 Download Brochure
               </Button>
             </div>

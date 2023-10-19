@@ -6,7 +6,7 @@ const CarouselCard = ({ className, ...props }) => (
       <Image
         className="h-[350px] w-[400px] rounded-t-3xl shadow-lg"
         src={`/${props.image}`}
-        alt={props.name}
+        alt={props.title}
         priority={true}
         width={400}
         height={350}
@@ -18,13 +18,13 @@ const CarouselCard = ({ className, ...props }) => (
           {props.title}
         </h5>
       </a>
-      <p className="mb-7 h-[107px] text-center font-normal text-xl text-gray-700 dark:text-gray-400">
+      <p className="mb-7 h-[107px] text-center text-xl font-normal text-gray-700 dark:text-gray-400">
         {props.description}
       </p>
       <a
         href="#"
-        className="items-center text-center text-xl block font-medium text-cf-red-600 focus:outline-none"
-        onClick={(e) => props.setModuleOverview(props.name)}
+        className="block items-center text-center text-xl font-medium text-cf-red-600 focus:outline-none"
+        onClick={(e) => props.setModuleOverview(props.title)}
       >
         Read more
       </a>
