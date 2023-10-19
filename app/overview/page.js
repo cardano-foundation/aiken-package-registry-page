@@ -2,16 +2,33 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Button from '@/components/Button'
-import Link from 'next/link'
 import PersonCard from '@/components/PersonCard'
 import CarouselCard from '@/components/CarouselCard'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 
 export default function Overview() {
   const [moduleOverview, setModuleOverview] = useState('Module 1')
 
-  useEffect(() => {
-    console.log(moduleOverview)
-  }, [moduleOverview])
+  // Carousel responsive scaling
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 2,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 2,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  }
 
   const cards = [
     {
@@ -21,6 +38,8 @@ export default function Overview() {
       image: 'module-image.jpeg',
       overview_description:
         'Module 1: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+      overview_description_2:
+        'It examines the content of a block and the role of the block producer. Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
     },
     {
       title: 'Module 2',
@@ -28,7 +47,29 @@ export default function Overview() {
         'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
       image: 'module-image.jpeg',
       overview_description:
-        'Module 2: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+      overview_description_2:
+        'It examines the content of a block and the role of the block producer. Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
+    },
+    {
+      title: 'Module 3',
+      description:
+        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
+      image: 'module-image.jpeg',
+      overview_description:
+        'Module 3: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+      overview_description_2:
+        'It examines the content of a block and the role of the block producer. Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
+    },
+    {
+      title: 'Module 4',
+      description:
+        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
+      image: 'module-image.jpeg',
+      overview_description:
+        'Module 4: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+      overview_description_2:
+        'It examines the content of a block and the role of the block producer. Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
     },
   ]
 
@@ -84,18 +125,19 @@ export default function Overview() {
           aria-hidden="true"
         />
         <div className="relative z-10 flex max-w-2xl flex-col items-center text-center text-white">
-          <h1 className="mb-4 w-[800px] text-6xl font-bold">
+          <h1 className="mb-4 w-[800px] text-4xl sm:text-6xl font-bold px-52 sm:px-0">
             Cardano Blockchain Certified Associate (CBCA) Course Overview
           </h1>
         </div>
         <div className="absolute h-screen w-full bg-[url('/noise-light.png')] bg-repeat opacity-25"></div>
       </section>
 
-      {/* Module carousel  section */}
-      <section className="relative -mt-40 flex items-center justify-center overflow-hidden pb-10 pt-10">
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      {/* Module Carousel section */}
+      <section className="relative -mt-40 overflow-hidden px-60">
+        <Carousel arrows infinite responsive={responsive}>
           {cards.map((card, index) => (
             <CarouselCard
+              className="m-auto flex justify-center"
               key={index}
               title={card.title}
               description={card.description}
@@ -104,28 +146,31 @@ export default function Overview() {
               setModuleOverview={setModuleOverview}
             />
           ))}
-        </div>
+        </Carousel>
       </section>
 
       {/* Module overview description from carousel section */}
       <section className="mb-24 flex h-[740px] items-center justify-center">
-        <div className="h-86 mb-20 flex h-[560px] w-[1264px] items-center justify-center rounded-3xl border-2 border-solid p-4 shadow-sm ">
-          <div className="grid grid-cols-1 place-items-center gap-10 p-20 sm:grid-cols-2">
+        <div className="h-86 mb-20 flex h-[560px] w-[1264px] items-center justify-center rounded-3xl border-2 border-solid p-4 shadow-xl">
+          <div className="lg:my-22 lg:mx-24 grid grid-cols-1 gap-16 sm:grid-cols-2">
             <div>
               {selectedCard && (
                 <div>
-                  <div className="mb-10 text-5xl font-bold text-cf-blue-600">
-                    {selectedCard.title}
+                  <div className="s,m:mb-10 text-4xl font-bold text-cf-blue-600">
+                    {selectedCard.title} Overview
                   </div>
-                  <div className="mb-4 text-xl font-extralight text-cf-gray-600">
+                  <div className="my-4 text-xl font-extralight text-cf-gray-600">
                     {selectedCard.overview_description}
+                  </div>
+                  <div className="text-xl font-extralight text-cf-gray-600">
+                    {selectedCard.overview_description_2}
                   </div>
                 </div>
               )}
             </div>
-            <div className="hidden items-center justify-center sm:block">
+            <div className="m-auto hidden items-center justify-center sm:block">
               <Image
-                src="/images/module.svg"
+                src="/module-overview.svg"
                 alt="Example SVG"
                 width={350}
                 height={400}
@@ -136,16 +181,16 @@ export default function Overview() {
       </section>
 
       {/* Course Creators and Contributors section */}
-      <section className="relative bg-cf-blue-600 py-12 sm:py-40">
+      <section className="relative bg-cf-blue-600 pt-80 pb-12 sm:pt-64 sm:pb-40">
         {/* Floating Brochure Box */}
         <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
-          <div className="grid grid-flow-row-dense grid-cols-3 flex-col sm:flex-row">
-            <div className="col-span-2 mb-4 text-4xl font-bold">
+          <div className="grid grid-flow-row-dense grid-cols-3 flex-col p-4 sm:flex-row">
+            <div className="col-span-3 mb-4 text-xl text-center sm:text-left font-semibold sm:col-span-2 sm:text-4xl">
               Interested in learning about Blockchain? Download Cardano
               Blockchain Certified Associate (CBCA) Course Brochure
             </div>
-            <div className="flex items-center">
-              <Button className="col-span-1 w-full bg-cf-blue-900 py-12 text-3xl text-white sm:text-[1.75rem]">
+            <div className="flex items-center sm:flex-row">
+              <Button className="w-11/12w-72 text-white bg-cf-blue-900 text-3xl sm:text-[1.75rem] py-5 px-8 sm:mr-8 mb-2 sm:mb-0">
                 Download Brochure
               </Button>
             </div>
@@ -153,7 +198,7 @@ export default function Overview() {
         </div>
 
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mb-6 mt-20 w-[750px] text-center text-6xl font-bold text-white">
+          <h2 className="text-6xl text-white font-bold sm:mb-6 text-center">
             Course Creators and Contributors
           </h2>
           <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
