@@ -1,22 +1,45 @@
+"use client";
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Button from '@/components/Button'
 import Link from 'next/link'
-import ModuleImage from '../../public/images/module-image.jpeg'
 import PersonCard from '@/components/PersonCard'
+import CarouselCard from '@/components/CarouselCard'
 
 export default function Overview() {
+  const [moduleOverview, setModuleOverview] = useState('Module 1')
+
+  useEffect(() => {
+    console.log(moduleOverview, '???????');
+  }, [moduleOverview])
+
   const cards = [
     {
       title: 'Module 1',
-      text: 'Introduces the foundation of blockchain, from the main components of a typical blockchain network',
+      description:
+        'Introduces the foundation of blockchain, from the main components of a typical blockchain network',
       link: 'link',
-      image: ModuleImage,
+      image: 'module-image.svg',
+      overview_description:
+        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
     },
     {
       title: 'Module 2',
-      text: 'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
+      description:
+        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
       link: 'link',
-      image: ModuleImage,
+      image: 'module-image.svg',
+      overview_description:
+        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+    },
+    {
+      title: 'Module 3',
+      description:
+        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
+      link: 'link',
+      image: 'module-image.svg',
+      overview_description:
+        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
     },
   ]
 
@@ -69,72 +92,44 @@ export default function Overview() {
           aria-hidden="true"
         />
         <div className="relative z-10 flex max-w-2xl flex-col items-center text-center text-white">
-          <h1 className="w-[800px] mb-4 text-6xl font-bold">
+          <h1 className="mb-4 w-[800px] text-6xl font-bold">
             Cardano Blockchain Certified Associate (CBCA) Course Overview
           </h1>
         </div>
         <div className="absolute h-screen w-full bg-[url('/noise-light.png')] bg-repeat opacity-25"></div>
       </section>
+
+      {/* Module carousel  section */}
       <section className="relative -mt-40 flex items-center justify-center overflow-hidden pb-10 pt-10">
-        <div className="mt-8 grid grid-cols-2 gap-6">
-          {cards.map((card, key) => (
-            <div key={key} className="max-w-xs rounded-lg shadow">
-              <a href="#">
-                <Image
-                  className="rounded-t-lg"
-                  src={card.image}
-                  alt={card.title}
-                />
-              </a>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-center text-2xl font-bold tracking-tight text-cf-blue-600">
-                    {card.title}
-                  </h5>
-                </a>
-                <p className="mb-3 text-center font-normal text-gray-700 dark:text-gray-400">
-                  {card.text}
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex items-center text-center text-sm font-medium text-cf-red-600 focus:outline-none focus:ring-4 focus:ring-blue-300"
-                >
-                  Read more
-                  <svg
-                    className="ml-2 h-3.5 w-3.5"
-                    aria-hidden="true"
-                    xmlns={card.link}
-                    fill="none"
-                    viewBox="0 0 14 10"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {cards.map((card, index) => (
+            <CarouselCard
+              key={index}
+              title={card.title}
+              description={card.description}
+              link={card.link}
+              image={card.image}
+              setModuleOverview={setModuleOverview}
+            />
           ))}
         </div>
       </section>
-      <section className="flex items-center justify-center">
-        <div className="h-86 mb-20 w-3/4 justify-center rounded-md border-2 border-solid p-4 shadow-sm">
-          <div className="grid grid-cols-2 place-items-center gap-2">
+
+      {/* Module overview description from carousel section */}
+      <section className="mb-24 flex h-[740px] items-center justify-center">
+        <div className="h-86 mb-20 flex h-[560px] w-[1264px] items-center justify-center rounded-3xl border-2 border-solid p-4 shadow-sm ">
+          <div className="grid grid-cols-1 place-items-center gap-10 p-20 sm:grid-cols-2">
             <div>
-              <div className="mb-4 text-3xl font-bold text-cf-blue-600">
+              <div className="mb-10 text-5xl font-bold text-cf-blue-600">
                 Module 2 Overview
               </div>
-              <div className="mb-4 text-sm">
+              <div className="mb-4 text-xl font-extralight text-cf-gray-600">
                 Builds on the concepts introduced in module 1. It defines the
                 transactions models used in blockchain, including account-based,
                 Unspent Transaction Output and extended Unspent Transaction
                 Output.
               </div>
-              <div className="mb-4 text-sm">
+              <div className="mb-4 text-xl font-extralight text-cf-gray-600">
                 It examines the content of a block and the role of the block
                 producer. Module 2 also explains how the risks against
                 double-spending and Sybil attacks are mitigated, the causes of
@@ -143,36 +138,39 @@ export default function Overview() {
                 solutions.
               </div>
             </div>
-            <div>
+            <div className="hidden items-center justify-center sm:block">
               <Image
                 src="/images/module.svg"
                 alt="Example SVG"
-                width={200}
-                height={200}
+                width={350}
+                height={400}
               />
             </div>
           </div>
         </div>
       </section>
+
       {/* Course Creators and Contributors section */}
       <section className="relative bg-cf-blue-600 py-12 sm:py-40">
         {/* Floating Brochure Box */}
         <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
-          <div className="flex flex-col sm:flex-row">
-            <div className="mb-4 text-xl font-bold ">
+          <div className="flex-col sm:flex-row grid grid-flow-row-dense grid-cols-3">
+            <div className="mb-4 text-4xl font-bold col-span-2">
               Interested in learning about Blockchain? Download Cardano
               Blockchain Certified Associate (CBCA) Course Brochure
             </div>
-            <Button className="w-72 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:text-[1.75rem]">
-              Download Brochure
-            </Button>
+            <div className='flex items-center'>
+              <Button className="py-12 w-full bg-cf-blue-900 text-3xl text-white sm:text-[1.75rem] col-span-1">
+                Download Brochure
+              </Button>
+            </div>
           </div>
         </div>
+
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mb-6 text-center text-6xl font-bold text-white">
+          <h2 className="mb-6 mt-20 w-[750px] text-center text-6xl font-bold text-white">
             Course Creators and Contributors
           </h2>
-
           <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
             {people.map((person, index) => (
               <PersonCard
