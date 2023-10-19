@@ -43,7 +43,7 @@ export default function Home() {
               adipiscing elit, sed do eiusmod tempor <br />
                 incididunt ut labore et dolore magna aliqua.
             </p>
-            <Button className="text-cf-blue-500 bg-white mt-14 text-3xl sm:text-[1.75rem] py-5 px-8">Register Today!</Button>
+            <Button className="text-cf-blue-600 bg-white mt-14 text-3xl sm:text-[1.75rem] py-5 px-8">Register Today!</Button>
           </div>
           <Image
             className="hidden lg:block"
@@ -72,7 +72,7 @@ export default function Home() {
       </section>
 
       {/* About section */}
-      <section className="bg-cf-blue-500 py-12 sm:py-40">
+      <section className="bg-cf-blue-600 py-12 sm:py-40">
         <div className="flex justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="flex flex-col justify-center items-start lg:pr-24">
             <h2 className="text-5xl sm:text-6xl text-white font-bold mb-6">
@@ -102,10 +102,10 @@ export default function Home() {
       {/* Course section */}
       <section className="bg-white pt-12 pb-48 sm:pt-40 sm:pb-64">
         <div className="flex flex-col justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
-          <h2 className="text-4xl sm:text-6xl text-cf-blue-500 font-bold mb-6 sm:text-center">
+          <h2 className="text-4xl sm:text-6xl text-cf-blue-600 font-bold mb-6 sm:text-center">
             Cardano Blockchain Certified <br /> Associate (CBCA) Course Overview
           </h2>
-          <p className="text-cf-blue-500 text-lg sm:text-xl sm:text-center pt-6">
+          <p className="text-cf-blue-600 text-lg sm:text-xl sm:text-center pt-6">
             Launching the Cardano Academy’s first certified course with: Cardano Blockchain Certified <br />
             Associate (CBCA) Course. No prior knowledge or experience of blockchain is needed.
           </p>
@@ -125,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* Features section */}
-      <section className="relative bg-cf-blue-500 pt-80 pb-12 sm:pt-64 sm:pb-40">
+      <section className="relative bg-cf-blue-600 pt-80 pb-12 sm:pt-64 sm:pb-40">
         {/* Floating CTA */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex flex-col justify-center items-center -mt-32 shadow-lg bg-cf-green-600 py-14 max-w-7xl px-6 sm:px-8 lg:px-12 w-full rounded-3xl">
           <h2 className="text-4xl sm:text-5xl text-cf-blue-900 font-bold mb-12 text-center">
@@ -161,7 +161,7 @@ export default function Home() {
       {/* Target audience section */}
       <section className="relative bg-white py-12 sm:py-40">
         <div className="flex flex-col justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
-          <h2 className="text-6xl text-cf-blue-500 font-bold mb-6 text-center">
+          <h2 className="text-6xl text-cf-blue-600 font-bold mb-6 text-center">
             Who is the Course For?
           </h2>
 
@@ -179,7 +179,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-cf-blue-500 py-12 sm:py-40">
+      <section className="relative bg-cf-blue-600 py-12 sm:py-40">
         <div className="flex flex-col justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
           <h2 className="text-5xl text-white font-bold mb-8 text-center">
             Education Institutions and Business Organizations

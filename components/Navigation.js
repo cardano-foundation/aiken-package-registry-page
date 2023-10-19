@@ -1,27 +1,20 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { PlusIcon } from '@heroicons/react/20/solid'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
 
-const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-}
 const navigation = [
   { name: 'Course Overview', href: '#', current: true },
   { name: 'Partners', href: '#', current: false },
   { name: 'Contact Us', href: '#', current: false },
 ]
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Log In', href: '#' },
+  { name: 'Register', href: '#' },
 ]
 
 function classNames(...classes) {
@@ -29,19 +22,22 @@ function classNames(...classes) {
 }
 
 const Navigation = () => {
-  const [clientWindowHeight, setClientWindowHeight] = useState(window.scrollY);
+  const pathname = usePathname()
 
-  const handleScroll = () => {
-    setClientWindowHeight(window.scrollY);
-  };
+  const [clientWindowHeight, setClientWindowHeight] = useState("")
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+    setClientWindowHeight(window.scrollY)
+    const options = { passive: true }
+    const scroll = (event) => {
+      setClientWindowHeight(window.scrollY)
+    };
+    document.addEventListener("scroll", scroll, options)
+    return () => document.removeEventListener("scroll", scroll, options)
+  }, []);
 
   return (
-    <Disclosure as="nav" className={`fixed top-0 z-10 w-full transition-all ease-in-out duration-500 ${clientWindowHeight > 150 ? 'bg-cf-blue-900' : 'bg-cf-offwhite/10'}`}>
+    <Disclosure as="nav" className={`fixed top-0 z-10 w-full transition-all ease-in-out duration-500 ${clientWindowHeight > 150 || pathname === '/partners' ? 'bg-cf-blue-600' : 'bg-cf-blue-600 lg:bg-cf-offwhite/10'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -49,7 +45,7 @@ const Navigation = () => {
               <div className="flex">
                 <div className="-ml-2 mr-2 flex items-center lg:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white hover:text-cf-blue-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white hover:text-cf-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -87,7 +83,7 @@ const Navigation = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="lg:hidden">
+          <Disclosure.Panel className="lg:hidden shadow-2xl">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -95,7 +91,7 @@ const Navigation = () => {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-white text-cf-blue-600' : 'text-white hover:bg-white hover:text-cf-blue-600',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
@@ -104,14 +100,14 @@ const Navigation = () => {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="border-t border-gray-700 pb-3 pt-4">
+            <div className="border-t border-cf-blue-50 pb-3 pt-4">
               <div className="space-y-1 px-2 sm:px-3">
                 {userNavigation.map((item) => (
                   <Disclosure.Button
                     key={item.name}
                     as="a"
                     href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white hover:text-cf-blue-600"
                   >
                     {item.name}
                   </Disclosure.Button>
