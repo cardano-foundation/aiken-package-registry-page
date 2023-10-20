@@ -1,21 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
-
-const navigation = [
-  { name: 'Course Overview', href: '#', current: true },
-  { name: 'Partners', href: '#', current: false },
-  { name: 'Contact Us', href: '#', current: false },
-]
-const userNavigation = [
-  { name: 'Log In', href: '#' },
-  { name: 'Register', href: '#' },
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -23,6 +14,16 @@ function classNames(...classes) {
 
 const Navigation = () => {
   const pathname = usePathname()
+
+  const navigation = [
+    { name: 'Course Overview', href: '#', current: false },
+    { name: 'Partners', href: '/partners', current: pathname === '/partners' },
+    { name: 'Contact Us', href: '/contact', current: pathname === '/contact' },
+  ]
+  const userNavigation = [
+    { name: 'Log In', href: '#' },
+    { name: 'Register', href: '#' },
+  ]
 
   const [clientWindowHeight, setClientWindowHeight] = useState("")
 
@@ -56,11 +57,13 @@ const Navigation = () => {
                   </Disclosure.Button>
                 </div>
                 <div className="flex flex-shrink-0 items-center">
-                  <Logo className="w-48 lg:mr-1" />
+                  <Link href="/">
+                    <Logo className="w-48 lg:mr-1" />
+                  </Link>
                 </div>
                 <div className="hidden lg:ml-12 lg:flex lg:items-center lg:space-x-9">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className={classNames(
@@ -70,7 +73,7 @@ const Navigation = () => {
                       aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -88,7 +91,7 @@ const Navigation = () => {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
+                  as={Link}
                   href={item.href}
                   className={classNames(
                     item.current ? 'bg-white text-cf-blue-600' : 'text-white hover:bg-white hover:text-cf-blue-600',
