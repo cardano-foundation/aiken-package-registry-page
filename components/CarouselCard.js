@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 const CarouselCard = ({ className, ...props }) => (
-  <div className="h-[669px] w-[832px] max-w-xs rounded-3xl shadow-xl my-10">
+  <div className="my-10 h-[669px] max-w-xs rounded-3xl shadow-xl">
     <Image
       className="rounded-t-3xl shadow-lg"
       src={`/${props.image}`}

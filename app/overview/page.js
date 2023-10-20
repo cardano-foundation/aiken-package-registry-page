@@ -14,15 +14,15 @@ export default function Overview() {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
-      items: 2,
+      items: 3,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 2,
+      items: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 3,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -110,34 +110,35 @@ export default function Overview() {
   const selectedCard = cards.find((card) => card.title === moduleOverview)
 
   return (
-    <main className="">
-      <section className="relative isolate flex h-[70vh] items-center justify-center overflow-hidden bg-cf-blue-900">
-        <div
-          className="left-[calc(50% + 2rem)] absolute bottom-[calc(0%-56rem)] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#05A6EC] blur-[256px]"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute left-[-25rem] top-[-25rem] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-br from-cf-blue-400 to-cf-blue-200 opacity-60 blur-[256px]"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute right-[-96rem] top-[-72rem] -z-10 h-[156rem] w-[156rem] overflow-hidden rounded-full bg-gradient-to-bl from-cf-blue-300 to-[#05A6EC] opacity-70 blur-[256px]"
-          aria-hidden="true"
-        />
-        <div className="relative z-10 flex max-w-2xl flex-col items-center text-center text-white">
-          <h1 className="mb-4 w-[800px] text-4xl sm:text-6xl font-bold px-52 sm:px-0">
-            Cardano Blockchain Certified Associate (CBCA) Course Overview
-          </h1>
+    <main>
+      <section className="bg-cf-blue-600">
+        <div className="relative isolate mx-auto flex h-[70vh] max-w-7xl items-center justify-center overflow-hidden bg-cf-blue-900">
+          <div
+            className="left-[calc(50% + 2rem)] absolute bottom-[calc(0%-56rem)] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#05A6EC] blur-[256px]"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute left-[-25rem] top-[-25rem] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-br from-cf-blue-400 to-cf-blue-200 opacity-60 blur-[256px]"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute right-[-96rem] top-[-72rem] -z-10 h-[156rem] w-[156rem] overflow-hidden rounded-full bg-gradient-to-bl from-cf-blue-300 to-[#05A6EC] opacity-70 blur-[256px]"
+            aria-hidden="true"
+          />
+          <div className="relative z-10 flex max-w-2xl flex-col items-center text-center text-white">
+            <h1 className="mb-4 w-[800px] px-52 text-4xl font-bold sm:px-0 sm:text-6xl">
+              Cardano Blockchain Certified Associate (CBCA) Course Overview
+            </h1>
+          </div>
+          <div className="absolute h-screen w-full bg-[url('/noise-light.png')] bg-repeat opacity-25"></div>
         </div>
-        <div className="absolute h-screen w-full bg-[url('/noise-light.png')] bg-repeat opacity-25"></div>
       </section>
 
       {/* Module Carousel section */}
-      <section className="relative -mt-40 overflow-hidden px-60">
+      <section className="relative mx-auto -mt-40 max-w-7xl overflow-hidden">
         <Carousel arrows infinite responsive={responsive}>
           {cards.map((card, index) => (
             <CarouselCard
-              className="m-auto flex justify-center"
               key={index}
               title={card.title}
               description={card.description}
@@ -150,9 +151,9 @@ export default function Overview() {
       </section>
 
       {/* Module overview description from carousel section */}
-      <section className="mb-24 flex h-[740px] items-center justify-center">
-        <div className="h-86 mb-20 flex h-[560px] w-[1264px] items-center justify-center rounded-3xl border-2 border-solid p-4 shadow-xl">
-          <div className="lg:my-22 lg:mx-24 grid grid-cols-1 gap-16 sm:grid-cols-2">
+      <section className="mx-auto mb-24 flex h-[740px] max-w-7xl items-center justify-center px-4 sm:px-0">
+        <div className="h-86 mb-20 flex items-center justify-center rounded-3xl border-2 border-solid p-4 shadow-xl">
+          <div className="lg:my-22 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:mx-24">
             <div>
               {selectedCard && (
                 <div>
@@ -181,35 +182,37 @@ export default function Overview() {
       </section>
 
       {/* Course Creators and Contributors section */}
-      <section className="relative bg-cf-blue-600 pt-80 pb-12 sm:pt-64 sm:pb-40">
-        {/* Floating Brochure Box */}
-        <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
-          <div className="grid grid-flow-row-dense grid-cols-3 flex-col p-4 sm:flex-row">
-            <div className="col-span-3 mb-4 text-xl text-center sm:text-left font-semibold sm:col-span-2 sm:text-4xl">
-              Interested in learning about Blockchain? Download Cardano
-              Blockchain Certified Associate (CBCA) Course Brochure
-            </div>
-            <div className="flex items-center sm:flex-row">
-              <Button className="w-11/12w-72 text-white bg-cf-blue-900 text-3xl sm:text-[1.75rem] py-5 px-8 sm:mr-8 mb-2 sm:mb-0">
-                Download Brochure
-              </Button>
+      <section className="bg-cf-blue-600">
+        <div className="relative mx-auto max-w-7xl bg-cf-blue-600 pb-12 pt-64 sm:pb-40 sm:pt-64">
+          {/* Floating Brochure Box */}
+          <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
+            <div className="grid grid-flow-row-dense grid-cols-3 flex-col p-4 sm:flex-row">
+              <div className="col-span-3 mb-4 text-center text-xl font-semibold sm:col-span-2 sm:text-left sm:text-4xl">
+                Interested in learning about Blockchain? Download Cardano
+                Blockchain Certified Associate (CBCA) Course Brochure
+              </div>
+              <div className="col-span-3 flex items-center justify-center sm:col-span-1 sm:flex-row">
+                <Button className="mb-2  w-11/12 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-8 sm:text-[1.75rem]">
+                  Download Brochure
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="text-6xl text-white font-bold sm:mb-6 text-center">
-            Course Creators and Contributors
-          </h2>
-          <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
-            {people.map((person, index) => (
-              <PersonCard
-                key={index}
-                image={person.image}
-                name={person.name}
-                position={person.position}
-              />
-            ))}
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
+            <h2 className="text-center text-4xl  font-bold text-white sm:mb-6 sm:text-6xl">
+              Course Creators and Contributors
+            </h2>
+            <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
+              {people.map((person, index) => (
+                <PersonCard
+                  key={index}
+                  image={person.image}
+                  name={person.name}
+                  position={person.position}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
