@@ -3,8 +3,8 @@ import Logo from '@/components/Logo'
 const footerNav = [
   { name: 'Home', href: '/' },
   { name: 'Course Overview', href: '#' },
-  { name: 'Partners', href: '#' },
-  { name: 'Contact Us', href: '#' },
+  { name: 'Partners', href: '/partners' },
+  { name: 'Contact Us', href: '/contact' },
   { name: 'Register/Login', href: '#' },
   { name: 'T&Cs', href: '#' },
 ]
