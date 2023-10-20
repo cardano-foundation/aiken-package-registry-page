@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Button from '@/components/Button'
 
 const PartnerCard = ({ className, ...props }) => (
-  <div className={`${className} relative flex items-center justify-start py-8 px-4 sm:py-16 sm:px-12 rounded-3xl border border-cf-gray-600 shadow-sm`}>
+  <div className={`${className} relative flex items-center justify-start py-8 px-4 sm:py-16 sm:px-12 rounded-3xl border border-cf-gray-300/25 shadow-sm`}>
     <div className="relative isolate hidden w-1/2 md:block -mt-[1.25rem]">
       <Image
         className="w-full rounded-3xl h-auto"

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 const StatCard = ({ className, ...props }) => (
-  <div className={`${className} relative flex flex-col items-center justify-center py-5 px-6 rounded-3xl border border-cf-gray-600 shadow-sm`}>
+  <div className={`${className} relative flex flex-col items-center justify-center py-5 px-6 rounded-3xl border border-cf-gray-300/25 shadow-sm`}>
     <Image
       className="h-[74px] w-auto"
       src={`/${props.icon}`}
