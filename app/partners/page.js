@@ -42,7 +42,7 @@ export default function Partners() {
     <main>
       {/* Hero section */}
       <section className="relative isolate pt-36 sm:pt-48 flex justify-center items-center bg-white overflow-hidden px-2">
-        <div className="flex justify-between items-center mx-auto max-w-7xl p-6 sm:p-8 lg:p-16  w-full border border-cf-gray-600 rounded-3xl">
+        <div className="flex justify-between items-center mx-auto max-w-7xl p-6 sm:p-8 lg:p-16  w-full border border-cf-gray-200/25 rounded-3xl">
           <div className="flex flex-col justify-center items-start sm:pr-24">
             <h1 className="text-5xl sm:text-6xl text-cf-blue-600 leading-tight font-bold">
               Education <br />

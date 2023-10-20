@@ -5,6 +5,8 @@ import Button from '@/components/Button'
 import PersonCard from '@/components/PersonCard'
 import CarouselCard from '@/components/CarouselCard'
 import Carousel from 'react-multi-carousel'
+import CarouselRightArrow from '@/components/CarouselRightArrow'
+import CarouselLeftArrow from '@/components/CarouselLeftArrow'
 import 'react-multi-carousel/lib/styles.css'
 
 export default function Overview() {
@@ -15,27 +17,32 @@ export default function Overview() {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
       items: 3,
+      slidesToSlide: 2,
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      breakpoint: { max: 3000, min: 1500 },
+      items: 2,
+      slidesToSlide: 2,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 3,
+      breakpoint: { max: 1500, min: 1200 },
+      items: 2,
+      slidesToSlide: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 1200, min: 0 },
       items: 1,
+      slidesToSlide: 1,
     },
   }
 
+  // Carousel cards
   const cards = [
     {
       title: 'Module 1',
       description:
         'Introduces the foundation of blockchain, from the main components of a typical blockchain network',
-      image: 'module-image.jpeg',
+      image: 'M1_carousel.svg',
       overview_description:
         'Module 1: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
       overview_description_2:
@@ -45,7 +52,7 @@ export default function Overview() {
       title: 'Module 2',
       description:
         'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
-      image: 'module-image.jpeg',
+      image: 'M2_carousel.svg',
       overview_description:
         'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
       overview_description_2:
@@ -55,7 +62,7 @@ export default function Overview() {
       title: 'Module 3',
       description:
         'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
-      image: 'module-image.jpeg',
+      image: 'M3_carousel.svg',
       overview_description:
         'Module 3: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
       overview_description_2:
@@ -65,7 +72,7 @@ export default function Overview() {
       title: 'Module 4',
       description:
         'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
-      image: 'module-image.jpeg',
+      image: 'M4_carousel.svg',
       overview_description:
         'Module 4: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
       overview_description_2:
@@ -73,6 +80,8 @@ export default function Overview() {
     },
   ]
 
+
+  // Course Creators and Contributors peo
   const people = [
     {
       name: 'Matthias Benkort',
@@ -111,38 +120,41 @@ export default function Overview() {
 
   return (
     <main>
-      <section className="bg-cf-blue-600">
-        <div className="relative isolate mx-auto flex h-[70vh] max-w-7xl items-center justify-center overflow-hidden bg-cf-blue-900">
-          <div
-            className="left-[calc(50% + 2rem)] absolute bottom-[calc(0%-56rem)] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#05A6EC] blur-[256px]"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute left-[-25rem] top-[-25rem] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-br from-cf-blue-400 to-cf-blue-200 opacity-60 blur-[256px]"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute right-[-96rem] top-[-72rem] -z-10 h-[156rem] w-[156rem] overflow-hidden rounded-full bg-gradient-to-bl from-cf-blue-300 to-[#05A6EC] opacity-70 blur-[256px]"
-            aria-hidden="true"
-          />
-          <div className="relative z-10 flex max-w-2xl flex-col items-center text-center text-white">
-            <h1 className="mb-4 w-[800px] px-52 text-4xl font-bold sm:px-0 sm:text-6xl">
-              Cardano Blockchain Certified Associate (CBCA) Course Overview
-            </h1>
-          </div>
-          <div className="absolute h-screen w-full bg-[url('/noise-light.png')] bg-repeat opacity-25"></div>
+
+      <section className="relative isolate pt-36 pb-64 sm:pt-48 flex justify-center items-center bg-cf-blue-600 overflow-hidden">
+        <div className="flex justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
+          <h1 className="text-5xl sm:text-6xl text-white leading-tight font-bold text-center">
+            Cardano Blockchain <br /> Certified Associate (CBCA) <br /> Course Overview
+          </h1>
         </div>
+
+        {/* Background gradient shapes  */}
+        <div
+          className="absolute mix-blend-plus-lighter brightness-150 opacity-50 left-[-10rem] top-[-12rem] -z-10 overflow-hidden blur-[256px] w-[36rem] h-[36rem] rounded-full bg-gradient-to-br from-[#05A6EC] to-[#036ECD]"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute mix-blend-plus-lighten opacity-50 right-[-32rem] top-[-10rem] -z-10 overflow-hidden blur-[256px] w-[72rem] h-[72rem] rounded-full bg-gradient-to-bl from-[#05A6EC] to-[#05A6EC]"
+          aria-hidden="true"
+        />
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay -z-10"></div>
       </section>
 
       {/* Module Carousel section */}
       <section className="relative mx-auto -mt-40 max-w-7xl overflow-hidden">
-        <Carousel arrows infinite responsive={responsive}>
+        <Carousel
+          arrows
+          infinite
+          responsive={responsive}
+          itemClass="flex lg:odd:pl-48 lg:even:pr-48 px-12"
+          customLeftArrow={<CarouselLeftArrow/>}
+          customRightArrow={<CarouselRightArrow/>}
+        >
           {cards.map((card, index) => (
             <CarouselCard
               key={index}
               title={card.title}
               description={card.description}
-              link={card.link}
               image={card.image}
               setModuleOverview={setModuleOverview}
             />
@@ -151,25 +163,25 @@ export default function Overview() {
       </section>
 
       {/* Module overview description from carousel section */}
-      <section className="mx-auto mb-24 flex h-[740px] max-w-7xl items-center justify-center px-4 sm:px-0">
-        <div className="h-86 mb-20 flex items-center justify-center rounded-3xl border-2 border-solid p-4 shadow-xl">
-          <div className="lg:my-22 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:mx-24">
-            <div>
+      <section className="mx-auto my-12 mb-36 flex h-[740px] max-w-7xl items-center justify-center px-4 xl:px-0">
+        <div className="h-86 mb-20 flex items-center justify-center rounded-3xl border border-solid p-4 shadow-sm">
+          <div className="lg:my-22 grid grid-cols-1 gap-16 md:grid-cols-2 lg:mx-24">
+            <div className="py-12">
               {selectedCard && (
                 <div>
-                  <div className="s,m:mb-10 text-4xl font-bold text-cf-blue-600">
+                  <div className="mb-10 text-3xl sm:text-4xl font-bold text-cf-blue-600">
                     {selectedCard.title} Overview
                   </div>
-                  <div className="my-4 text-xl font-extralight text-cf-gray-600">
+                  <div className="my-4 text-lg sm:text-xl text-cf-neutral-gray">
                     {selectedCard.overview_description}
                   </div>
-                  <div className="text-xl font-extralight text-cf-gray-600">
+                  <div className="text-lg sm:text-xl text-cf-neutral-gray">
                     {selectedCard.overview_description_2}
                   </div>
                 </div>
               )}
             </div>
-            <div className="m-auto hidden items-center justify-center sm:block">
+            <div className="m-auto hidden items-center justify-center md:block">
               <Image
                 src="/module-overview.svg"
                 alt="Example SVG"

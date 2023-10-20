@@ -2,7 +2,7 @@ import Logo from '@/components/Logo'
 
 const footerNav = [
   { name: 'Home', href: '/' },
-  { name: 'Course Overview', href: '#' },
+  { name: 'Course Overview', href: '/overview' },
   { name: 'Partners', href: '/partners' },
   { name: 'Contact Us', href: '/contact' },
   { name: 'Register/Login', href: '#' },
