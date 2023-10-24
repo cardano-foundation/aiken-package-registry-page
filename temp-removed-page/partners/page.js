@@ -44,7 +44,7 @@ export default function Partners() {
       <section className="relative isolate pt-36 sm:pt-48 flex justify-center items-center bg-white overflow-hidden px-2">
         <div className="flex justify-between items-center mx-auto max-w-7xl p-6 sm:p-8 lg:p-16  w-full border border-cf-gray-200/25 rounded-3xl">
           <div className="flex flex-col justify-center items-start sm:pr-24">
-            <h1 className="text-5xl sm:text-6xl text-cf-blue-600 leading-tight font-bold">
+            <h1 className="text-4xl sm:text-6xl text-cf-blue-600 leading-tight font-bold">
               Education <br />
               Partnerships with <br />
               Cardano Academy
@@ -72,7 +72,7 @@ export default function Partners() {
       <section className="bg-white py-12 sm:py-24">
         <div className="flex justify-start items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="flex flex-col justify-center items-start">
-            <h2 className="text-5xl sm:text-6xl text-cf-blue-600 font-bold mb-8 sm:mb-20">
+            <h2 className="text-4xl sm:text-6xl text-cf-blue-600 font-bold mb-8 sm:mb-20">
               Partner with us
             </h2>
             <div className="space-y-6 sm:space-y-12">

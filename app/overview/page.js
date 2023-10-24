@@ -146,7 +146,7 @@ export default function Overview() {
           arrows
           infinite
           responsive={responsive}
-          itemClass="flex lg:odd:pl-48 lg:even:pr-48 px-12"
+          itemClass="flex lg:odd:pl-48 lg:even:pr-48 px-12 md:px-6"
           customLeftArrow={<CarouselLeftArrow/>}
           customRightArrow={<CarouselRightArrow/>}
         >
