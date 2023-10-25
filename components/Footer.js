@@ -3,16 +3,16 @@ import Logo from '@/components/Logo'
 const footerNav = [
   { name: 'Home', href: '/' },
   { name: 'Course Overview', href: '/overview' },
-  { name: 'Partners', href: '/partners' },
-  { name: 'Contact Us', href: '/contact' },
-  { name: 'Register/Login', href: '#' },
+  // { name: 'Partners', href: '/partners' },
+  { name: 'Pre-Register', href: '/contact' },
+  // { name: 'Register/Login', href: '#' },
   { name: 'T&Cs', href: '#' },
 ]
 
 const Footer = () => (
   <div className="relative isolate overflow-hidden py-12 sm:py-24 bg-cf-blue-900">
     <div className="flex flex-col md:flex-row  justify-between items-start mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
-      <Logo className="w-96 md:mr-1 mb-10 md:mb-0" />
+      <Logo className="w-72 sm:w-96 md:mr-1 mb-10 md:mb-0" />
 
       <div className="flex flex-col space-y-6">
         {footerNav.map((item) => (

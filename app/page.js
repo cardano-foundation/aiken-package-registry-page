@@ -5,6 +5,16 @@ import StatCard from '@/components/StatCard'
 import FeatureCard from '@/components/FeatureCard'
 import TargetCard from '@/components/TargetCard'
 
+export const metadata = {
+  title: 'Cardano Academy',
+  description: 'Learn about the blockchain and Cardano with our free online courses.',
+  openGraph: {
+    // openGraphImage
+    title: 'Cardano Academy',
+    description: 'Learn about the blockchain and Cardano with our free online courses.',
+  },
+}
+
 const stats = [
   { stat: '4', description: 'Modules', icon: 'globe-book.svg', alt: 'Icon depicting a globe and a stack of books' },
   { stat: '29', description: 'Units', icon: 'online-book.svg', alt: 'Icon depicting a book on a monitor' },
@@ -71,8 +81,8 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-full h-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay -z-10"></div>
       </section>
 
-      {/* About section */}
-      <section className="bg-cf-blue-600 py-12 sm:py-40">
+      {/* About section / will be uncommented */}
+      {/* <section className="bg-cf-blue-600 py-12 sm:py-40">
         <div className="flex justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="flex flex-col justify-center items-start lg:pr-24">
             <h2 className="text-5xl sm:text-6xl text-white font-bold mb-6">
@@ -97,7 +107,7 @@ export default function Home() {
             height={500}
           />
         </div>
-      </section>
+      </section> */}
 
       {/* Course section */}
       <section className="bg-white pt-12 pb-48 sm:pt-40 sm:pb-64">
@@ -129,11 +139,19 @@ export default function Home() {
         {/* Floating CTA */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex flex-col justify-center items-center -mt-32 shadow-lg bg-cf-green-600 py-14 max-w-7xl px-6 sm:px-8 lg:px-12 w-full rounded-3xl">
           <h2 className="text-4xl sm:text-5xl text-cf-blue-900 font-bold mb-12 text-center">
-            Register and Start Learning Today!
+            {/* Register and Start Learning Today! */}
+            Register Today!
           </h2>
           <div className="flex flex-col sm:flex-row">
-            <Button className="w-72 text-white bg-cf-blue-900 text-3xl sm:text-[1.75rem] py-5 px-8 sm:mr-8 mb-2 sm:mb-0">Register Today!</Button>
-            <Button className="w-72 text-cf-blue-900 bg-white text-3xl sm:text-[1.75rem] py-5 px-8">Learn More</Button>
+            <Link href="/contact">
+              <Button className="w-72 text-white bg-cf-blue-900 text-3xl sm:text-[1.75rem] py-5 px-8 sm:mr-8 mb-2 sm:mb-0">
+                {/* Register Today! */}
+                Pre-Register
+              </Button>
+            </Link>
+            <Link href="/overview">
+              <Button className="w-72 text-cf-blue-900 bg-white text-3xl sm:text-[1.75rem] py-5 px-8">Learn More</Button>
+            </Link>
           </div>
         </div>
 

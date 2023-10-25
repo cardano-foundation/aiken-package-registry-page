@@ -17,12 +17,12 @@ const Navigation = () => {
 
   const navigation = [
     { name: 'Course Overview', href: '/overview', current: pathname === '/overview' },
-    { name: 'Partners', href: '/partners', current: pathname === '/partners' },
-    { name: 'Contact Us', href: '/contact', current: pathname === '/contact' },
+    // { name: 'Partners', href: '/partners', current: pathname === '/partners' },
+    { name: 'Pre-Register', href: '/contact', current: pathname === '/conttact' },
   ]
   const userNavigation = [
-    { name: 'Log In', href: '#' },
-    { name: 'Register', href: '#' },
+    // { name: 'Log In', href: '#' },
+    // { name: 'Register', href: '#' },
   ]
 
   const [clientWindowHeight, setClientWindowHeight] = useState("")
@@ -78,10 +78,10 @@ const Navigation = () => {
                 </div>
               </div>
               <div className="hidden sm:flex items-center">
-                <div className="flex-shrink-0">
+                {/* <div className="flex-shrink-0">
                   <Button className="bg-transparent ring-inset ring-2 ring-white text-white w-28 mr-4">Log In</Button>
                   <Button className="text-cf-blue-900 bg-white w-28">Register</Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ const Navigation = () => {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="border-t border-cf-blue-50 pb-3 pt-4">
+            {/* <div className="border-t border-cf-blue-50 pb-3 pt-4">
               <div className="space-y-1 px-2 sm:px-3">
                 {userNavigation.map((item) => (
                   <Disclosure.Button
@@ -116,7 +116,7 @@ const Navigation = () => {
                   </Disclosure.Button>
                 ))}
               </div>
-            </div>
+            </div> */}
           </Disclosure.Panel>
         </>
       )}

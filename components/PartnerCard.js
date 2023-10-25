@@ -24,14 +24,14 @@ const PartnerCard = ({ className, ...props }) => (
         width={74}
         height={74}
       />
-      <h2 className="text-4xl sm:text-[2.5rem] text-cf-blue-600 font-bold mb-6">
+      <h2 className="text-3xl sm:text-[2.5rem] text-cf-blue-600 font-bold mb-6">
         {props.title}
       </h2>
       <p className="text-cf-neutral-gray text-lg sm:text-lg">
         {props.description}
       </p>
       <div className="mt-8">
-        <Button className="text-white bg-cf-blue-600 text-lg py-5 px-8">Contacts Us to Become a Partner</Button>
+        <Button className="text-white text-base bg-cf-blue-600 sm:text-lg py-5 px-8">Contacts Us to Become a Partner</Button>
       </div>
     </div>
   </div>

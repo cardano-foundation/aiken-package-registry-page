@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { toast } from 'react-hot-toast';
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/Button'
@@ -8,19 +9,68 @@ import Input from '@/components/Input'
 import Select from '@/components/Select'
 import TextArea from '@/components/TextArea'
 
-export default function Home() {
+export default function Contact() {
+
+
+  const portalId = "7759219"
+  const formGuid = "e6273f91-31e3-47f3-85e3-dd853c47b291"
   const enquirerOptions = [
     { id: 'business', name: 'Business' },
   ]
 
+  const blockchainKnowledgeOptions = [
+    { id: 'Newbie (little or no knowledge)', name: 'Newbie (little or no knowledge)' },
+    { id: 'Beginner (limited knowledge)', name: 'Beginner (limited knowledge)' },
+    { id: 'Intermediate (good understanding)', name: 'Intermediate (good understanding)' },
+    { id: 'Expert (advanced understanding)', name: 'Expert (advanced understanding)' },
+  ]
+
   const [enquirer, setEnquirer] = useState(enquirerOptions[0])
+
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [blockchainKnowledge, setBlockchainKnowledge] = useState(blockchainKnowledgeOptions[0])
+
+  const submitForm = async (event) => {
+    event.preventDefault()
+
+    const form = {
+      firstname: name,
+      email,
+      "what_is_your_current_blockchain_knowledge_": blockchainKnowledge.id,
+    }
+
+    const response = await fetch(`/api/preregister?portalId=${portalId}&formGuid=${formGuid}`, {
+      method: 'POST',
+      body: JSON.stringify(form),
+    })
+
+    const data = await response.json()
+
+    console.log(data)
+
+    if (data.errors) {
+      data.errors.forEach((error) => {
+        if (error.message.includes('fields.firstname')) {
+          toast.error('The first name field is invalid.')
+        } else if (error.message.includes('fields.email')) {
+          toast.error('The email field is invalid.')
+        }
+      })
+    } else {
+      toast.success('Thank you for your interest in the CF Learning Platform. We will be in touch soon!')
+    }
+  }
 
   return (
     <main>
       {/* Hero section */}
       <section className="relative isolate pt-36 pb-96 sm:pt-48 sm:pb-[24rem] flex justify-center items-center bg-cf-blue-600 overflow-hidden">
         <div className="flex justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
-          <h1 className="text-5xl sm:text-6xl text-white leading-tight font-bold">Contact Us to Learn More</h1>
+          <h1 className="text-5xl sm:text-6xl text-white leading-tight font-bold">
+            {/* Contact Us to Learn More */}
+            Pre-Register Today!
+          </h1>
         </div>
 
         {/* Background gradient shapes  */}
@@ -36,8 +86,8 @@ export default function Home() {
       </section>
       <section className="relative bg-white pt-12 pb-12 sm:pb-24">
         <div className="flex flex-col justify-center items-center mx-auto max-w-4xl px-4 sm:px-8 lg:px-12 w-full -mt-96 sm:-mt-[20rem]">
-          <div className="grid md:grid-cols-2 w-full bg-white rounded-3xl gap-x-6 gap-y-6 md:gap-y-12 shadow-xl px-8 md:px-20 py-8 md:py-16">
-            <Input
+          <form onSubmit={(e) => submitForm(e)} className="grid md:grid-cols-2 w-full bg-white rounded-3xl gap-x-6 gap-y-6 md:gap-y-12 shadow-xl px-8 md:px-20 py-8 md:py-16">
+            {/* <Input
               className="col-span-1 w-full"
               type="text"
               icon={
@@ -148,8 +198,56 @@ export default function Home() {
               rows="6"
               placeholder="Type message"
             />
-            <Button className="md:hidden text-white bg-cf-blue-600 text-lg py-6 px-5">Send Message</Button>
-          </div>
+            <Button className="md:hidden text-white bg-cf-blue-600 text-lg py-6 px-5">Send Message</Button> */}
+            <div className="col-span-2">
+              <Input
+                className="col-span-2 w-full"
+                type="text"
+                icon={
+                  <svg className="h-5 w-5 text-cf-gray-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path d="M2.7085 18.3333V17.2917C2.7085 16.3341 2.8971 15.3859 3.26354 14.5013C3.62998 13.6166 4.16708 12.8128 4.84418 12.1357C5.52127 11.4586 6.3251 10.9215 7.20976 10.555C8.09443 10.1886 9.04261 10 10.0002 10C10.9577 10 11.9059 10.1886 12.7906 10.555C13.6752 10.9215 14.4791 11.4586 15.1561 12.1357C15.8332 12.8128 16.3703 13.6166 16.7368 14.5013C17.1032 15.3859 17.2918 16.3341 17.2918 17.2917V18.3333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M10.0002 10.0001C11.1052 10.0001 12.165 9.56109 12.9464 8.77969C13.7278 7.99829 14.1668 6.93848 14.1668 5.83341C14.1668 4.72835 13.7278 3.66854 12.9464 2.88714C12.165 2.10573 11.1052 1.66675 10.0002 1.66675C8.89509 1.66675 7.83529 2.10573 7.05388 2.88714C6.27248 3.66854 5.8335 4.72835 5.8335 5.83341C5.8335 6.93848 6.27248 7.99829 7.05388 8.77969C7.83529 9.56109 8.89509 10.0001 10.0002 10.0001V10.0001Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                }
+                name="first_name"
+                id="first_name"
+                label="First name"
+                placeholder="First name"
+                onChange={(e) => setName(e)}
+              />
+            </div>
+            <div className="col-span-2">
+              <Input
+                className="col-span-2 w-full"
+                type="email"
+                icon={
+                  <svg className="h-5 w-5 text-cf-gray-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path d="M18.3332 5.94946V14.2828C18.3332 14.8353 18.1137 15.3652 17.723 15.7559C17.3323 16.1466 16.8024 16.3661 16.2498 16.3661H3.74984C3.1973 16.3661 2.6674 16.1466 2.2767 15.7559C1.886 15.3652 1.6665 14.8353 1.6665 14.2828V5.94946" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M18.3332 5.94954C18.3332 5.39701 18.1137 4.86711 17.723 4.47641C17.3323 4.0857 16.8024 3.86621 16.2498 3.86621H3.74984C3.1973 3.86621 2.6674 4.0857 2.2767 4.47641C1.886 4.86711 1.6665 5.39701 1.6665 5.94954L8.89567 10.4634C9.22678 10.6704 9.60938 10.7801 9.99984 10.7801C10.3903 10.7801 10.7729 10.6704 11.104 10.4634L18.3332 5.94954Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                }
+                name="email"
+                id="email"
+                label="Email"
+                placeholder="Email address"
+                onChange={(e) => setEmail(e)}
+              />
+            </div>
+            <div className="col-span-2">
+              <Select
+                className="h-full col-span-1"
+                label="What is your current blockchain knowledge?"
+                options={blockchainKnowledgeOptions}
+                selected={blockchainKnowledge}
+                onChange={e => {
+                  setBlockchainKnowledge(e)
+                }}
+              />
+            </div>
+            <div className="col-span-2 flex justify-end">
+              <Button type="submit" className="text-white bg-cf-blue-600 text-lg py-6 px-5">Pre-Register</Button>
+            </div>
+          </form>
         </div>
       </section>
     </main>
