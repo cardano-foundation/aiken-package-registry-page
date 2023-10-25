@@ -39,6 +39,7 @@ export default function Contact() {
       email,
       "what_is_your_current_blockchain_knowledge_": blockchainKnowledge.id,
     }
+    console.log(form)
 
     const response = await fetch(`/api/preregister?portalId=${portalId}&formGuid=${formGuid}`, {
       method: 'POST',
@@ -57,8 +58,10 @@ export default function Contact() {
           toast.error('The email field is invalid.')
         }
       })
-    } else {
-      toast.success('Thank you for your interest in the CF Learning Platform. We will be in touch soon!')
+    }
+
+    if (data.inlineMessage) {
+      toast.success('🎉 Thank you for your submission!')
     }
   }
 
@@ -202,6 +205,7 @@ export default function Contact() {
             <div className="col-span-2">
               <Input
                 className="col-span-2 w-full"
+                required
                 type="text"
                 icon={
                   <svg className="h-5 w-5 text-cf-gray-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
@@ -213,12 +217,13 @@ export default function Contact() {
                 id="first_name"
                 label="First name"
                 placeholder="First name"
-                onChange={(e) => setName(e)}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="col-span-2">
               <Input
                 className="col-span-2 w-full"
+                required
                 type="email"
                 icon={
                   <svg className="h-5 w-5 text-cf-gray-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
@@ -230,7 +235,7 @@ export default function Contact() {
                 id="email"
                 label="Email"
                 placeholder="Email address"
-                onChange={(e) => setEmail(e)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="col-span-2">
