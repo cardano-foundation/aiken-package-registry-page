@@ -51,7 +51,11 @@ export default function Contact() {
 
     if (data.errors) {
       data.errors.forEach((error) => {
-        toast.error(error.message)
+        if (error.message.includes('fields.firstname')) {
+          toast.error('The first name field is invalid.')
+        } else if (error.message.includes('fields.email')) {
+          toast.error('The email field is invalid.')
+        }
       })
     } else {
       toast.success('Thank you for your interest in the CF Learning Platform. We will be in touch soon!')
@@ -198,7 +202,6 @@ export default function Contact() {
             <div className="col-span-2">
               <Input
                 className="col-span-2 w-full"
-                required
                 type="text"
                 icon={
                   <svg className="h-5 w-5 text-cf-gray-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
@@ -216,7 +219,6 @@ export default function Contact() {
             <div className="col-span-2">
               <Input
                 className="col-span-2 w-full"
-                required
                 type="email"
                 icon={
                   <svg className="h-5 w-5 text-cf-gray-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
