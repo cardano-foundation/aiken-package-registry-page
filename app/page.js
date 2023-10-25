@@ -5,6 +5,16 @@ import StatCard from '@/components/StatCard'
 import FeatureCard from '@/components/FeatureCard'
 import TargetCard from '@/components/TargetCard'
 
+export const metadata = {
+  title: 'Cardano Academy',
+  description: 'Learn about the blockchain and Cardano with our free online courses.',
+  openGraph: {
+    // openGraphImage
+    title: 'Cardano Academy',
+    description: 'Learn about the blockchain and Cardano with our free online courses.',
+  },
+}
+
 const stats = [
   { stat: '4', description: 'Modules', icon: 'globe-book.svg', alt: 'Icon depicting a globe and a stack of books' },
   { stat: '29', description: 'Units', icon: 'online-book.svg', alt: 'Icon depicting a book on a monitor' },

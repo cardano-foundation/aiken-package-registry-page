@@ -1,5 +1,6 @@
 import './globals.css'
 import { Chivo } from 'next/font/google'
+import { Toaster } from "react-hot-toast";
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={chivo.className}>
         <Navigation />
+        <Toaster position="bottom-center " />
         {children}
         <Footer />
       </body>
