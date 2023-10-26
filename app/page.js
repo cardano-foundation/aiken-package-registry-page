@@ -244,7 +244,7 @@ export default function Home() {
 
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
           <h2 className="text-center text-6xl font-bold text-white sm:mb-6">
-            Learn Blockchain, Your Way
+            Learn blockchain, your way
           </h2>
           <p className="pt-6 text-center text-xl text-white">
             Interested in learning about Blockchain?
@@ -268,7 +268,7 @@ export default function Home() {
       <section className="relative bg-white py-12 sm:py-40">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
           <h2 className="mb-6 text-center text-6xl font-bold text-cf-blue-600">
-            Who is the Course For?
+            Who is the course for?
           </h2>
 
           <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
