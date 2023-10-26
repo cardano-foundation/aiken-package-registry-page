@@ -44,39 +44,39 @@ export default function Overview() {
         'Introduces the foundation of blockchain, from the main components of a typical blockchain network',
       image: 'M1_carousel.svg',
       overview_description:
-        'Module 1: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+        'Module 1 introduces the foundation of blockchain, from the main components of a typical blockchain network, to how consensus algorithms provide a mechanism to reach agreement in decentralised systems. It delves into the Byzantine Generals Problem and explains what Byzantine and Practical Byzantine fault tolerant systems are.',
       overview_description_2:
-        'It examines the content of a block and the role of the block producer. Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
+        'This module looks at the key concepts behind proof of work and proof of stake systems, including their respective limitations. Other proof-based consensus models including proof of authority, proof of Importance and proof of History are briefly explored. Encryption methods are examined and how hash functions and digital signatures provide data authenticity and integrity.',
     },
     {
       title: 'Module 2',
       description:
-        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
+        'Builds on the concepts introduced in module 1. It defines the transaction models used in blockchain',
       image: 'M2_carousel.svg',
       overview_description:
-        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+        'Module 2 builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output. It examines the content of a block and the role of the block producer.',
       overview_description_2:
-        'It examines the content of a block and the role of the block producer. Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
+        'Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
     },
     {
       title: 'Module 3',
       description:
-        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
+        'Focuses on the Cardano blockchain, it describes Cardano’s genesis and genesis entities',
       image: 'M3_carousel.svg',
       overview_description:
-        'Module 3: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+        'Module 3 focuses on Cardano blockchain, it describes Cardano’s genesis and genesis entities, and the mission and principles governing Cardano. It looks at the Cardano node and how the eras have developed and enhanced features of the network.',
       overview_description_2:
-        'It examines the content of a block and the role of the block producer. Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
+        `Ouroboros, Cardano's consensus algorithm, is examined, along with the reward and incentive mechanism of Cardano. The governance process including Cardano Improvement Proposals is explained, along with the role of the Cardano Community.`
     },
     {
       title: 'Module 4',
       description:
-        'Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain',
+        'Looks at how to get started on Cardano. Buying, storing, and Transferring ada. How staking works, the role of stake pools, and stake pool operators.',
       image: 'M4_carousel.svg',
       overview_description:
-        'Module 4: Builds on the concepts introduced in module 1. It defines the transactions models used in blockchain, including account-based, Unspent Transaction Output and extended Unspent Transaction Output.',
+        'Module 4 looks at how to get started buying, storing and transferring ada. It also examines how staking works on Cardano with the staking lifecycle, along with the role of stake pools and stake pool operators.',
       overview_description_2:
-        'It examines the content of a block and the role of the block producer. Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
+        'It describes how to create and transfer both native assets and non-fungible tokens and concludes with a look at decentralised applications and exchanges.'
     },
   ]
 
@@ -86,32 +86,32 @@ export default function Overview() {
     {
       name: 'Matthias Benkort',
       position: 'Technical Director of Open Source',
-      image: 'person.svg',
+      image: 'contributors/Matthias-Benkort.jpeg',
     },
     {
       name: 'John Greene',
       position: 'Technical Blockchain Educator',
-      image: 'person.svg',
+      image: 'contributors/John-Greene.png',
     },
     {
       name: 'Vanessa Hurhangee',
       position: 'Education Manager',
-      image: 'person.svg',
+      image: 'contributors/Vanessa-Hurhangee.jpg',
     },
     {
-      name: 'Thomas Mayfield',
+      name: 'Thomas Mayfiel',
       position: 'Team Lead - Decentralized  Trust and Identity Solutions',
-      image: 'person.svg',
+      image: 'contributors/Thomas-Mayfiel.jpeg',
     },
     {
       name: 'Michiel Bellen',
-      position: 'Integrations  Core Team Lead',
-      image: 'person.svg',
+      position: 'Core Integrations Team Lead',
+      image: 'contributors/Michiel-Bellen.jpeg',
     },
     {
       name: 'Denicio Bute',
       position: 'Community Manager',
-      image: 'person.svg',
+      image: 'contributors/Denicio-Bute.jpeg',
     },
   ]
 
@@ -163,7 +163,7 @@ export default function Overview() {
       </section>
 
       {/* Module overview description from carousel section */}
-      <section className="mx-auto my-12 mb-36 flex h-[740px] max-w-7xl items-center justify-center px-4 xl:px-0">
+      <section className="mx-auto my-12 mb-4 flex h-[740px] max-w-7xl items-center justify-center px-4 xl:px-0">
         <div className="h-86 mb-20 flex items-center justify-center rounded-3xl border border-solid p-4 shadow-sm">
           <div className="lg:my-22 grid grid-cols-1 gap-16 md:grid-cols-2 lg:mx-24">
             <div className="py-12">
@@ -195,9 +195,9 @@ export default function Overview() {
 
       {/* Course Creators and Contributors section */}
       <section className="bg-cf-blue-600">
-        <div className="relative mx-auto max-w-7xl bg-cf-blue-600 pb-12 pt-64 sm:pb-40 sm:pt-64">
+        <div className="relative mx-auto max-w-7xl bg-cf-blue-600 pb-12 pt-24 sm:pb-40 sm:pt-44">
           {/* Floating Brochure Box */}
-          <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
+          {/* <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
             <div className="grid grid-flow-row-dense grid-cols-3 flex-col p-4 sm:flex-row">
               <div className="col-span-3 mb-4 text-center text-xl font-semibold sm:col-span-2 sm:text-left sm:text-4xl">
                 Interested in learning about Blockchain? Download Cardano
@@ -209,7 +209,7 @@ export default function Overview() {
                 </Button>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
             <h2 className="text-center text-4xl  font-bold text-white sm:mb-6 sm:text-6xl">

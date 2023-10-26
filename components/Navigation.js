@@ -18,7 +18,7 @@ const Navigation = () => {
   const navigation = [
     { name: 'Course Overview', href: '/overview', current: pathname === '/overview' },
     // { name: 'Partners', href: '/partners', current: pathname === '/partners' },
-    { name: 'Pre-Register', href: '/contact', current: pathname === '/conttact' },
+    { name: 'Register', href: '/contact', current: pathname === '/contact' },
   ]
   const userNavigation = [
     // { name: 'Log In', href: '#' },

@@ -69,7 +69,7 @@ export default function Contact() {
         <div className="flex justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
           <h1 className="text-5xl sm:text-6xl text-white leading-tight font-bold">
             {/* Contact Us to Learn More */}
-            Pre-Register Today!
+            Register Today!
           </h1>
         </div>
 
@@ -245,7 +245,7 @@ export default function Contact() {
               />
             </div>
             <div className="col-span-2 flex justify-end">
-              <Button type="submit" className="text-white bg-cf-blue-600 text-lg py-6 px-5">Pre-Register</Button>
+              <Button type="submit" className="text-white bg-cf-blue-600 text-lg py-6 px-5">Register</Button>
             </div>
           </form>
         </div>

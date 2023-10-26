@@ -4,9 +4,7 @@ const footerNav = [
   { name: 'Home', href: '/' },
   { name: 'Course Overview', href: '/overview' },
   // { name: 'Partners', href: '/partners' },
-  { name: 'Pre-Register', href: '/contact' },
-  // { name: 'Register/Login', href: '#' },
-  { name: 'T&Cs', href: '#' },
+  { name: 'Register', href: '/contact' },
 ]
 
 const Footer = () => (
