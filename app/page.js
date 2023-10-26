@@ -202,7 +202,7 @@ export default function Home() {
             blockchain is needed.
           </p>
 
-          <div className="mt-16 grid w-full grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8 md:gap-9 lg:grid-cols-3 lg:gap-16">
+          <div className="mt-16 grid w-full grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8 md:gap-9 lg:grid-cols-3 lg:gap-16 max-w-3xl">
             {stats.map((stat, index) => (
               <StatCard
                 key={index}
