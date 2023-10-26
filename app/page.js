@@ -74,7 +74,7 @@ const features = [
     icon: 'glass.svg',
     alt: 'Icon depicting a cube seen through a magnifying glass',
     title: 'get certified',
-    description: 'Enhance your profile by becoming an accredited associate or expert. Available from March 2024',
+    description: 'Enhance your profile and get certified on Cardano.',
   },
 ]
 
