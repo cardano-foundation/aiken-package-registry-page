@@ -10,7 +10,7 @@ const TargetCard = ({ className, ...props }) => (
       width={74}
       height={74}
     />
-    <span className="text-xl text-cf-blue-900 mt-5" dangerouslySetInnerHTML={{__html: props.description}}></span>
+    <span className="text-xl text-center text-cf-blue-900 mt-5" dangerouslySetInnerHTML={{__html: props.description}}></span>
   </div>
 )
 

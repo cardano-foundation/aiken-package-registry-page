@@ -6,7 +6,7 @@ const PersonCard = ({ className, ...props }) => (
   >
     <div className="mt-5 flex flex-col items-center pb-5 h-[74px] w-auto">
       <Image
-        className="h-[180px] w-auto rounded-full shadow-lg"
+        className="h-48 w-48 rounded-full shadow-lg object-cover object-center"
         src={`/${props.image}`}
         alt={props.name}
         priority={true}
