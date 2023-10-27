@@ -131,9 +131,11 @@ export default function Home() {
             Empowering the digital architects of the <br className="hidden sm:block"/>
               future.
             </p>
-            <Button className="mt-14 bg-white px-8 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
-              Register Today!
-            </Button>
+            <Link href="/register">
+              <Button className="mt-14 bg-white px-8 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
+                Register Today!
+              </Button>
+            </Link>
           </div>
           <Image
             className="hidden lg:block"

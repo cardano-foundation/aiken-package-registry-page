@@ -257,7 +257,6 @@ export default function ContactPage() {
             </div>
             <div className="col-span-2">
               <Checkbox
-                className="col-span-2 w-full"
                 name="gdpr"
                 id="gdpr"
                 label="I allow the Cardano Foundation to store and process the personal information provided. I also agree to receive communications from the Cardano Foundation according to the Privacy Policy."
