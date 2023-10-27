@@ -9,7 +9,7 @@ import CarouselRightArrow from '@/components/CarouselRightArrow'
 import CarouselLeftArrow from '@/components/CarouselLeftArrow'
 import 'react-multi-carousel/lib/styles.css'
 
-export default function Overview() {
+export default function OverviewPage() {
   const [moduleOverview, setModuleOverview] = useState('Module 1')
 
   // Carousel responsive scaling

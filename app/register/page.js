@@ -1,17 +1,17 @@
-import OverviewPage from '@/components/OverviewPage'
+import ContactPage from '@/components/ContactPage'
 
 export const metadata = {
-  title: 'Cardano Academy | Course Overview',
+  title: 'Cardano Academy | Register',
   description: 'Learn about the blockchain and Cardano with our free online courses.',
   openGraph: {
     // openGraphImage
-    title: 'Cardano Academy | Course Overview',
+    title: 'Cardano Academy | Register',
     description: 'Learn about the blockchain and Cardano with our free online courses.',
   },
 }
 
-export default function Overview() {
+export default function Contact() {
   return (
-    <OverviewPage />
+    <ContactPage />
   )
 }
