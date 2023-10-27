@@ -95,7 +95,7 @@ export default function ContactPage() {
       </section>
       <section className="relative bg-white pt-12 pb-12 sm:pb-24">
         <div className="flex flex-col justify-center items-center mx-auto max-w-4xl px-4 sm:px-8 lg:px-12 w-full -mt-96 sm:-mt-[20rem]">
-          <form onSubmit={(e) => submitForm(e)} className="grid md:grid-cols-2 w-full bg-white rounded-3xl gap-x-6 gap-y-6 md:gap-y-12 shadow-xl px-8 md:px-20 py-8 md:py-16">
+          <form onSubmit={(e) => submitForm(e)} className="grid md:grid-cols-2 w-full bg-white rounded-3xl gap-x-6 gap-y-6 md:gap-y-12 shadow-xl px-4 md:px-20 py-6 md:py-16">
             {/* <Input
               className="col-span-1 w-full"
               type="text"
