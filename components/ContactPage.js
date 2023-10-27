@@ -8,6 +8,7 @@ import Button from '@/components/Button'
 import Input from '@/components/Input'
 import Select from '@/components/Select'
 import TextArea from '@/components/TextArea'
+import Checkbox from '@/components/Checkbox'
 
 export default function ContactPage() {
 
@@ -30,9 +31,14 @@ export default function ContactPage() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [blockchainKnowledge, setBlockchainKnowledge] = useState(blockchainKnowledgeOptions[0])
+  const [gdprConsent, setGdprConsent] = useState(false)
 
   const submitForm = async (event) => {
     event.preventDefault()
+
+    if (!gdprConsent) {
+      toast.error('You need to agree to our privacy policy before registering.')
+    }
 
     const form = {
       firstname: name,
@@ -247,6 +253,15 @@ export default function ContactPage() {
                 onChange={e => {
                   setBlockchainKnowledge(e)
                 }}
+              />
+            </div>
+            <div className="col-span-2">
+              <Checkbox
+                className="col-span-2 w-full"
+                name="gdpr"
+                id="gdpr"
+                label="I allow the Cardano Foundation to store and process the personal information provided. I also agree to receive communications from the Cardano Foundation according to the Privacy Policy."
+                onChange={(e) => setGdprConsent(e.target.checked)}
               />
             </div>
             <div className="col-span-2 flex justify-end">
