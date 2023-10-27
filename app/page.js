@@ -6,14 +6,14 @@ import FeatureCard from '@/components/FeatureCard'
 import TargetCard from '@/components/TargetCard'
 
 export const metadata = {
-  title: 'Cardano Academy',
+  title: 'Blockchain Course',
   description:
-    'Learn about the blockchain and Cardano with our free online courses.',
+    'In-depth training course to get you from beginner to advanced blockchain knowledge. Free access to high-quality, up-to-date, self-paced learning material.',
   openGraph: {
     // openGraphImage
-    title: 'Cardano Academy',
+    title: 'Blockchain Course',
     description:
-      'Learn about the blockchain and Cardano with our free online courses.',
+      'In-depth training course to get you from beginner to advanced blockchain knowledge. Free access to high-quality, up-to-date, self-paced learning material.',
   },
 }
 
@@ -128,7 +128,7 @@ export default function Home() {
               Learn About<br /> Blockchain
             </h1>
             <p className="mt-8 text-xl text-white sm:mt-12 sm:text-2xl">
-            Empowering the digital architects of the<br />
+            Empowering the digital architects of the <br className="hidden sm:block"/>
               future.
             </p>
             <Button className="mt-14 bg-white px-8 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
@@ -197,7 +197,7 @@ export default function Home() {
           </h2>
           <p className="pt-6 text-lg text-cf-blue-600 sm:text-center sm:text-xl">
             Launching the Cardano Academy’s first certified course with: Cardano
-            Blockchain Certified <br />
+            Blockchain Certified  <br />
             Associate (CBCA) Course. No prior knowledge or experience of
             blockchain is needed.
           </p>
@@ -228,7 +228,7 @@ export default function Home() {
           Start your journey with Cardano Academy.
           </p>
           <div className="flex flex-col sm:flex-row">
-            <Link href="/contact">
+            <Link href="/register">
               <Button className="mb-2 w-72 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-8 sm:text-[1.75rem]">
                 {/* Register Today! */}
                 Register
@@ -243,7 +243,7 @@ export default function Home() {
         </div>
 
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="text-center text-6xl font-bold text-white sm:mb-6">
+          <h2 className="text-center text-5xl sm:text-6xl font-bold text-white sm:mb-6">
             Learn blockchain, your way
           </h2>
           <p className="pt-6 text-center text-xl text-white">
@@ -267,7 +267,7 @@ export default function Home() {
       {/* Target audience section */}
       <section className="relative bg-white py-12 sm:py-40">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mb-6 text-center text-6xl font-bold text-cf-blue-600">
+          <h2 className="mb-6 text-center text-5xl sm:text-6xl font-bold text-cf-blue-600">
             Who is the course for?
           </h2>
 

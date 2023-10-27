@@ -91,7 +91,7 @@ export default function OverviewPage() {
     {
       name: 'John Greene',
       position: 'Technical Blockchain Educator',
-      image: 'contributors/John-Greene.png',
+      image: 'contributors/John-Greene.jpeg',
     },
     {
       name: 'Vanessa Hurhangee',
@@ -123,7 +123,7 @@ export default function OverviewPage() {
 
       <section className="relative isolate pt-36 pb-64 sm:pt-48 flex justify-center items-center bg-cf-blue-600 overflow-hidden">
         <div className="flex justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
-          <h1 className="text-5xl sm:text-6xl text-white leading-tight font-bold text-center">
+          <h1 className="text-4xl sm:text-6xl text-white leading-tight font-bold text-center">
             Cardano Blockchain <br /> Certified Associate (CBCA) <br /> Course Overview
           </h1>
         </div>
@@ -163,7 +163,7 @@ export default function OverviewPage() {
       </section>
 
       {/* Module overview description from carousel section */}
-      <section className="mx-auto my-12 mb-4 flex h-[740px] max-w-7xl items-center justify-center px-4 xl:px-0">
+      <section className="mx-auto my-24 sm:my-12 mb-4 flex h-[740px] max-w-7xl items-center justify-center px-4 xl:px-0">
         <div className="h-86 mb-20 flex items-center justify-center rounded-3xl border border-solid p-4 shadow-sm">
           <div className="lg:my-22 grid grid-cols-1 gap-16 md:grid-cols-2 lg:mx-24">
             <div className="py-12">
