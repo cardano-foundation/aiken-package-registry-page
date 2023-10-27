@@ -1,12 +1,12 @@
 import ContactPage from '@/components/ContactPage'
 
 export const metadata = {
-  title: 'Cardano Academy | Register',
-  description: 'Learn about the blockchain and Cardano with our free online courses.',
+  title: 'Blockchain Course | Register',
+  description: 'In-depth training course to get you from beginner to advanced blockchain knowledge. Free access to high-quality, up-to-date, self-paced learning material.',
   openGraph: {
     // openGraphImage
-    title: 'Cardano Academy | Register',
-    description: 'Learn about the blockchain and Cardano with our free online courses.',
+    title: 'Blockchain Course | Register',
+    description: 'In-depth training course to get you from beginner to advanced blockchain knowledge. Free access to high-quality, up-to-date, self-paced learning material.',
   },
 }
 
