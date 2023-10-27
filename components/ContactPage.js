@@ -9,7 +9,7 @@ import Input from '@/components/Input'
 import Select from '@/components/Select'
 import TextArea from '@/components/TextArea'
 
-export default function Contact() {
+export default function ContactPage() {
 
 
   const portalId = "7759219"
@@ -71,7 +71,7 @@ export default function Contact() {
       <section className="relative isolate pt-36 pb-96 sm:pt-48 sm:pb-[24rem] flex justify-center items-center bg-cf-blue-600 overflow-hidden">
         <div className="flex justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
           <h1 className="text-5xl sm:text-6xl text-white leading-tight font-bold">
-            {/* Contact Us to Learn More */}
+            {/* Page Us to Learn More */}
             Register Today!
           </h1>
         </div>
