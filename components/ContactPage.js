@@ -38,6 +38,7 @@ export default function ContactPage() {
 
     if (!gdprConsent) {
       toast.error('You need to agree to our privacy policy before registering.')
+      return
     }
 
     const form = {
@@ -45,7 +46,6 @@ export default function ContactPage() {
       email,
       "what_is_your_current_blockchain_knowledge_": blockchainKnowledge.id,
     }
-    console.log(form)
 
     const response = await fetch(`/api/preregister?portalId=${portalId}&formGuid=${formGuid}`, {
       method: 'POST',
@@ -53,8 +53,6 @@ export default function ContactPage() {
     })
 
     const data = await response.json()
-
-    console.log(data)
 
     if (data.errors) {
       data.errors.forEach((error) => {

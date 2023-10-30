@@ -99,7 +99,7 @@ export default function OverviewPage() {
       image: 'contributors/Vanessa-Hurhangee.jpg',
     },
     {
-      name: 'Thomas Mayfiel',
+      name: 'Thomas Mayfield',
       position: 'Team Lead - Decentralized  Trust and Identity Solutions',
       image: 'contributors/Thomas-Mayfiel.jpeg',
     },
