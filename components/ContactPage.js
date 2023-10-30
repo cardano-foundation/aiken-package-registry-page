@@ -84,11 +84,11 @@ export default function ContactPage() {
 
         {/* Background gradient shapes  */}
         <div
-          className="absolute mix-blend-plus-lighter brightness-150 opacity-50 left-[-10rem] top-[-12rem] -z-10 overflow-hidden blur-[256px] w-[36rem] h-[36rem] rounded-full bg-gradient-to-br from-[#05A6EC] to-[#036ECD]"
+          className="absolute mix-blend-plus-lighter brightness-150 opacity-50 left-[-10rem] top-[-12rem] -z-10 overflow-hidden blur-[256px] w-[36rem] h-[36rem] rounded-full bg-gradient-to-br from-[#05A6EC] to-[#036ECD] safari-fix"
           aria-hidden="true"
         />
         <div
-          className="absolute mix-blend-plus-lighten opacity-50 right-[-32rem] top-[-10rem] -z-10 overflow-hidden blur-[256px] w-[72rem] h-[72rem] rounded-full bg-gradient-to-bl from-[#05A6EC] to-[#05A6EC]"
+          className="absolute mix-blend-plus-lighten opacity-50 right-[-32rem] top-[-10rem] -z-10 overflow-hidden blur-[256px] w-[72rem] h-[72rem] rounded-full bg-gradient-to-bl from-[#05A6EC] to-[#05A6EC] safari-fix"
           aria-hidden="true"
         />
         <div className="absolute top-0 right-0 w-full h-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay -z-10"></div>

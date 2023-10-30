@@ -149,15 +149,15 @@ export default function Home() {
 
         {/* Background gradient shapes  */}
         <div
-          className="left-[calc(50% + 2rem)] absolute bottom-[calc(0%-56rem)] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#05A6EC] mix-blend-plus-lighter blur-[256px]"
+          className="left-[calc(50% + 2rem)] absolute bottom-[calc(0%-56rem)] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#05A6EC] mix-blend-plus-lighter blur-[256px] safari-fix"
           aria-hidden="true"
         />
         <div
-          className="absolute left-[-25rem] top-[-25rem] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-br from-[#05A6EC] to-[#036ECD] opacity-50 mix-blend-plus-lighter blur-[256px]"
+          className="absolute left-[-25rem] top-[-25rem] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-br from-[#05A6EC] to-[#036ECD] opacity-50 mix-blend-plus-lighter blur-[256px] safari-fix"
           aria-hidden="true"
         />
         <div
-          className="mix-blend-plus-lighten absolute right-[-96rem] top-[-72rem] -z-10 h-[156rem] w-[156rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05A6EC] to-[#05A6EC] opacity-50 blur-[256px]"
+          className="mix-blend-plus-lighten absolute right-[-96rem] top-[-72rem] -z-10 h-[156rem] w-[156rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05A6EC] to-[#05A6EC] opacity-50 blur-[256px] safari-fix"
           aria-hidden="true"
         />
         <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>

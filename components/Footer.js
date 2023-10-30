@@ -27,11 +27,11 @@ const Footer = () => (
 
     {/* Background gradient shapes  */}
     <div
-      className="absolute mix-blend-plus-lighter brightness-150 opacity-50 left-[-8rem] top-[-15rem] -z-10 overflow-hidden blur-[256px] w-[35rem] h-[35rem] rounded-full bg-gradient-to-br from-[#05A6EC] to-[#05A6EC]"
+      className="absolute mix-blend-plus-lighter brightness-150 opacity-50 left-[-8rem] top-[-15rem] -z-10 overflow-hidden blur-[256px] w-[35rem] h-[35rem] rounded-full bg-gradient-to-br from-[#05A6EC] to-[#05A6EC] safari-fix"
       aria-hidden="true"
     />
     <div
-      className="absolute mix-blend-plus-lighten opacity-50 right-[-10rem] top-0 -z-10 overflow-hidden blur-[256px] w-[72rem] h-[72rem] rounded-full bg-gradient-to-tl from-cf-red-400 to-cf-red-500"
+      className="absolute mix-blend-plus-lighten opacity-50 right-[-10rem] top-0 -z-10 overflow-hidden blur-[256px] w-[72rem] h-[72rem] rounded-full bg-gradient-to-tl from-cf-red-400 to-cf-red-500 safari-fix"
       aria-hidden="true"
     />
     <div className="absolute right-0 top-0 w-full h-screen bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay -z-10"></div>
