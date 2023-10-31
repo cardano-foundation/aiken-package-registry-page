@@ -257,7 +257,7 @@ export default function ContactPage() {
               <Checkbox
                 name="gdpr"
                 id="gdpr"
-                label="I allow the Cardano Foundation to store and process the personal information provided. I also agree to receive communications from the Cardano Foundation according to the Privacy Policy."
+                label="I allow the Cardano Foundation to store and process the personal information provided. I also agree to receive communications from the Cardano Foundation according to the <a class='text-cf-blue-500 hover:text-cf-blue-600' href='/privacy.pdf' target='_blank'>Privacy Policy.</a>"
                 onChange={(e) => setGdprConsent(e.target.checked)}
               />
             </div>
