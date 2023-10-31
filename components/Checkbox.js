@@ -13,8 +13,7 @@ const Checkbox = React.forwardRef(
           />
         </div>
         <div className="ml-3 text-sm leading-6">
-          <label htmlFor={props.name} className="font-medium text-cf-blue-900">
-            {props.label}
+          <label htmlFor={props.name} className="font-medium text-cf-blue-900" dangerouslySetInnerHTML={{__html: props.label}}>
           </label>{' '}
         </div>
       </div>
