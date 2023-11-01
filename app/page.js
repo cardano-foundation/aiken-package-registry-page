@@ -149,15 +149,15 @@ export default function Home() {
 
         {/* Background gradient shapes  */}
         <div
-          className="left-[calc(50% + 2rem)] absolute bottom-[calc(0%-56rem)] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#05A6EC] mix-blend-plus-lighter blur-[256px] safari-fix"
+          className="left-[calc(50% + 2rem)] absolute bottom-[calc(0%-56rem)] -z-10 w-[20rem] h-[20rem] sm:h-[72rem] sm:w-[72rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#05A6EC] mix-blend-plus-lighter blur-[256px] safari-fix"
           aria-hidden="true"
         />
         <div
-          className="absolute left-[-25rem] top-[-25rem] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-br from-[#05A6EC] to-[#036ECD] opacity-50 mix-blend-plus-lighter blur-[256px] safari-fix"
+          className="absolute left-[-25rem] top-[-25rem] -z-10 h-[40rem] w-[40rem] sm:h-[72rem] sm:w-[72rem] overflow-hidden rounded-full bg-gradient-to-br from-[#05A6EC] to-[#036ECD] opacity-50 mix-blend-plus-lighter blur-[256px] safari-fix"
           aria-hidden="true"
         />
         <div
-          className="mix-blend-plus-lighten absolute right-[-96rem] top-[-72rem] -z-10 h-[156rem] w-[156rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05A6EC] to-[#05A6EC] opacity-50 blur-[256px] safari-fix"
+          className="mix-blend-plus-lighten absolute right-[-96rem] top-[-72rem] -z-10 h-[118rem] w-[118rem] sm:h-[156rem] sm:w-[156rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05A6EC] to-[#05A6EC] opacity-50 blur-[256px] safari-fix"
           aria-hidden="true"
         />
         <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
@@ -287,7 +287,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-cf-blue-600 py-12 sm:py-24">
+      {/* <section className="relative bg-cf-blue-600 py-12 sm:py-24">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
           <h2 className="mb-8 text-center text-5xl font-bold text-white">
             Education Institution and Business Organizations
@@ -298,9 +298,9 @@ export default function Home() {
           <p className="sm:text-3xl text-white text-center">
             Email <a href="mailto:academy@cardanofoundation.org" className="cursor-pointer hover:text-cf-gray-50">academy@cardanofoundation.org</a> <br/> and partner with us.
           </p>
-          {/* <Button className="text-cf-blue-900 bg-white text-3xl sm:text-[1.75rem] py-5 px-8 mr-8">Partner With Us Today</Button> */}
+          <Button className="text-cf-blue-900 bg-white text-3xl sm:text-[1.75rem] py-5 px-8 mr-8">Partner With Us Today</Button>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }
