@@ -1,0 +1,17 @@
+[[redirects]]
+  from = "/education.cardanofoundation.org/*"
+  to = "https://academy.cardanofoundation.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/education.cardano.org/*"
+  to = "https://academy.cardanofoundation.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/academy.cardano.org/*"
+  to = "https://academy.cardanofoundation.org/:splat"
+  status = 301
+  force = true
