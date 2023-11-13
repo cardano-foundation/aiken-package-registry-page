@@ -1,17 +1,17 @@
 [[redirects]]
-  from = "/education.cardanofoundation.org/*"
+  from = "https://education.cardanofoundation.org/"
   to = "https://academy.cardanofoundation.org/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/education.cardano.org/*"
+  from = "https://education.cardano.org/"
   to = "https://academy.cardanofoundation.org/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/academy.cardano.org/*"
+  from = "https://academy.cardano.org/"
   to = "https://academy.cardanofoundation.org/"
   status = 301
   force = true
