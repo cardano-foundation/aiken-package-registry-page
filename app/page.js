@@ -222,13 +222,10 @@ export default function Home() {
       <section className="relative bg-cf-blue-600 pb-12 pt-80 sm:pb-40 sm:pt-64">
         {/* Floating CTA */}
         <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-green-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
-          <h2 className="text-center text-4xl font-bold text-cf-blue-900 sm:text-5xl">
+          <h2 className="text-center text-4xl font-bold text-cf-blue-900 sm:text-5xl mb-12">
             {/* Register and Start Learning Today! */}
-            Launch Date: 1 December 2023
+            Start your journey with Cardano Academy
           </h2>
-          <p className="my-6 text-center text-xl text-black">
-          Start your journey with Cardano Academy.
-          </p>
           <div className="flex flex-col sm:flex-row">
             <Link href="/register">
               <Button className="mb-2 w-72 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-8 sm:text-[1.75rem]">
