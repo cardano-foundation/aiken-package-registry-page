@@ -43,7 +43,7 @@ const features = [
     icon: 'knowledge.svg',
     alt: 'Icon depicting a globe and a stack of books',
     title: 'cutting-edge content',
-    description: 'Written and peer-reviewed by subject matter experts based on the most up-to-date information and best practices.',
+    description: 'Written by subject matter experts based on the most up-to-date information and best practices.',
   },
   {
     icon: 'cloud.svg',

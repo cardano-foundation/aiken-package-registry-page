@@ -8,7 +8,7 @@ const chivo = Chivo({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Blockchain Course',
-  description: 'In-depth training course to get you from beginner to advanced blockchain knowledge. Free access to high-quality, up-to-date, peer-reviewed and self-paced learning material. Register Today!',
+  description: 'In-depth training course to get you from beginner to advanced blockchain knowledge. Free access to high-quality, up-to-date and self-paced learning material. Register Today!',
 }
 
 export default function RootLayout({ children }) {
