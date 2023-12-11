@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 const FeatureCard = ({ className, ...props }) => (
-  <div className={`${className} relative flex flex-col items-center justify-start h-84 py-5 px-7 shadow-sm rounded-3xl bg-white/[.15]`}>
+  <div className={`${className} relative flex flex-col items-center justify-start h-80 py-5 px-7 shadow-sm rounded-3xl bg-white/[.15]`}>
     <Image
       className="h-[74px] w-auto"
       src={`/${props.icon}`}

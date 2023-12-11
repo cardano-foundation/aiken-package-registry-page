@@ -31,10 +31,10 @@ const stats = [
     alt: 'Icon depicting a book on a monitor',
   },
   {
-    stat: '6-8',
-    description: 'Hours',
-    icon: 'duration.svg',
-    alt: 'Icon depicting a stopwatch on a clipboard',
+    stat: '621',
+    description: 'Testers',
+    icon: 'tester.svg',
+    alt: 'Icon depicting a person sitting at their laptop',
   },
 ]
 
@@ -43,10 +43,10 @@ const features = [
     icon: 'knowledge.svg',
     alt: 'Icon depicting a globe and a stack of books',
     title: 'cutting-edge content',
-    description: 'Written by subject matter experts based on the most up-to-date information and best practices.',
+    description: 'Written and reviewed by experts based on the most up-to-date information and best practices.',
   },
   {
-    icon: 'cloud.svg',
+    icon: 'growth.svg',
     alt: 'Icon depicting a cloud and a graduate cap',
     title: 'learn at your own pace',
     description:
@@ -59,7 +59,7 @@ const features = [
     description: 'Free course material is accessible anywhere, anytime from any device.',
   },
   {
-    icon: 'chart.svg',
+    icon: 'cloud.svg',
     alt: 'Icon depicting a stock chart trending upward',
     title: 'retain your knowledge',
     description: 'Gamified micro-learning delivery to maximize comprehension and retention.',
@@ -74,7 +74,7 @@ const features = [
     icon: 'glass.svg',
     alt: 'Icon depicting a cube seen through a magnifying glass',
     title: 'get certified',
-    description: 'Enhance your profile and get certified on Cardano.',
+    description: 'Enhance your profile by becoming an accredited associate or expert. Available from March 2024',
   },
 ]
 
@@ -131,9 +131,9 @@ export default function Home() {
             Empowering the digital architects of the <br className="hidden sm:block"/>
               future.
             </p>
-            <Link href="/register">
+            <Link href="https://learn.academy.cardanofoundation.org/register">
               <Button className="mt-14 bg-white px-8 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
-                Register Today!
+                Start Learning
               </Button>
             </Link>
           </div>
@@ -222,15 +222,16 @@ export default function Home() {
       <section className="relative bg-cf-blue-600 pb-12 pt-80 sm:pb-40 sm:pt-64">
         {/* Floating CTA */}
         <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-green-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
-          <h2 className="text-center text-4xl font-bold text-cf-blue-900 sm:text-5xl mb-12">
-            {/* Register and Start Learning Today! */}
-            Start your journey with Cardano Academy
+          <h2 className="text-center text-4xl font-bold text-cf-blue-900 sm:text-5xl mb-8">
+            Launch Date: 14 December 2023
           </h2>
+          <h3 className="text-center text-4xl text-cf-blue-900 sm:text-xl mb-8">
+            Start your journey with Cardano Academy.
+          </h3>
           <div className="flex flex-col sm:flex-row">
-            <Link href="/register">
+            <Link href="https://learn.academy.cardanofoundation.org/register">
               <Button className="mb-2 w-72 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-8 sm:text-[1.75rem]">
-                {/* Register Today! */}
-                Register
+                Start Learning
               </Button>
             </Link>
             <Link href="/overview">
@@ -245,7 +246,7 @@ export default function Home() {
           <h2 className="text-center text-5xl sm:text-6xl font-bold text-white sm:mb-6">
             Learn blockchain, your way
           </h2>
-          <p className="pt-6 text-center text-xl text-white">
+          <p className="pt-2 text-center text-xl text-white">
             Interested in learning about Blockchain?
           </p>
 
@@ -284,20 +285,19 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      {/* <section className="relative bg-cf-blue-600 py-12 sm:py-24">
+      <section className="relative bg-cf-blue-600 py-12 sm:py-24">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mb-8 text-center text-5xl font-bold text-white">
+          <h2 className="mb-6 text-center text-5xl font-bold text-white">
             Education Institution and Business Organizations
           </h2>
-          <p className="mb-8 text-xl text-white text-center">
+          <p className="mb-12 text-xl text-cf-offwhite text-center">
             Interested in offering this blockchain program to your students or employees?
           </p>
-          <p className="sm:text-3xl text-white text-center">
-            Email <a href="mailto:academy@cardanofoundation.org" className="cursor-pointer hover:text-cf-gray-50">academy@cardanofoundation.org</a> <br/> and partner with us.
-          </p>
-          <Button className="text-cf-blue-900 bg-white text-3xl sm:text-[1.75rem] py-5 px-8 mr-8">Partner With Us Today</Button>
+          <Link href="/partner-with-us">
+            <Button className="text-cf-blue-600 bg-white text-3xl sm:text-[1.75rem] py-5 px-8">Partner with Us</Button>
+          </Link>
         </div>
-      </section> */}
+      </section>
     </main>
   )
 }

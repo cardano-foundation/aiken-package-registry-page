@@ -18,11 +18,7 @@ const Navigation = () => {
   const navigation = [
     { name: 'Course Overview', href: '/overview', current: pathname === '/overview' },
     // { name: 'Partners', href: '/partners', current: pathname === '/partners' },
-    { name: 'Register', href: '/register', current: pathname === '/register' },
-  ]
-  const userNavigation = [
-    // { name: 'Log In', href: '#' },
-    // { name: 'Register', href: '#' },
+    { name: 'Partner With Us', href: '/partner-with-us', current: pathname === '/partner-with-us' },
   ]
 
   const [clientWindowHeight, setClientWindowHeight] = useState("")
@@ -38,7 +34,7 @@ const Navigation = () => {
   }, []);
 
   return (
-    <Disclosure as="nav" className={`fixed top-0 z-10 w-full transition-all ease-in-out duration-500 ${clientWindowHeight > 150 || pathname === '/partners' ? 'bg-cf-blue-600' : 'bg-cf-blue-600 lg:bg-cf-offwhite/10'}`}>
+    <Disclosure as="nav" className={`fixed top-0 z-10 w-full transition-all ease-in-out duration-500 ${clientWindowHeight > 150 || pathname === '/partners' || pathname === '/privacy-policy' || pathname === '/terms-and-conditions' ? 'bg-cf-blue-600' : 'bg-cf-blue-600 lg:bg-cf-offwhite/10'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -78,10 +74,11 @@ const Navigation = () => {
                 </div>
               </div>
               <div className="hidden sm:flex items-center">
-                {/* <div className="flex-shrink-0">
-                  <Button className="bg-transparent ring-inset ring-2 ring-white text-white w-28 mr-4">Log In</Button>
-                  <Button className="text-cf-blue-900 bg-white w-28">Register</Button>
-                </div> */}
+                <div className="flex-shrink-0">
+                  <Link href="https://learn.academy.cardanofoundation.org/register">
+                    <Button className="text-cf-blue-600 bg-white">Start Learning</Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -103,20 +100,6 @@ const Navigation = () => {
                 </Disclosure.Button>
               ))}
             </div>
-            {/* <div className="border-t border-cf-blue-50 pb-3 pt-4">
-              <div className="space-y-1 px-2 sm:px-3">
-                {userNavigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white hover:text-cf-blue-600"
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
-              </div>
-            </div> */}
           </Disclosure.Panel>
         </>
       )}

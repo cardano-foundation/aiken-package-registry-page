@@ -19,21 +19,16 @@ export default function ContactPage() {
     { id: 'business', name: 'Business' },
   ]
 
-  const blockchainKnowledgeOptions = [
-    { id: 'Newbie (little or no knowledge)', name: 'Newbie (little or no knowledge)' },
-    { id: 'Beginner (limited knowledge)', name: 'Beginner (limited knowledge)' },
-    { id: 'Intermediate (good understanding)', name: 'Intermediate (good understanding)' },
-    { id: 'Expert (advanced understanding)', name: 'Expert (advanced understanding)' },
-  ]
-
   const [enquirer, setEnquirer] = useState(enquirerOptions[0])
-
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
-  const [blockchainKnowledge, setBlockchainKnowledge] = useState(blockchainKnowledgeOptions[0])
+  const [phone, setPhone] = useState("")
+  const [country, setCountry] = useState("")
+  const [message, setMessage] = useState("")
   const [gdprConsent, setGdprConsent] = useState(false)
 
   const submitForm = async (event) => {
+    return
     event.preventDefault()
 
     if (!gdprConsent) {
@@ -44,7 +39,7 @@ export default function ContactPage() {
     const form = {
       firstname: name,
       email,
-      "what_is_your_current_blockchain_knowledge_": blockchainKnowledge.id,
+      enquirer: enquirer.id,
     }
 
     const response = await fetch(`/api/preregister?portalId=${portalId}&formGuid=${formGuid}`, {
@@ -94,7 +89,7 @@ export default function ContactPage() {
       <section className="relative bg-white pt-12 pb-12 sm:pb-24">
         <div className="flex flex-col justify-center items-center mx-auto max-w-4xl px-4 sm:px-8 lg:px-12 w-full -mt-96 sm:-mt-[20rem]">
           <form onSubmit={(e) => submitForm(e)} className="grid md:grid-cols-2 w-full bg-white rounded-3xl gap-x-6 gap-y-6 md:gap-y-12 shadow-xl px-4 md:px-20 py-6 md:py-16">
-            {/* <Input
+            <Input
               className="col-span-1 w-full"
               type="text"
               icon={
@@ -107,6 +102,7 @@ export default function ContactPage() {
               id="full_name"
               label="Name"
               placeholder="Full name"
+              onChange={(e) => setName(e.target.value)}
             />
             <Input
               className="col-span-1 w-full"
@@ -121,6 +117,7 @@ export default function ContactPage() {
               id="email"
               label="Email"
               placeholder="Email address"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Input
               className="col-span-1 w-full"
@@ -141,6 +138,7 @@ export default function ContactPage() {
               id="phone"
               label="Phone (Optional)"
               placeholder="(123) 456 - 789"
+              onChange={(e) => setPhone(e.target.value)}
             />
             <Input
               className="col-span-1 w-full"
@@ -157,7 +155,7 @@ export default function ContactPage() {
                   </g>
                   <defs>
                     <clipPath id="clip0_657_301">
-                    <rect width="20" height="20" fill="white"/>
+                      <rect width="20" height="20" fill="white"/>
                     </clipPath>
                   </defs>
                 </svg>
@@ -167,6 +165,7 @@ export default function ContactPage() {
               id="country"
               label="Country"
               placeholder="Czech Republic"
+              onChange={(e) => setCountry(e.target.value)}
             />
             <div className="flex flex-col justify-between">
               <Select
@@ -192,11 +191,11 @@ export default function ContactPage() {
                     <path fillRule="evenodd" clipRule="evenodd" d="M5.78963 11.4089L6.40196 8.5419C6.49111 8.14349 6.69191 7.77887 6.98074 7.49094L12.5756 1.93349C13.143 1.35418 13.9133 1.01939 14.723 1.00024C15.3337 0.991466 15.9225 1.22756 16.3587 1.65603C17.3117 2.78473 17.1887 4.47026 16.0819 5.44788L10.487 11.0558C10.1997 11.3453 9.83596 11.5466 9.43847 11.6359L6.57811 12.2497H6.41874C6.20963 12.2577 6.00991 12.1623 5.88435 11.9946C5.75879 11.8268 5.72339 11.6079 5.78963 11.4089ZM7.86989 8.39056C7.75236 8.50472 7.67072 8.65085 7.63502 8.81095L7.224 10.7699L9.17844 10.3495C9.33816 10.3138 9.48395 10.2319 9.59784 10.1141L15.1927 4.50623C15.8056 4.0144 15.9273 3.12777 15.4695 2.48839C15.2691 2.29645 15.0001 2.19342 14.723 2.20253C14.2454 2.22175 13.794 2.42685 13.4648 2.77425L7.86989 8.39056Z" strokeWidth="0.5"/>
                     <path d="M15.9561 7.75999C15.6105 7.76452 15.3315 8.0442 15.3269 8.39056V13.1745C15.3382 13.8507 15.078 14.5031 14.6049 14.9853C14.1317 15.4674 13.4852 15.7389 12.8105 15.7389H4.81661C3.42197 15.7114 2.30445 14.5727 2.30016 13.1745V5.19565C2.32306 3.79586 3.46181 2.67317 4.85855 2.67336H9.6314C9.97885 2.67336 10.2605 2.39104 10.2605 2.04278C10.2605 1.69453 9.97885 1.41221 9.6314 1.41221H4.81661C2.72502 1.41208 1.02298 3.09933 1 5.19565V13.1745C1 15.2873 2.70875 17 4.81661 17H12.777C14.8815 16.9954 16.5852 15.284 16.5852 13.1745V8.39056C16.5807 8.0442 16.3016 7.76452 15.9561 7.75999Z" strokeWidth="0.5"/>
                   </g>
-                <defs>
-                  <clipPath id="clip0_657_313">
-                    <rect width="18" height="18" fill="white"/>
-                  </clipPath>
-                </defs>
+                  <defs>
+                    <clipPath id="clip0_657_313">
+                      <rect width="18" height="18" fill="white"/>
+                    </clipPath>
+                  </defs>
                 </svg>
               }
               name="message"
@@ -204,66 +203,17 @@ export default function ContactPage() {
               label="Message"
               rows="6"
               placeholder="Type message"
+              onChange={(e) => setMessage(e.target.value)}
             />
-            <Button className="md:hidden text-white bg-cf-blue-600 text-lg py-6 px-5">Send Message</Button> */}
-            <div className="col-span-2">
-              <Input
-                className="col-span-2 w-full"
-                required
-                type="text"
-                icon={
-                  <svg className="h-5 w-5 text-cf-gray-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
-                    <path d="M2.7085 18.3333V17.2917C2.7085 16.3341 2.8971 15.3859 3.26354 14.5013C3.62998 13.6166 4.16708 12.8128 4.84418 12.1357C5.52127 11.4586 6.3251 10.9215 7.20976 10.555C8.09443 10.1886 9.04261 10 10.0002 10C10.9577 10 11.9059 10.1886 12.7906 10.555C13.6752 10.9215 14.4791 11.4586 15.1561 12.1357C15.8332 12.8128 16.3703 13.6166 16.7368 14.5013C17.1032 15.3859 17.2918 16.3341 17.2918 17.2917V18.3333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M10.0002 10.0001C11.1052 10.0001 12.165 9.56109 12.9464 8.77969C13.7278 7.99829 14.1668 6.93848 14.1668 5.83341C14.1668 4.72835 13.7278 3.66854 12.9464 2.88714C12.165 2.10573 11.1052 1.66675 10.0002 1.66675C8.89509 1.66675 7.83529 2.10573 7.05388 2.88714C6.27248 3.66854 5.8335 4.72835 5.8335 5.83341C5.8335 6.93848 6.27248 7.99829 7.05388 8.77969C7.83529 9.56109 8.89509 10.0001 10.0002 10.0001V10.0001Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                }
-                name="first_name"
-                id="first_name"
-                label="First name"
-                placeholder="First name"
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div className="col-span-2">
-              <Input
-                className="col-span-2 w-full"
-                required
-                type="email"
-                icon={
-                  <svg className="h-5 w-5 text-cf-gray-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
-                    <path d="M18.3332 5.94946V14.2828C18.3332 14.8353 18.1137 15.3652 17.723 15.7559C17.3323 16.1466 16.8024 16.3661 16.2498 16.3661H3.74984C3.1973 16.3661 2.6674 16.1466 2.2767 15.7559C1.886 15.3652 1.6665 14.8353 1.6665 14.2828V5.94946" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M18.3332 5.94954C18.3332 5.39701 18.1137 4.86711 17.723 4.47641C17.3323 4.0857 16.8024 3.86621 16.2498 3.86621H3.74984C3.1973 3.86621 2.6674 4.0857 2.2767 4.47641C1.886 4.86711 1.6665 5.39701 1.6665 5.94954L8.89567 10.4634C9.22678 10.6704 9.60938 10.7801 9.99984 10.7801C10.3903 10.7801 10.7729 10.6704 11.104 10.4634L18.3332 5.94954Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                }
-                name="email"
-                id="email"
-                label="Email"
-                placeholder="Email address"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="col-span-2">
-              <Select
-                className="h-full col-span-1"
-                label="What is your current blockchain knowledge?"
-                options={blockchainKnowledgeOptions}
-                selected={blockchainKnowledge}
-                onChange={e => {
-                  setBlockchainKnowledge(e)
-                }}
-              />
-            </div>
-            <div className="col-span-2">
-              <Checkbox
-                name="gdpr"
-                id="gdpr"
-                label="I allow the Cardano Foundation to store and process the personal information provided. I also agree to receive communications from the Cardano Foundation according to the <a class='text-cf-blue-500 hover:text-cf-blue-600' href='/privacy.pdf' target='_blank'>Privacy Policy.</a>"
-                onChange={(e) => setGdprConsent(e.target.checked)}
-              />
-            </div>
-            <div className="col-span-2 flex justify-end">
-              <Button type="submit" className="text-white bg-cf-blue-600 text-lg py-6 px-5">Register</Button>
-            </div>
+            <Button type="submit" className="md:hidden text-white bg-cf-blue-600 text-lg py-6 px-5">Send Message</Button>
+            {/*<div className="col-span-2">*/}
+            {/*  <Checkbox*/}
+            {/*    name="gdpr"*/}
+            {/*    id="gdpr"*/}
+            {/*    label="I allow the Cardano Foundation to store and process the personal information provided. I also agree to receive communications from the Cardano Foundation according to the <a class='text-cf-blue-500 hover:text-cf-blue-600' href='/privacy.pdf' target='_blank'>Privacy Policy.</a>"*/}
+            {/*    onChange={(e) => setGdprConsent(e.target.checked)}*/}
+            {/*  />*/}
+            {/*</div>*/}
           </form>
         </div>
       </section>
