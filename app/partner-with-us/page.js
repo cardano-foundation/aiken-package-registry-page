@@ -71,7 +71,7 @@ export default function ContactPage() {
         <div className="flex justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
           <h1 className="text-5xl sm:text-6xl text-white leading-tight font-bold">
             {/* Page Us to Learn More */}
-            Register Today!
+            Partner with Us!
           </h1>
         </div>
 
