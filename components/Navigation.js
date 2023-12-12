@@ -18,7 +18,7 @@ const Navigation = () => {
   const navigation = [
     { name: 'Course Overview', href: '/overview', current: pathname === '/overview' },
     // { name: 'Partners', href: '/partners', current: pathname === '/partners' },
-    { name: 'Partner With Us', href: '/partner-with-us', current: pathname === '/partner-with-us' },
+    // { name: 'Partner With Us', href: '/partner-with-us', current: pathname === '/partner-with-us' },
   ]
 
   const [clientWindowHeight, setClientWindowHeight] = useState("")
