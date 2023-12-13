@@ -229,11 +229,11 @@ export default function Home() {
       <section className="relative bg-cf-blue-600 pb-12 pt-80 sm:pb-40 sm:pt-64">
         {/* Floating CTA */}
         <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-green-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
-          <h2 className="mb-8 text-center text-4xl font-bold text-cf-blue-900 sm:text-5xl">
-            Launch Date: 14 December 2023
+          <h2 className="mb-6 text-center text-4xl font-bold text-cf-blue-900 sm:text-5xl">
+            Start your learning journey today!
           </h2>
           <h3 className="mb-8 text-center text-4xl text-cf-blue-900 sm:text-xl">
-            Start your journey with Cardano Academy.
+            <strong>Launch:</strong> December 14th 2023
           </h3>
           <div className="flex flex-col sm:flex-row">
             <Link href="https://learn.academy.cardanofoundation.org/register">
@@ -250,7 +250,7 @@ export default function Home() {
         </div>
 
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="text-center text-5xl font-bold text-white sm:mb-6 sm:text-6xl">
+          <h2 className="text-center mt-16 sm:mt-0 text-5xl font-bold text-white sm:mb-6 sm:text-6xl">
             Learn blockchain, your way
           </h2>
           <p className="pt-2 text-center text-xl text-white">
