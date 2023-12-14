@@ -122,11 +122,11 @@ export default function Overview() {
                 Blockchain Certified Associate (CBCA) Course Overview.
               </div>
               <div className="col-span-3 flex items-center justify-center md:col-span-1 sm:flex-row">
-              <Button className="mb-2  w-11/12 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 lg:text-[1.75rem]">
                 <a href="/Academy-Overview.pdf" target="_blank">
+                  <Button className="mb-2  w-11/12 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 lg:text-[1.75rem] whitespace-nowrap">
                  Download Overview
+                </Button>
                 </a>
-              </Button>
               </div>
             </div>
           </div>
