@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const chivo = Chivo({ subsets: ['latin'] })
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
       </body>
+      <GoogleTagManager gtmId="GTM-PQN3C6FS" />
     </html>
   )
 }
