@@ -79,7 +79,7 @@ const features = [
     alt: 'Icon depicting a cube seen through a magnifying glass',
     title: 'get certified',
     description:
-      'Enhance your profile by becoming an accredited associate or expert. Available from March 2024',
+      'Enhance your profile by becoming an accredited associate or expert. Coming soon.',
   },
 ]
 
