@@ -24,6 +24,7 @@ const Footer = () => (
             {item.name}
           </a>
         ))}
+        <a className="text-white hover:text-cf-gray-100 text-2xl" href="mailto:academy@cardanofoundation.org">Contact</a>
       </div>
     </div>
 
