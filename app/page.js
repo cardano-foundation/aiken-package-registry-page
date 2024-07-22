@@ -138,8 +138,13 @@ export default function Home() {
               <br className="hidden sm:block" />
               future.
             </p>
+            <Link href="/partner">
+              <Button className="mt-14 bg-white w-60 xl:w-80 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
+                Partner with Us
+              </Button>
+            </Link>
             <Link href="https://learn.academy.cardanofoundation.org/register">
-              <Button className="mt-14 bg-white px-8 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
+              <Button className="mt-4 bg-white w-60 xl:w-80 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
                 Start Learning
               </Button>
             </Link>

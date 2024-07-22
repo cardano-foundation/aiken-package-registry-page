@@ -7,3 +7,122 @@
         transform: translate3d(0, 0, 0);
     }
 }
+
+/* ContactForm */
+.contactForm input:not([type='checkbox']),
+.contactForm textarea,
+.contactForm select {
+    @apply px-5 py-3 mb-6 block w-full border-none bg-gray-200 rounded-3xl text-base text-gray-900 placeholder-gray-600 ring-0 ring-transparent transition focus:border-gray-600 focus:outline-none focus:ring-black;
+}
+
+.contactForm label {
+    @apply text-base text-gray-900 transition-all duration-200;
+}
+
+.contactForm .hs-fieldtype-checkbox {
+    @apply mb-6;
+}
+
+.contactForm .hs-field-desc {
+    @apply mt-0.5 text-[0.8125rem] text-gray-800;
+}
+
+.contactForm .hs-fieldtype-checkbox .hs-form-checkbox {
+    @apply mb-1;
+}
+
+.contactForm .hs-fieldtype-checkbox .multi-container {
+    @apply py-2;
+}
+
+.contactForm .hs-form-booleancheckbox label[for='newsletter_checkbox-e0bc51e9-ec22-4bbc-829a-9dad9416e38b'] {
+    @apply mb-2 flex items-center;
+}
+
+.contactForm .hs-fieldtype-checkbox .hs-form-checkbox-display {
+    @apply flex items-center;
+}
+
+.contactForm .hs-fieldtype-booleancheckbox .hs-form-booleancheckbox-display {
+    @apply flex items-center;
+}
+
+.contactForm .legal-consent-container span {
+    margin-left: 0.75rem !important;
+}
+
+.contactForm label.hs-form-booleancheckbox-display input[type='checkbox'],
+.contactForm label.hs-form-checkbox-display input[type='checkbox'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    @apply mr-3 cursor-pointer;
+}
+
+.contactForm label.hs-form-booleancheckbox-display input[type='checkbox']::before,
+.contactForm label.hs-form-checkbox-display input[type='checkbox']::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    @apply border bg-gray-100;
+}
+
+.contactForm label.hs-form-booleancheckbox-display input[type='checkbox']:focus::before,
+.contactForm label.hs-form-checkbox-display input[type='checkbox']:focus::before {
+    @apply outline-none ring-2 ring-blue-100 ring-offset-1 ring-offset-gray-100;
+}
+
+.contactForm label.hs-form-booleancheckbox-display input[type='checkbox']:invalid::before,
+.contactForm label.hs-form-checkbox-display input[type='checkbox']:invalid::before {
+    @apply border-gray-100;
+}
+
+.contactForm label.hs-form-booleancheckbox-display input[type='checkbox']:checked::before,
+.contactForm label.hs-form-checkbox-display input[type='checkbox']:checked::before {
+    transition: background-color 0.3s ease;
+    @apply bg-gray-900;
+}
+
+.contactForm label.hs-form-booleancheckbox-display input[type='checkbox']::after,
+.contactForm label.hs-form-checkbox-display input[type='checkbox']::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    transform: rotate(-45deg);
+    left: 6px;
+    top: 8px;
+    color: white;
+}
+
+.contactForm label.hs-form-booleancheckbox-display input[type='checkbox']::after,
+.contactForm label.hs-form-checkbox-display input[type='checkbox']::after {
+    content: '';
+    visibility: hidden;
+}
+
+.contactForm label.hs-form-booleancheckbox-display input[type='checkbox']:checked::after,
+.contactForm label.hs-form-checkbox-display input[type='checkbox']:checked::after {
+    visibility: visible;
+}
+
+.contactForm input[type='submit'] {
+    @apply mt-12 flex h-16 w-40 items-center justify-center whitespace-nowrap rounded-full border-none bg-cf-green-800 px-6 py-5 text-sm font-medium text-black shadow-none transition-colors hover:bg-cf-green-300 hover:text-gray-900 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+}
+
+.contactForm .submitted-message {
+    @apply text-gray-900;
+}
+.contactForm .hs-form-field>.hs-error-msgs,
+.hs-error-msg.hs-main-font-element,
+.legal-consent-container .hs-error-msgs label,
+.contactForm .hs_error_rollup .hs-main-font-element {
+    color: #d64a2e !important;
+    @apply text-xs font-medium leading-5 tracking-tighter;
+}

@@ -16,25 +16,38 @@ const Navigation = () => {
   const pathname = usePathname()
 
   const navigation = [
-    { name: 'Course Overview', href: '/overview', current: pathname === '/overview' },
-    // { name: 'Partners', href: '/partners', current: pathname === '/partners' },
-    // { name: 'Partner With Us', href: '/partner-with-us', current: pathname === '/partner-with-us' },
+    {
+      name: 'Course Overview',
+      href: '/overview',
+      current: pathname === '/overview',
+    },
+    // { name: 'Partner with us', href: '/partner', current: pathname === '/partner' },
   ]
 
-  const [clientWindowHeight, setClientWindowHeight] = useState("")
+  const [clientWindowHeight, setClientWindowHeight] = useState('')
 
   useEffect(() => {
     setClientWindowHeight(window.scrollY)
     const options = { passive: true }
     const scroll = (event) => {
       setClientWindowHeight(window.scrollY)
-    };
-    document.addEventListener("scroll", scroll, options)
-    return () => document.removeEventListener("scroll", scroll, options)
-  }, []);
+    }
+    document.addEventListener('scroll', scroll, options)
+    return () => document.removeEventListener('scroll', scroll, options)
+  }, [])
 
   return (
-    <Disclosure as="nav" className={`fixed top-0 z-10 w-full transition-all ease-in-out duration-500 ${clientWindowHeight > 150 || pathname === '/partners' || pathname === '/privacy-policy' || pathname === '/terms-and-conditions' ? 'bg-cf-blue-600' : 'bg-cf-blue-600 lg:bg-cf-offwhite/10'}`}>
+    <Disclosure
+      as="nav"
+      className={`fixed top-0 z-10 w-full transition-all duration-500 ease-in-out ${
+        clientWindowHeight > 150 ||
+        pathname === '/partner' ||
+        pathname === '/privacy-policy' ||
+        pathname === '/terms-and-conditions'
+          ? 'bg-cf-blue-600'
+          : 'bg-cf-blue-600 lg:bg-cf-offwhite/10'
+      }`}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -63,8 +76,10 @@ const Navigation = () => {
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        item.current ? 'font-bold underline underline-offset-8' : 'hover:underline hover:underline-offset-8',
-                        'text-white px-2 py-2 text-2xl'
+                        item.current
+                          ? 'font-bold underline underline-offset-8'
+                          : 'hover:underline hover:underline-offset-8',
+                        'px-2 py-2 text-2xl text-white',
                       )}
                       aria-current={item.current ? 'page' : undefined}
                     >
@@ -73,17 +88,24 @@ const Navigation = () => {
                   ))}
                 </div>
               </div>
-              <div className="hidden sm:flex items-center">
+              <div className="hidden items-center sm:flex">
                 <div className="flex-shrink-0">
+                  <Link href="/partner">
+                    <Button className="bg-white text-cf-blue-600 mx-4">
+                      Partner with Us
+                    </Button>
+                  </Link>
                   <Link href="https://learn.academy.cardanofoundation.org/register">
-                    <Button className="text-cf-blue-600 bg-white">Start Learning</Button>
+                    <Button className="bg-white text-cf-blue-600">
+                      Start Learning
+                    </Button>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
 
-          <Disclosure.Panel className="lg:hidden shadow-2xl">
+          <Disclosure.Panel className="shadow-2xl lg:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -91,8 +113,10 @@ const Navigation = () => {
                   as={Link}
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-white text-cf-blue-600' : 'text-white hover:bg-white hover:text-cf-blue-600',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                    item.current
+                      ? 'bg-white text-cf-blue-600'
+                      : 'text-white hover:bg-white hover:text-cf-blue-600',
+                    'block rounded-md px-3 py-2 text-base font-medium',
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
