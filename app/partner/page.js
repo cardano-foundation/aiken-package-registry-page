@@ -21,44 +21,52 @@ export default function Partner() {
         />
         <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
       </section>{' '}
-      <section className="mx-auto grid w-full max-w-7xl grid-cols-1 justify-between gap-4 p-8 px-6 text-cf-offwhite sm:px-8 md:grid-cols-2 lg:px-12">
-        <div>
-          <p className="md:text-3xl">
+      <section className="mx-auto grid w-full max-w-7xl grid-cols-1 justify-between gap-y-8 gap-x-10 lg:gap-x-16 text-cf-offwhite md:grid-cols-2 px-6 sm:px-8 lg:px-12 py-12 sm:py-40">
+        <div className='flex flex-col justify-center'>
+          <p className="text-xl sm:text-3xl">
             Access quality verified{' '}
             <span className="text-cf-green-800 font-bold">
               blockchain education and enablement
-            </span>{' '}
-            to suit your business.
+              </span>{' '}
+              to suit your business.
           </p>
-          <p className="mt-4 text-sm md:text-2xl">
+          <p className="my-6 sm:my-8 text-sm sm:text-xl">
             From instructor-led executive masterclasses to scalable on-demand
             e-learning for your entire team.
           </p>
-          <ul className="mt-4 list-none space-y-3">
-            <li className="text-sm xl:text-xl">
-              <span className="text-cf-green-800">✔</span>{' '}
-              <span className='font-bold'>Master the fundamentals</span> of blockchain technology
-              for business.
+          <ul className="list-none space-y-3">
+            <li className="text-sm sm:text-xl flex space-x-2">
+              <div className="text-cf-green-800">✔</div>
+              <div>
+                <span className='font-bold'>Master the fundamentals</span> of blockchain technology
+                for business.
+              </div>
             </li>
-            <li className="text-sm xl:text-xl">
-              <span className="text-cf-green-800">✔</span>{' '}
-              <span className='font-bold'>Explore evolving use cases</span> and business benefits
-              of blockchain.
+            <li className="text-sm sm:text-xl flex space-x-2">
+              <div className="text-cf-green-800">✔</div>
+              <div>
+                <span className='font-bold'>Explore evolving use cases</span> and business benefits
+                of blockchain.
+              </div>
             </li>
-            <li className="text-sm xl:text-xl">
-              <span className="text-cf-green-800">✔</span>{' '}
-              <span className='font-bold'>Empower executives </span>for informed digital
-              transformation initiatives.
+            <li className="text-sm sm:text-xl flex space-x-2">
+              <div className="text-cf-green-800">✔</div>
+              <div>
+                <span className='font-bold'>Empower executives </span>for informed digital
+                transformation initiatives.
+              </div>
             </li>
-            <li className="text-sm xl:text-xl">
-              <span className="text-cf-green-800">✔</span>{' '}
-              <span className='font-bold'>Equip engineers and developers</span> to build on
-              Cardano.
+            <li className="text-sm sm:text-xl flex space-x-2">
+              <div className="text-cf-green-800">✔</div>
+              <div>
+                <span className='font-bold'>Equip engineers and developers</span> to build on
+                Cardano.
+              </div>
             </li>
           </ul>
         </div>
-        <div className="relative flex w-full max-w-2xl flex-col xl:px-6">
-          <div className="rounded-2xl bg-cf-offwhite p-4">
+        <div className="relative flex w-full max-w-2xl flex-col">
+          <div className="rounded-3xl bg-cf-offwhite p-4 sm:p-6">
             <FormHubspot />
           </div>
         </div>

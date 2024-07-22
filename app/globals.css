@@ -12,7 +12,7 @@
 .contactForm input:not([type='checkbox']),
 .contactForm textarea,
 .contactForm select {
-    @apply px-5 py-3 mb-6 block w-full border-none bg-gray-200 rounded-3xl text-base text-gray-900 placeholder-gray-600 ring-0 ring-transparent transition focus:border-gray-600 focus:outline-none focus:ring-black;
+    @apply px-5 py-3 mb-6 mt-1 block w-full border-none bg-gray-200 rounded-3xl text-base text-gray-900 placeholder-gray-600 ring-0 ring-transparent transition focus:border-gray-600 focus:outline-none focus:ring-black;
 }
 
 .contactForm label {
@@ -58,33 +58,35 @@
     width: 24px;
     height: 24px;
     position: relative;
-    @apply mr-3 cursor-pointer;
+    @apply mr-3 cursor-pointer border-none rounded-lg;
 }
 
 .contactForm label.hs-form-booleancheckbox-display input[type='checkbox']::before,
 .contactForm label.hs-form-checkbox-display input[type='checkbox']::before {
     content: '';
     position: absolute;
+    left: 0;
+    top: 0;
     width: 24px;
     height: 24px;
     box-sizing: border-box;
-    @apply border bg-gray-100;
+    @apply border-none rounded-lg bg-gray-200;
 }
 
-.contactForm label.hs-form-booleancheckbox-display input[type='checkbox']:focus::before,
+.contactForm label.hs-form-booleancheckbox-display input[type='checkbox']:focus::l,
 .contactForm label.hs-form-checkbox-display input[type='checkbox']:focus::before {
-    @apply outline-none ring-2 ring-blue-100 ring-offset-1 ring-offset-gray-100;
+    @apply border-none outline-none;
 }
 
 .contactForm label.hs-form-booleancheckbox-display input[type='checkbox']:invalid::before,
 .contactForm label.hs-form-checkbox-display input[type='checkbox']:invalid::before {
-    @apply border-gray-100;
+    @apply border-none border-gray-100;
 }
 
 .contactForm label.hs-form-booleancheckbox-display input[type='checkbox']:checked::before,
 .contactForm label.hs-form-checkbox-display input[type='checkbox']:checked::before {
     transition: background-color 0.3s ease;
-    @apply bg-gray-900;
+    @apply border-none bg-gray-900;
 }
 
 .contactForm label.hs-form-booleancheckbox-display input[type='checkbox']::after,
@@ -113,7 +115,7 @@
 }
 
 .contactForm input[type='submit'] {
-    @apply mt-12 flex h-16 w-40 items-center justify-center whitespace-nowrap rounded-full border-none bg-cf-green-800 px-6 py-5 text-sm font-medium text-black shadow-none transition-colors hover:bg-cf-green-300 hover:text-gray-900 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply mt-12 mb-0 flex h-16 w-48 items-center justify-center whitespace-nowrap rounded-full border-none bg-cf-green-800 px-6 py-5 text-base font-medium text-gray-900 shadow-none transition-colors hover:bg-cf-green-800/80 hover:text-gray-900 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
 }
 
 .contactForm .submitted-message {

@@ -41,7 +41,6 @@ const Navigation = () => {
       as="nav"
       className={`fixed top-0 z-10 w-full transition-all duration-500 ease-in-out ${
         clientWindowHeight > 150 ||
-        pathname === '/partner' ||
         pathname === '/privacy-policy' ||
         pathname === '/terms-and-conditions'
           ? 'bg-cf-blue-600'
