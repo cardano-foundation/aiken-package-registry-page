@@ -139,12 +139,12 @@ export default function Home() {
               future.
             </p>
             <Link href="/partner">
-              <Button className="mt-14 bg-white w-60 xl:w-80 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
+              <Button className="mt-14 w-60 bg-white py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem] xl:w-80">
                 Partner with Us
               </Button>
             </Link>
             <Link href="https://learn.academy.cardanofoundation.org/register">
-              <Button className="mt-4 bg-white w-60 xl:w-80 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
+              <Button className="mt-4 w-60 bg-white py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem] xl:w-80">
                 Start Learning
               </Button>
             </Link>
@@ -255,7 +255,7 @@ export default function Home() {
         </div>
 
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="text-center mt-16 sm:mt-0 text-5xl font-bold text-white sm:mb-6 sm:text-6xl">
+          <h2 className="mt-16 text-center text-5xl font-bold text-white sm:mb-6 sm:mt-0 sm:text-6xl">
             Learn blockchain, your way
           </h2>
           <p className="pt-2 text-center text-xl text-white">
@@ -300,19 +300,18 @@ export default function Home() {
       <section className="relative bg-cf-blue-600 py-12 sm:py-24">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
           <h2 className="mb-6 text-center text-5xl font-bold text-white">
-            CBCA Certification Coming Soon!
+            CBCA Certification
           </h2>
           <p className="max-w-4xl text-center text-xl text-cf-offwhite">
-            The Cardano Foundation is pleased to announce that for the CBCA
-            course, you will soon have the opportunity to obtain the Associate
-            Certification. The examination bookings will be made available in
-            the first half of 2024.
+            The Cardano Foundation is pleased to announce that certification for
+            the Cardano Blockchain Certified Associate (CBCA) Course is live. To
+            make a booking, and get certified, click below
           </p>
-          {/* <Link href="/partner-with-us">
-            <Button className="bg-white px-8 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
-              Partner with Us
+          <Link target="_blank" href="https://cardanofoundation.slack.com/archives/D05KBKH2WSC/p1721718441148759">
+            <Button className="bg-white mt-8 px-8 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
+              Get Certified
             </Button>
-          </Link> */}
+          </Link>
         </div>
       </section>
     </main>
