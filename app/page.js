@@ -307,7 +307,7 @@ export default function Home() {
             the Cardano Blockchain Certified Associate (CBCA) Course is live. To
             make a booking, and get certified, click below
           </p>
-          <Link target="_blank" href="https://cardanofoundation.slack.com/archives/D05KBKH2WSC/p1721718441148759">
+          <Link target="_blank" href="https://home.pearsonvue.com/cardanofoundation">
             <Button className="bg-white mt-8 px-8 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
               Get Certified
             </Button>
