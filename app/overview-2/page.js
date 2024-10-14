@@ -77,21 +77,6 @@ export default function Overview() {
       position: 'Education Manager',
       image: 'contributors/Vanessa-Hurhangee.jpg',
     },
-    {
-      name: 'Thomas Mayfield',
-      position: 'Team Lead - Decentralized  Trust and Identity Solutions',
-      image: 'contributors/Thomas-Mayfiel.jpeg',
-    },
-    {
-      name: 'Michiel Bellen',
-      position: 'Core Integrations Team Lead',
-      image: 'contributors/Michiel-Bellen.jpeg',
-    },
-    {
-      name: 'Denicio Bute',
-      position: 'Community Manager',
-      image: 'contributors/Denicio-Bute.jpeg',
-    },
   ]
 
   const targets = [
@@ -100,12 +85,6 @@ export default function Overview() {
       alt: 'Icon depicting a network of people',
       description:
         '<strong>Business Professionals, decision-makers, entrepreneurs</strong> who want to learn more about blockchain for their businesses',
-    },
-    {
-      icon: 'developer.svg',
-      alt: 'Icon depicting a person sitting in front of their laptop chatting online',
-      description:
-        '<strong>Lecturers, researchers, teachers,</strong> and trainers who want to understand the fundamentals of blockchain and/or teach the course material.',
     },
     {
       icon: 'online-learning.svg',
@@ -120,12 +99,6 @@ export default function Overview() {
         'Traditional <strong>web2 IT professionals</strong> wanting to learn about blockchain and upskill in web3.',
     },
     {
-      icon: 'programming.svg',
-      alt: 'Icon depicting a monitor with code on it',
-      description:
-        '<strong>Blockchain developers and engineers</strong> who will develop and build on the Cardano Blockchain.',
-    },
-    {
       icon: 'coding.svg',
       alt: 'Icon depicting a keyboard and a code symbol',
       description:
@@ -135,11 +108,10 @@ export default function Overview() {
 
   return (
     <main>
-      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-600 py-36 pb-16 sm:pb-44 sm:pt-48">
+      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-600 py-36 pb-16 sm:pb-32 sm:pt-48">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-6 sm:px-8 lg:px-12">
           <h1 className="text-center text-4xl font-bold leading-tight text-white sm:text-6xl">
-            Cardano Blockchain <br /> Certified Associate (CBCA) <br /> Course
-            Overview
+            Blockchain Fundamentals <br/> Course Overview
           </h1>
         </div>
 
@@ -155,22 +127,15 @@ export default function Overview() {
         <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
       </section>
 
+      {/* Coming soon section */}
+      <section className="relative flex items-center justify-center bg-cf-yellow-600 py-4 md:py-8">
+        <span className="text-center text-md md:text-4xl font-bold">
+          COMING SOON • COMING SOON • COMING SOON
+        </span>
+      </section>
+
       {/* Module overview description from carousel section */}
       <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center space-y-8 px-6 py-12 pb-12 sm:space-y-36 sm:px-8 sm:pb-32 sm:pt-32 lg:px-12">
-        {/* Floating Levels Box */}
-        <div className="bg-cf-green-900 absolute bottom-64 left-1/2 -mt-32 hidden w-full max-w-5xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl p-4 shadow-lg sm:p-8 md:flex">
-          <div className="my-6 grid w-full max-w-4xl grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4">
-            {levels.map((level, index) => (
-              <LevelOverviewCard
-                key={index}
-                alt={level.alt}
-                icon={level.icon}
-                title={level.title}
-              />
-            ))}
-          </div>
-        </div>
-
         {/*map over cards*/}
         {cards.map((card, index) => (
           <div
@@ -197,7 +162,7 @@ export default function Overview() {
             </div>
           </div>
         ))}
-        
+
         <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
           <Link
             href="https://learn.academy.cardanofoundation.org/register"
@@ -218,32 +183,30 @@ export default function Overview() {
         </div>
       </section>
 
-      {/* CBCA Certification Section */}
-      <section className="relative bg-cf-blue-600 py-8">
+      {/* Badges Section */}
+      <section className="relative bg-cf-blue-900 py-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
             <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
-              CBCA Certification
+              Learn and share badges
             </h2>
             <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
-              The Cardano Foundation is pleased to announce that certification
-              for the Cardano Blockchain Certified Associate (CBCA) Course is
-              live. To make a booking, and get certified, click below
+              Validate your skills and accelerate your career progression.
             </p>
             <Link
               target="_blank"
               href="https://home.pearsonvue.com/cardanofoundation"
             >
               <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
-                Get Certified
+                Sign up
               </Button>
             </Link>
           </div>
           <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
             <Image
               className="hidden lg:block"
-              src="/certified_cbca.svg"
-              alt="Certified CBCA"
+              src="/business_learn_fundamentals.svg"
+              alt="Business Learn Fundamentals"
               priority={true}
               width={450}
               height={450}
@@ -259,7 +222,7 @@ export default function Overview() {
             Who is the course for?
           </h2>
 
-          <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
+          <div className="lg:grid-cols- mt-6 grid w-full max-w-3xl grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:gap-9">
             {targets.map((target, index) => (
               <TargetCard
                 key={index}
@@ -274,34 +237,7 @@ export default function Overview() {
 
       {/* Course Creators and Contributors section */}
       <section className="bg-cf-blue-600">
-        <div className="relative mx-auto max-w-7xl bg-cf-blue-600 pb-12 pt-32 sm:pb-40 sm:pt-56 md:pt-32 lg:pt-56">
-          {/* Floating Brochure Box */}
-          <div className="absolute left-1/2 top-4 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 p-4 shadow-lg sm:p-8 lg:p-14">
-            <div className="flex flex-col items-center">
-              <div className="mb-4 text-center text-xl font-semibold sm:text-3xl lg:text-4xl">
-                Your open resource to blockchain mastery
-              </div>
-              <div className="mb-4 text-center text-lg sm:text-xl lg:text-2xl">
-                Download{' '}
-                <strong>CBCA’s quality-verified course material</strong> to
-                learn offline or for incorporation into your curriculum and
-                training plans
-              </div>
-              <div className="flex flex-col sm:flex-row sm:space-x-4">
-                <a href="/Academy-Overview.pdf" target="_blank">
-                  <Button className="mb-2 w-11/12 whitespace-nowrap bg-cf-blue-900 px-8 py-5 text-2xl text-white sm:mb-0 lg:text-[1.75rem]">
-                    Download course material
-                  </Button>
-                </a>
-                <a href="/Academy-Overview.pdf" target="_blank">
-                  <Button className="mb-2 w-11/12 whitespace-nowrap bg-cf-blue-900 px-8 py-5 text-2xl text-white sm:mb-0 lg:text-[1.75rem]">
-                    Github repository
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </div>
-
+        <div className="relative mx-auto max-w-7xl bg-cf-blue-600 pb-12 pt-32 sm:pb-40 sm:pt-56 md:pt-32">
           <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
             <h2 className="max-w-2xl text-center text-4xl font-bold text-white sm:text-6xl">
               Course Creators and Contributors

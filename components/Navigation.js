@@ -17,8 +17,13 @@ const Navigation = () => {
 
   const navigation = [
     {
-      name: 'Course Overview',
+      name: 'Courses',
       href: '/overview',
+      current: pathname === '/overview',
+    },
+    {
+      name: 'Accelerator ',
+      href: '/accelerator ',
       current: pathname === '/overview',
     },
     // { name: 'Partner with us', href: '/partner', current: pathname === '/partner' },
@@ -76,7 +81,7 @@ const Navigation = () => {
                       href={item.href}
                       className={classNames(
                         item.current
-                          ? 'font-bold underline underline-offset-8'
+                          ? 'font-bold underline-offset-8'
                           : 'hover:underline hover:underline-offset-8',
                         'px-2 py-2 text-2xl text-white',
                       )}

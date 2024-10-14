@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/Button'
+import LevelCard from '@/components/LevelCard'
 import StatCard from '@/components/StatCard'
+import FundamentalStatCard from '@/components/FundamentalStatCard'
 import FeatureCard from '@/components/FeatureCard'
-import TargetCard from '@/components/TargetCard'
 
 export const metadata = {
   title: 'Blockchain Course',
@@ -31,10 +32,66 @@ const stats = [
     alt: 'Icon depicting a book on a monitor',
   },
   {
-    stat: '621',
-    description: 'Testers',
+    stat: '3,954',
+    description: 'Learners',
     icon: 'tester.svg',
     alt: 'Icon depicting a person sitting at their laptop',
+  },
+]
+
+const statsFundamentals = [
+  {
+    stat: '5',
+    description: 'Modules',
+    icon: 'globe-book.svg',
+    alt: 'Icon depicting a globe and a stack of books',
+  },
+  {
+    stat: '1.5',
+    description: 'Hours',
+    icon: 'clock.svg',
+    alt: 'Icon timer',
+  },
+]
+
+const levels = [
+  {
+    icon: 'technical.svg',
+    alt: 'Icon depicting a screwdrivers on a laptop',
+    title: 'Technical',
+  },
+  {
+    icon: 'knowledge-2.svg',
+    alt: 'Icon depicting a screen with a hat',
+    title: 'Self-paced',
+  },
+  {
+    icon: 'beginner.svg',
+    alt: 'Icon depicting a searching mobile phone',
+    title: 'Beginner',
+  },
+  {
+    icon: 'certified.svg',
+    alt: 'Icon depicting a certificate',
+    title: 'Certified',
+  },
+]
+
+const levelsFundamentals = [
+  {
+    icon: 'business.svg',
+    alt: 'Icon depicting a briefcase',
+    title: 'Business',
+  },
+  {
+    icon: 'knowledge-2.svg',
+    alt: 'Icon depicting a screen with a hat',
+    title: 'Self-paced',
+  },
+  {
+    icon: 'beginner.svg',
+    alt: 'Icon depicting a searching mobile phone',
+    title: 'Beginner',
   },
 ]
 
@@ -80,45 +137,6 @@ const features = [
     title: 'get certified',
     description:
       'Enhance your profile by becoming an accredited associate or expert. Coming soon.',
-  },
-]
-
-const targets = [
-  {
-    icon: 'networking.svg',
-    alt: 'Icon depicting a network of people',
-    description:
-      '<strong>Business Professionals, decision-makers, entrepreneurs</strong> who want to learn more about blockchain for their businesses',
-  },
-  {
-    icon: 'developer.svg',
-    alt: 'Icon depicting a person sitting in front of their laptop chatting online',
-    description:
-      '<strong>Lecturers, researchers, teachers,</strong> and trainers who want to understand the fundamentals of blockchain and/or teach the course material.',
-  },
-  {
-    icon: 'online-learning.svg',
-    alt: 'Icon depicting a monitor with a graduate cap',
-    description:
-      '<strong>Students</strong> who are interested in learning about or working in the blockchain industry.',
-  },
-  {
-    icon: 'paper-plane.svg',
-    alt: 'Icon depicting a paper airplane with a message',
-    description:
-      'Traditional <strong>web2 IT professionals</strong> wanting to learn about blockchain and upskill in web3.',
-  },
-  {
-    icon: 'programming.svg',
-    alt: 'Icon depicting a monitor with code on it',
-    description:
-      '<strong>Blockchain developers and engineers</strong> who will develop and build on the Cardano Blockchain.',
-  },
-  {
-    icon: 'coding.svg',
-    alt: 'Icon depicting a keyboard and a code symbol',
-    description:
-      '<strong>General public</strong> interested in blockchain, and in working with blockchain in the future.',
   },
 ]
 
@@ -204,18 +222,33 @@ export default function Home() {
       </section> */}
 
       {/* Course section */}
-      <section className="bg-white pb-48 pt-12 sm:pb-64 sm:pt-40">
+      <section className="bg-white pb-32 pt-12 sm:pt-32">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
+          <h1 className="border-cf-green-900 mb-10 rounded-full border-2 border-dotted px-4 py-2 text-2xl font-bold text-cf-blue-600 sm:text-center">
+            Featured course
+          </h1>
           <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 sm:text-center sm:text-6xl">
-            Cardano Blockchain Certified <br /> Associate (CBCA) Course Overview
+            Cardano Blockchain Certified
+            <br /> Associate (CBCA)
           </h2>
+          <div className="my-6 grid w-full max-w-4xl grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4 ">
+            {levels.map((level, index) => (
+              <LevelCard
+                key={index}
+                alt={level.alt}
+                icon={level.icon}
+                title={level.title}
+              />
+            ))}
+          </div>
           <p className="pt-6 text-lg text-cf-blue-600 sm:text-center sm:text-xl">
-            Launching the Cardano Academy’s first certified course with: Cardano
-            Blockchain Certified <br />
-            Associate (CBCA) Course. No prior knowledge or experience of
-            blockchain is needed.
+            Gain a comprehensive introduction to blockchain, with an extra focus
+            on the Cardano technology. <br />
+            Go from the fundamentals to advanced concepts, plus take an in-depth
+            look at the Cardano
+            <br />
+            blockchain and how to get started.
           </p>
-
           <div className="mt-16 grid w-full max-w-3xl grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8 md:gap-9 lg:grid-cols-3 lg:gap-16">
             {stats.map((stat, index) => (
               <StatCard
@@ -228,40 +261,153 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
+          <Link href="https://learn.academy.cardanofoundation.org/register">
+            <Button className="mb-2 w-72 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-8 sm:text-[1.75rem]">
+              Start Learning
+            </Button>
+          </Link>
+          <Link href="/overview">
+            <Button className="bg-cf-green-900 w-72 px-8 py-5 text-3xl sm:text-[1.75rem]">
+              Learn More
+            </Button>
+          </Link>
+        </div>
       </section>
 
-      {/* Features section */}
-      <section className="relative bg-cf-blue-600 pb-12 pt-80 sm:pb-40 sm:pt-64">
-        {/* Floating CTA */}
-        <div className="absolute left-1/2 top-0 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-green-600 px-6 py-14 shadow-lg sm:px-8 lg:px-12">
-          <h2 className="mb-6 text-center text-4xl font-bold text-cf-blue-900 sm:text-5xl">
-            Start your learning journey today!
-          </h2>
-          <h3 className="mb-8 text-center text-4xl text-cf-blue-900 sm:text-xl">
-            <strong>Launch:</strong> December 14th 2023
-          </h3>
-          <div className="flex flex-col sm:flex-row">
-            <Link href="https://learn.academy.cardanofoundation.org/register">
-              <Button className="mb-2 w-72 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-8 sm:text-[1.75rem]">
-                Start Learning
-              </Button>
-            </Link>
-            <Link href="/overview">
-              <Button className="w-72 bg-white px-8 py-5 text-3xl text-cf-blue-900 sm:text-[1.75rem]">
-                Learn More
+      {/* CBCA Certification Section */}
+      <section className="relative bg-cf-blue-600 py-8">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
+          <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
+            <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
+              CBCA Certification
+            </h2>
+            <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
+              The Cardano Foundation is pleased to announce that certification
+              for the Cardano Blockchain Certified Associate (CBCA) Course is
+              live. To make a booking, and get certified, click below
+            </p>
+            <Link
+              target="_blank"
+              href="https://home.pearsonvue.com/cardanofoundation"
+            >
+              <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
+                Get Certified
               </Button>
             </Link>
           </div>
+          <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
+            <Image
+              className="hidden lg:block"
+              src="/certified_cbca.svg"
+              alt="Certified CBCA"
+              priority={true}
+              width={450}
+              height={450}
+            />
+          </div>
         </div>
+      </section>
 
+      {/* Fundamentals section */}
+      <section className="bg-white pb-32 pt-12  sm:pt-32">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mt-16 text-center text-5xl font-bold text-white sm:mb-6 sm:mt-0 sm:text-6xl">
+          <h1 className="mb-10 rounded-full bg-cf-blue-600 px-6 py-3 text-4xl font-bold text-white sm:text-center">
+            Coming soon!
+          </h1>
+          <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 sm:text-center sm:text-6xl">
+            Blockchain Fundamentals
+          </h2>
+          <div className="my-6 grid w-full max-w-2xl grid-cols-1 gap-9 lg:grid-cols-3">
+            {levelsFundamentals.map((level, index) => (
+              <LevelCard
+                key={index}
+                alt={level.alt}
+                icon={level.icon}
+                title={level.title}
+              />
+            ))}
+          </div>
+          <p className="pt-6 text-lg text-cf-blue-600 sm:text-center sm:text-xl">
+            This foundational course covers the fundamentals of blockchain and
+            is ideal for learners who are new <br />
+            to blockchain and interested in what it is, how it works and its
+            evolving use cases and <br />
+            applications.
+          </p>
+          <div className="mt-16 grid w-full max-w-xl grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
+            {statsFundamentals.map((stat, index) => (
+              <FundamentalStatCard
+                key={index}
+                alt={stat.alt}
+                icon={stat.icon}
+                stat={stat.stat}
+                description={stat.description}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
+          <Link
+            href="https://learn.academy.cardanofoundation.org/register"
+            className="flex items-center"
+          >
+            <Button className="w-62 mb-2 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-4 sm:text-[1.75rem]">
+              Learn more
+            </Button>
+            <Image
+              className="h-[50px] w-auto"
+              src={`/ada-logo.svg`}
+              alt="ada logo"
+              priority={true}
+              width={72}
+              height={72}
+            />
+          </Link>
+        </div>
+      </section>
+
+      {/* Badges Section */}
+      <section className="relative bg-cf-blue-900 py-8">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
+          <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
+            <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
+              Learn and share badges
+            </h2>
+            <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
+              Validate your skills and accelerate your career progression.
+            </p>
+            <Link
+              target="_blank"
+              href="https://home.pearsonvue.com/cardanofoundation"
+            >
+              <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
+                Sign up
+              </Button>
+            </Link>
+          </div>
+          <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
+            <Image
+              className="hidden lg:block"
+              src="/business_learn_fundamentals.svg"
+              alt="Business Learn Fundamentals"
+              priority={true}
+              width={450}
+              height={450}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Features section */}
+      <section className="relative bg-cf-blue-600 pb-12 sm:pb-40 sm:pt-32">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
+          <h2 className="mt-16 text-center text-5xl font-bold text-white sm:mb-2 sm:mt-0 sm:text-6xl">
             Learn blockchain, your way
           </h2>
-          <p className="pt-2 text-center text-xl text-white">
+          {/* <p className="pt-2 text-center text-xl text-white">
             Interested in learning about Blockchain?
-          </p>
-
+          </p> */}
           <div className="mt-12 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
             {features.map((feature, index) => (
               <FeatureCard
@@ -274,44 +420,20 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Target audience section */}
-      <section className="relative bg-white py-12 sm:py-40">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mb-6 text-center text-5xl font-bold text-cf-blue-600 sm:text-6xl">
-            Who is the course for?
-          </h2>
-
-          <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
-            {targets.map((target, index) => (
-              <TargetCard
-                key={index}
-                icon={target.icon}
-                alt={target.alt}
-                description={target.description}
-              />
-            ))}
+        <div className="absolute bottom-[-6rem] left-1/2 z-20 hidden w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 p-4 shadow-lg sm:flex sm:p-8 lg:p-10">
+          <div className="flex flex-col items-center">
+            <div className="mb-8 text-center text-xl font-semibold sm:text-3xl lg:text-4xl">
+              Start your learning journey today!
+            </div>
+            <div className="flex items-center justify-center">
+              <a href="/Academy-Overview.pdf" target="_blank">
+                <Button className="mb-2 w-11/12 whitespace-nowrap bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 lg:text-[1.75rem]">
+                  Register now
+                </Button>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="relative bg-cf-blue-600 py-12 sm:py-24">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mb-6 text-center text-5xl font-bold text-white">
-            CBCA Certification
-          </h2>
-          <p className="max-w-4xl text-center text-xl text-cf-offwhite">
-            The Cardano Foundation is pleased to announce that certification for
-            the Cardano Blockchain Certified Associate (CBCA) Course is live. To
-            make a booking, and get certified, click below
-          </p>
-          <Link target="_blank" href="https://home.pearsonvue.com/cardanofoundation">
-            <Button className="bg-white mt-8 px-8 py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem]">
-              Get Certified
-            </Button>
-          </Link>
         </div>
       </section>
     </main>
