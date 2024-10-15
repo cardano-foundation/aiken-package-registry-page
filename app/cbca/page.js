@@ -7,7 +7,7 @@ import TargetCard from '@/components/TargetCard'
 import LevelOverviewCard from '@/components/LevelOverviewCard'
 import 'react-multi-carousel/lib/styles.css'
 
-export default function Overview() {
+export default function Cbca() {
   // Levels cards
   const levels = [
     {
@@ -135,7 +135,7 @@ export default function Overview() {
 
   return (
     <main>
-      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-600 py-36 pb-16 sm:pb-44 sm:pt-48">
+      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-600 py-36 pb-16 sm:pb-52 sm:pt-48">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-6 sm:px-8 lg:px-12">
           <h1 className="text-center text-4xl font-bold leading-tight text-white sm:text-6xl">
             Cardano Blockchain <br /> Certified Associate (CBCA) <br /> Course
@@ -158,7 +158,7 @@ export default function Overview() {
       {/* Module overview description from carousel section */}
       <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center space-y-8 px-6 py-12 pb-12 sm:space-y-36 sm:px-8 sm:pb-32 sm:pt-32 lg:px-12">
         {/* Floating Levels Box */}
-        <div className="bg-cf-green-900 absolute bottom-64 left-1/2 -mt-32 hidden w-full max-w-5xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl p-4 shadow-lg sm:p-8 md:flex">
+        <div className="bg-cf-green-900 absolute bottom-56 left-1/2 -mt-32 hidden w-full max-w-5xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl p-4 shadow-lg sm:p-8 md:flex">
           <div className="my-6 grid w-full max-w-4xl grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4">
             {levels.map((level, index) => (
               <LevelOverviewCard
@@ -187,7 +187,7 @@ export default function Overview() {
             </div>
             <div className="hidden w-1/3 justify-end md:flex">
               <Image
-                className="max-h-64 w-full"
+                className="max-h-72 w-full"
                 src={`/${card.image}`}
                 alt={`Image of ${card.title}`}
                 priority={true}
@@ -197,7 +197,7 @@ export default function Overview() {
             </div>
           </div>
         ))}
-        
+
         <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
           <Link
             href="https://learn.academy.cardanofoundation.org/register"
@@ -207,7 +207,7 @@ export default function Overview() {
               Download course overview
             </Button>
             <Image
-              className="hidden h-[50px] w-auto sm:block"
+              className="ml-4 hidden h-[65px] w-auto sm:block"
               src={`/ada-logo.svg`}
               alt="ada logo"
               priority={true}
@@ -219,7 +219,7 @@ export default function Overview() {
       </section>
 
       {/* CBCA Certification Section */}
-      <section className="relative bg-cf-blue-600 py-8">
+      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
             <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
@@ -250,6 +250,21 @@ export default function Overview() {
             />
           </div>
         </div>
+
+        {/* Background gradient shapes  */}
+        <div
+          className="left-[calc(50% + 2rem)] safari-fix absolute bottom-[calc(0%-56rem)] -z-10 h-[20rem] w-[20rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#0033AD] mix-blend-plus-lighter blur-[256px] sm:h-[72rem] sm:w-[72rem]"
+          aria-hidden="true"
+        />
+        <div
+          className="safari-fix absolute left-[-25rem] top-[-25rem] -z-10 h-[40rem] w-[40rem] overflow-hidden rounded-full bg-gradient-to-br from-[#0033AD] to-[#036ECD] opacity-50 mix-blend-plus-lighter blur-[256px] sm:h-[72rem] sm:w-[72rem]"
+          aria-hidden="true"
+        />
+        <div
+          className="mix-blend-plus-lighten safari-fix absolute right-[-96rem] top-[-72rem] -z-10 h-[118rem] w-[118rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#0033AD] to-[#05A6EC] opacity-50 blur-[256px] sm:h-[156rem] sm:w-[156rem]"
+          aria-hidden="true"
+        />
+        <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
       </section>
 
       {/* Target audience section */}
@@ -258,8 +273,7 @@ export default function Overview() {
           <h2 className="mb-6 text-center text-5xl font-bold text-cf-blue-600 sm:text-6xl">
             Who is the course for?
           </h2>
-
-          <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
+          <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mb-12 sm:mt-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
             {targets.map((target, index) => (
               <TargetCard
                 key={index}
@@ -274,9 +288,9 @@ export default function Overview() {
 
       {/* Course Creators and Contributors section */}
       <section className="bg-cf-blue-600">
-        <div className="relative mx-auto max-w-7xl bg-cf-blue-600 pb-12 pt-32 sm:pb-40 sm:pt-56 md:pt-32 lg:pt-56">
+        <div className="relative mx-auto max-w-7xl bg-cf-blue-600 pb-12 pt-12 sm:pb-40 sm:pt-56 md:pt-32 lg:pt-56">
           {/* Floating Brochure Box */}
-          <div className="absolute left-1/2 top-4 -mt-32 flex w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 p-4 shadow-lg sm:p-8 lg:p-14">
+          <div className="absolute left-1/2 top-4 -mt-32 hidden w-full max-w-7xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl bg-cf-yellow-600 p-4 shadow-lg sm:flex sm:p-8 lg:p-14">
             <div className="flex flex-col items-center">
               <div className="mb-4 text-center text-xl font-semibold sm:text-3xl lg:text-4xl">
                 Your open resource to blockchain mastery
@@ -303,7 +317,7 @@ export default function Overview() {
           </div>
 
           <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-            <h2 className="max-w-2xl text-center text-4xl font-bold text-white sm:text-6xl">
+            <h2 className="max-w-2xl text-center text-4xl font-bold text-white sm:mt-12 sm:text-6xl">
               Course Creators and Contributors
             </h2>
             <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">

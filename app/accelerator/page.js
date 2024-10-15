@@ -102,14 +102,14 @@ export default function Accelerator() {
 
   return (
     <main>
-      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-600 py-36 pb-16 sm:pb-44 sm:pt-48">
+      <section className="bg-cf-green-900 relative isolate flex items-center justify-center overflow-hidden py-36 pb-16 sm:pb-44 sm:pt-48">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-center text-5xl font-bold text-black sm:text-[90px] ">
+            <h1 className="text-center text-5xl font-bold text-cf-offwhite sm:text-black sm:text-[90px] ">
               Cardano Accelerator <br />
               Pilot Program
             </h1>
-            <p className="mt-8 text-xl text-black sm:mt-12 sm:text-2xl">
+            <p className="text-center mt-8 text-xl text-cf-offwhite sm:text-black sm:mt-12 sm:text-2xl">
               Supercharge your Cardano blockchain enterprise venture
             </p>
             <Link href="/partner">
@@ -122,11 +122,19 @@ export default function Accelerator() {
 
         {/* Background gradient shapes  */}
         <div
-          className="safari-fix absolute left-[-10rem] top-[-12rem] -z-10 h-[36rem] w-[36rem] overflow-hidden rounded-full bg-gradient-to-br from-[#05A6EC] to-[#036ECD] opacity-50 mix-blend-plus-lighter blur-[256px] brightness-150"
+          className="mix-blend-plus-lighten safari-fix absolute left-[-32rem] top-[-45rem] -z-10 h-[72rem] w-[85rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05153D] to-[#0033AD] opacity-100 blur-[206px]"
           aria-hidden="true"
         />
         <div
-          className="mix-blend-plus-lighten safari-fix absolute right-[-32rem] top-[-10rem] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05A6EC] to-[#05A6EC] opacity-50 blur-[256px]"
+          className="mix-blend-plus-lighten safari-fix absolute left-[-32rem] top-[35rem] -z-10 h-[72rem] w-[72rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05153D] to-[#0033AD] opacity-100 blur-[206px]"
+          aria-hidden="true"
+        />
+        <div
+          className="mix-blend-plus-lighten safari-fix absolute right-[-32rem] top-[15rem] -z-10 h-[72rem] w-[82rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05153D] to-[#0033AD] opacity-100 blur-[206px]"
+          aria-hidden="true"
+        />
+                <div
+          className="mix-blend-plus-lighten safari-fix absolute right-[-32rem] top-[-50rem] -z-10 h-[52rem] w-[80rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05153D] to-[#0033AD] opacity-100 blur-[206px]"
           aria-hidden="true"
         />
         <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
@@ -152,7 +160,7 @@ export default function Accelerator() {
       {/* Accelerator Pilot Program section */}
       <section className="relative pb-12 sm:pb-40">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 sm:text-center sm:text-6xl">
+          <h2 className="mb-6 text-4xl font-bold sm:text-cf-blue-600 sm:text-center sm:text-6xl">
             Cardano Accelerator Pilot Program
           </h2>
           <p className="pt-6 text-lg text-cf-blue-600 sm:text-center sm:text-xl">
@@ -164,7 +172,7 @@ export default function Accelerator() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid w-full max-w-7xl grid-cols-1 gap-8 px-6 sm:grid-cols-2 sm:px-8 lg:grid-cols-4 lg:px-12 mb-0 md:mb-20">
+        <div className="mx-auto mb-0 mt-12 grid w-full max-w-7xl grid-cols-1 gap-8 px-6 sm:grid-cols-2 sm:px-8 md:mb-20 lg:grid-cols-4 lg:px-12">
           {accelerators.map((accelerator, index) => (
             <AcceleratorCard
               key={index}
@@ -177,7 +185,7 @@ export default function Accelerator() {
         </div>
 
         {/* Accelerator Program Floating Box */}
-        <div className="bg-cf-green-900 absolute left-1/2 top-35 z-20 hidden w-full max-w-6xl -translate-x-1/2 transform flex-col items-center justify-between rounded-3xl px-6 shadow-lg sm:flex sm:px-8 lg:flex-row ">
+        <div className="bg-cf-green-900 top-35 absolute left-1/2 z-20 hidden w-full max-w-6xl -translate-x-1/2 transform flex-col items-center justify-between rounded-3xl px-6 shadow-lg sm:flex sm:px-16 lg:flex-row ">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
             <h2 className="white mb-6 text-center text-3xl font-bold sm:text-3xl lg:text-left lg:text-4xl">
               Access the business and technical expertise you need to accelerate

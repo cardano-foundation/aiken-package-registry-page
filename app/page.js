@@ -156,16 +156,18 @@ export default function Home() {
               <br className="hidden sm:block" />
               future.
             </p>
-            <Link href="/partner">
-              <Button className="mt-14 w-60 bg-white py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem] xl:w-80">
-                Partner with Us
-              </Button>
-            </Link>
-            <Link href="https://learn.academy.cardanofoundation.org/register">
-              <Button className="mt-4 w-60 bg-white py-5 text-3xl text-cf-blue-600 sm:text-[1.75rem] xl:w-80">
-                Start Learning
-              </Button>
-            </Link>
+            <div className="mt-14 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+              <Link href="/partner">
+                <Button className="w-48 bg-white py-4 text-2xl text-cf-blue-600 sm:text-[1.5rem] xl:w-60">
+                  Partner with Us
+                </Button>
+              </Link>
+              <Link href="https://learn.academy.cardanofoundation.org/register">
+                <Button className="w-48 bg-white py-4 text-2xl text-cf-blue-600 sm:text-[1.5rem] xl:w-60">
+                  Start Learning
+                </Button>
+              </Link>
+            </div>
           </div>
           <Image
             className="hidden lg:block"
@@ -264,10 +266,10 @@ export default function Home() {
         <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
           <Link href="https://learn.academy.cardanofoundation.org/register">
             <Button className="mb-2 w-72 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-8 sm:text-[1.75rem]">
-              Start Learning
+              Start learning
             </Button>
           </Link>
-          <Link href="/overview">
+          <Link href="/cbca">
             <Button className="bg-cf-green-900 w-72 px-8 py-5 text-3xl sm:text-[1.75rem]">
               Learn More
             </Button>
@@ -276,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* CBCA Certification Section */}
-      <section className="relative bg-cf-blue-600 py-8">
+      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
             <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
@@ -307,6 +309,21 @@ export default function Home() {
             />
           </div>
         </div>
+
+        {/* Background gradient shapes  */}
+        <div
+          className="left-[calc(50% + 2rem)] safari-fix absolute bottom-[calc(0%-56rem)] -z-10 h-[20rem] w-[20rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#0033AD] mix-blend-plus-lighter blur-[256px] sm:h-[72rem] sm:w-[72rem]"
+          aria-hidden="true"
+        />
+        <div
+          className="safari-fix absolute left-[-25rem] top-[-25rem] -z-10 h-[40rem] w-[40rem] overflow-hidden rounded-full bg-gradient-to-br from-[#0033AD] to-[#036ECD] opacity-50 mix-blend-plus-lighter blur-[256px] sm:h-[72rem] sm:w-[72rem]"
+          aria-hidden="true"
+        />
+        <div
+          className="mix-blend-plus-lighten safari-fix absolute right-[-96rem] top-[-72rem] -z-10 h-[118rem] w-[118rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#0033AD] to-[#05A6EC] opacity-50 blur-[256px] sm:h-[156rem] sm:w-[156rem]"
+          aria-hidden="true"
+        />
+        <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
       </section>
 
       {/* Fundamentals section */}
@@ -349,26 +366,18 @@ export default function Home() {
         </div>
         <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
           <Link
-            href="https://learn.academy.cardanofoundation.org/register"
+            href="/blockchain-fundamentals"
             className="flex items-center"
           >
             <Button className="w-62 mb-2 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-4 sm:text-[1.75rem]">
               Learn more
             </Button>
-            <Image
-              className="h-[50px] w-auto"
-              src={`/ada-logo.svg`}
-              alt="ada logo"
-              priority={true}
-              width={72}
-              height={72}
-            />
           </Link>
         </div>
       </section>
 
       {/* Badges Section */}
-      <section className="relative bg-cf-blue-900 py-8">
+      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
             <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
@@ -397,6 +406,17 @@ export default function Home() {
             />
           </div>
         </div>
+
+        {/* Background gradient shapes  */}
+        <div
+          className="left-[calc(50% + 2rem)] safari-fix absolute bottom-[calc(0%-56rem)] -z-10 h-[20rem] w-[20rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#030321] mix-blend-plus-lighter blur-[256px] sm:h-[22rem] sm:w-[22rem]"
+          aria-hidden="true"
+        />
+        <div
+          className="safari-fix absolute left-[-25rem] top-[-25rem] -z-10 h-[40rem] w-[40rem] overflow-hidden rounded-full bg-gradient-to-br from-[#030321] to-[#036ECD] opacity-50 mix-blend-plus-lighter blur-[256px] sm:h-[72rem] sm:w-[72rem]"
+          aria-hidden="true"
+        />
+        <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
       </section>
 
       {/* Features section */}
@@ -427,7 +447,7 @@ export default function Home() {
               Start your learning journey today!
             </div>
             <div className="flex items-center justify-center">
-              <a href="/Academy-Overview.pdf" target="_blank">
+              <a href="https://learn.academy.cardanofoundation.org/register" target="_blank">
                 <Button className="mb-2 w-11/12 whitespace-nowrap bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 lg:text-[1.75rem]">
                   Register now
                 </Button>

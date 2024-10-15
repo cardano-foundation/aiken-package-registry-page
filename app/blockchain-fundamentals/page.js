@@ -7,7 +7,7 @@ import TargetCard from '@/components/TargetCard'
 import LevelOverviewCard from '@/components/LevelOverviewCard'
 import 'react-multi-carousel/lib/styles.css'
 
-export default function Overview() {
+export default function blockchainFundamentals() {
   // Levels cards
   const levels = [
     {
@@ -36,27 +36,38 @@ export default function Overview() {
   const cards = [
     {
       title: 'Module 1 Overview',
+      subtitle: 'What is blockchain?',
       content:
-        "Introduces the foundation of blockchain, from the main components of a typical blockchain network, to how consensus algorithms provide a mechanism to reach agreement in decentralized systems. It delves into the Byzantine Generals' Problem and explains what Byzantine and Practical Byzantine fault-tolerant systems are. This module looks at the key concepts behind proof-of-work and proof-of-stake systems, including their respective limitations. Other proof-based consensus models including proof of authority, proof of Importance and proof of History are briefly explored. Encryption methods are examined and how hash functions and digital signatures provide data authenticity and integrity.",
+        'In this module, you’ll learn the basics of blockchain as a decentralized ledger technology. It explains how blockchain works to securely and transparently store data. Additionally, you’ll explore Byzantine Fault Tolerance (BFT), which allows blockchain systems to reach consensus even in the presence of faults or malicious participants.',
       image: 'overview/module1.svg',
     },
     {
       title: 'Module 2 Overview',
+      subtitle: 'Bitcoin and ethereum',
       content:
-        'Builds on the concepts introduced in Module 1. It defines the transaction models used in blockchain, including account-based, Unspent Transaction Output, and extended Unspent Transaction Output. It examines the content of a block and the role of the block producer. Module 2 also explains how the risks against double-spending and Sybil attacks are mitigated, the causes of soft and hard forks, and the importance of incentive mechanisms. It concludes with a look at layer 1 and layer 2 scaling solutions.',
+        'This module covers two key blockchain platforms, Bitcoin and Ethereum. It explains Bitcoins role as a peer-to-peer digital currency and how the Lightning Network improves its scalability. The module then shifts to Ethereum, discussing its smart contracts, the move from proof-of-work to proof-of-stake, and its use in decentralized applications. It also highlights blockchains evolution, including hard and soft forks, and the three generations of blockchain.',
       image: 'overview/module2.svg',
     },
     {
       title: 'Module 3 Overview',
+      subtitle: 'Cardano part 1',
       content:
-        "Focuses on the Cardano blockchain, it describes Cardano’s genesis and genesis entities, and the mission and principles governing Cardano. It looks at the Cardano node and how the eras have developed and enhanced features of the network. Ouroboros, Cardano's consensus algorithm, is examined, along with the reward and incentive mechanism of Cardano. The governance process including Cardano Improvement Proposals is explained, along with the role of the Cardano Community. ",
+        "In this module, you'll explore the origins of Cardano, its development milestones, and its proof-of-stake consensus mechanism, Ouroboros. You'll learn how staking works on Cardano and the unique eUTXO model that enhances security and scalability. The module concludes with an introduction to smart contracts on Cardano.",
       image: 'overview/module3.svg',
     },
     {
       title: 'Module 4 Overview',
+      subtitle: 'Cardano part 2',
       content:
-        'Looks at how to get started buying, storing, and transferring ada. It also examines how staking works on Cardano with the staking lifecycle, along with the role of stake pools and stake pool operators. It describes how to create and transfer both native assets and non-fungible tokens and concludes with a look at decentralized applications and exchanges.',
+        'This module focuses on Cardano’s scalability strategies, including Hydra, a Layer 2 solution designed to improve transaction throughput, and Cardano’s monetary policy. Other topics include NFTs, interoperability with other blockchain networks, and decentralized governance.',
       image: 'overview/module4.svg',
+    },
+    {
+      title: 'Module 5 Overview',
+      subtitle: 'Benefits and use cases',
+      content:
+        'The final module looks at the business benefits and practical applications of blockchain technology. You will learn how to evaluate whether blockchain is suitable for various use cases and explore its role in Web3, DeFi, tokenization, and industries like gaming, payments, and supply chains.',
+      image: 'overview/module5.svg',
     },
   ]
 
@@ -111,7 +122,7 @@ export default function Overview() {
       <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-600 py-36 pb-16 sm:pb-32 sm:pt-48">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-6 sm:px-8 lg:px-12">
           <h1 className="text-center text-4xl font-bold leading-tight text-white sm:text-6xl">
-            Blockchain Fundamentals <br/> Course Overview
+            Blockchain Fundamentals <br /> Course Overview
           </h1>
         </div>
 
@@ -129,7 +140,7 @@ export default function Overview() {
 
       {/* Coming soon section */}
       <section className="relative flex items-center justify-center bg-cf-yellow-600 py-4 md:py-8">
-        <span className="text-center text-md md:text-4xl font-bold">
+        <span className="text-md text-center font-bold md:text-4xl">
           COMING SOON • COMING SOON • COMING SOON
         </span>
       </section>
@@ -184,7 +195,7 @@ export default function Overview() {
       </section>
 
       {/* Badges Section */}
-      <section className="relative bg-cf-blue-900 py-8">
+      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
             <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
@@ -213,6 +224,17 @@ export default function Overview() {
             />
           </div>
         </div>
+
+        {/* Background gradient shapes  */}
+        <div
+          className="left-[calc(50% + 2rem)] safari-fix absolute bottom-[calc(0%-56rem)] -z-10 h-[20rem] w-[20rem] overflow-hidden rounded-full bg-gradient-to-t from-[#030321] via-[#032247] to-[#030321] mix-blend-plus-lighter blur-[256px] sm:h-[22rem] sm:w-[22rem]"
+          aria-hidden="true"
+        />
+        <div
+          className="safari-fix absolute left-[-25rem] top-[-25rem] -z-10 h-[40rem] w-[40rem] overflow-hidden rounded-full bg-gradient-to-br from-[#030321] to-[#036ECD] opacity-50 mix-blend-plus-lighter blur-[256px] sm:h-[72rem] sm:w-[72rem]"
+          aria-hidden="true"
+        />
+        <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
       </section>
 
       {/* Target audience section */}
