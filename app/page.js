@@ -201,7 +201,7 @@ export default function Home() {
           <h1 className="border-cf-green-900 mb-10 rounded-full border-2 border-dotted px-4 py-2 text-2xl font-bold text-cf-blue-600 sm:text-center">
             Featured course
           </h1>
-          <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 text-center sm:text-6xl">
+          <h2 className="mb-6 text-center text-4xl font-bold text-cf-blue-600 sm:text-6xl">
             Cardano Blockchain Certified
             <br /> Associate (CBCA)
           </h2>
@@ -251,44 +251,44 @@ export default function Home() {
 
       {/* CBCA Certification Section */}
       <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
-  <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
-    <Image
-      className="block w-24 h-24 mb-4 lg:hidden"
-      src="/certified_cbca.svg"
-      alt="Certified CBCA"
-      priority={true}
-      width={96}
-      height={96}
-    />
-    <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
-      CBCA Certification
-    </h2>
-    <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
-      The Cardano Foundation is pleased to announce that certification
-      for the Cardano Blockchain Certified Associate (CBCA) Course is
-      live. To make a booking, and get certified, click below
-    </p>
-    <Link
-      target="_blank"
-      href="https://www.pearsonvue.com/us/en/cardanofoundation.html"
-    >
-      <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
-        Get Certified
-      </Button>
-    </Link>
-  </div>
-  <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
-    <Image
-      className="hidden lg:block"
-      src="/certified_cbca.svg"
-      alt="Certified CBCA"
-      priority={true}
-      width={450}
-      height={450}
-    />
-  </div>
-</div>
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
+          <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
+            <Image
+              className="mb-4 block h-24 w-24 lg:hidden"
+              src="/certified_cbca.svg"
+              alt="Certified CBCA"
+              priority={true}
+              width={96}
+              height={96}
+            />
+            <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
+              CBCA Certification
+            </h2>
+            <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
+              The Cardano Foundation is pleased to announce that certification
+              for the Cardano Blockchain Certified Associate (CBCA) Course is
+              live. To make a booking, and get certified, click below
+            </p>
+            <Link
+              target="_blank"
+              href="https://www.pearsonvue.com/us/en/cardanofoundation.html"
+            >
+              <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
+                Get Certified
+              </Button>
+            </Link>
+          </div>
+          <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
+            <Image
+              className="hidden lg:block"
+              src="/certified_cbca.svg"
+              alt="Certified CBCA"
+              priority={true}
+              width={450}
+              height={450}
+            />
+          </div>
+        </div>
 
         {/* Background gradient shapes  */}
         <div
@@ -312,7 +312,7 @@ export default function Home() {
           <h1 className="mb-10 rounded-full bg-cf-blue-600 px-6 py-3 text-4xl font-bold text-white sm:text-center">
             Coming soon!
           </h1>
-          <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 text-center sm:text-6xl">
+          <h2 className="mb-6 text-center text-4xl font-bold text-cf-blue-600 sm:text-6xl">
             Blockchain Fundamentals
           </h2>
           <div className="my-6 grid w-full max-w-2xl grid-cols-1 gap-9 lg:grid-cols-3">
@@ -345,10 +345,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
-          <Link
-            href="/blockchain-fundamentals"
-            className="flex items-center"
-          >
+          <Link href="/blockchain-fundamentals" className="flex items-center">
             <Button className="w-62 mb-2 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-4 sm:text-[1.75rem]">
               Learn more
             </Button>
@@ -360,6 +357,14 @@ export default function Home() {
       <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
+            <Image
+              className="mb-4 block h-24 w-24 lg:hidden"
+              src="/business_learn_fundamentals.svg"
+              alt="Business Learn Fundamentals"
+              priority={true}
+              width={96}
+              height={96}
+            />
             <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
               Learn and share badges
             </h2>
@@ -424,7 +429,10 @@ export default function Home() {
               Start your learning journey today!
             </div>
             <div className="flex items-center justify-center">
-              <a href="https://learn.academy.cardanofoundation.org/register" target="_blank">
+              <a
+                href="https://learn.academy.cardanofoundation.org/register"
+                target="_blank"
+              >
                 <Button className="mb-2 w-11/12 whitespace-nowrap bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 lg:text-[1.75rem]">
                   Register now
                 </Button>
