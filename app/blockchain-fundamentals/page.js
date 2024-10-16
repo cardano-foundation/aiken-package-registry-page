@@ -74,11 +74,6 @@ export default function blockchainFundamentals() {
   // Course Creators and Contributors peo
   const people = [
     {
-      name: 'Matthias Benkort',
-      position: 'Technical Director of Open Source',
-      image: 'contributors/Matthias-Benkort.jpeg',
-    },
-    {
       name: 'John Greene',
       position: 'Technical Blockchain Educator',
       image: 'contributors/John-Greene.jpeg',
@@ -87,6 +82,11 @@ export default function blockchainFundamentals() {
       name: 'Vanessa Hurhangee',
       position: 'Education Manager',
       image: 'contributors/Vanessa-Hurhangee.jpg',
+    },
+    {
+      name: 'Thomas Mayfield',
+      position: 'Team Lead - Decentralized  Trust and Identity Solutions',
+      image: 'contributors/Thomas-Mayfiel.jpeg',
     },
   ]
 

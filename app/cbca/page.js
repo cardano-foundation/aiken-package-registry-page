@@ -99,7 +99,7 @@ export default function Cbca() {
       icon: 'networking.svg',
       alt: 'Icon depicting a network of people',
       description:
-        '<strong>Business Professionals, decision-makers, entrepreneurs</strong> who want to learn more about blockchain for their businesses',
+        '<strong>CTOs and CIOs </strong> who want a deeper understanding of the technology and principles underpinning decentralized networks and Cardano.',
     },
     {
       icon: 'developer.svg',

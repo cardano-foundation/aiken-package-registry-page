@@ -59,7 +59,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-10 w-full transition-all duration-500 ease-in-out ${
+      className={`fixed top-0 z-30 w-full transition-all duration-500 ease-in-out ${
         clientWindowHeight > 150 ||
         pathname === '/privacy-policy' ||
         pathname === '/terms-and-conditions'
