@@ -129,7 +129,7 @@ export default function Cbca() {
       icon: 'coding.svg',
       alt: 'Icon depicting a keyboard and a code symbol',
       description:
-        '<strong>General public</strong> interested in blockchain, and in working with blockchain in the future.',
+        '<strong>Implementation partners</strong> looking to expand their solution stack to include decentralized networks and Cardano.',
     },
   ]
 

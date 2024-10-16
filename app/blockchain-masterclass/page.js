@@ -89,7 +89,7 @@ export default function Masterclass() {
         'Written, reviewed and facilitated by experts based on the most up-to-date information and best practices.',
     },
     {
-      icon: 'tutorial.svg',
+      icon: 'tutorial-2.svg',
       alt: 'Icon depicting a video playing on a monitor',
       title: 'interactive live training',
       description:
