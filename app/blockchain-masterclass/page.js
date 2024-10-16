@@ -191,8 +191,8 @@ export default function Masterclass() {
           <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
             <Image
               className="hidden lg:block"
-              src="/accelerator_program.svg"
-              alt="Accelerator Program"
+              src="/masterclass-partner.svg"
+              alt="Masterclass Partner"
               priority={true}
               width={350}
               height={350}
