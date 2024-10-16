@@ -131,7 +131,6 @@ export default function Masterclass() {
 
       {/* Module overview description from carousel section */}
       <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center space-y-8 px-6 py-12 pb-12 sm:space-y-36 sm:px-8 sm:pb-32 sm:pt-28 lg:px-12">
-        
         {/* Floating Levels Box */}
         <div className="bg-cf-green-900 absolute left-1/2 -mt-48 hidden w-full max-w-5xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl p-4 shadow-lg sm:p-8 lg:flex">
           <div className="my-6 grid w-full max-w-4xl grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4">
@@ -150,10 +149,10 @@ export default function Masterclass() {
       {/* Course section */}
       <section className="bg-white pb-32">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 text-center sm:text-6xl">
+          <h2 className="mb-6 text-center text-4xl font-bold text-cf-blue-600 sm:text-6xl">
             Blockchain Masterclass
           </h2>
-          <p className="pt-6 text-lg text-cf-blue-600 text-center sm:text-xl">
+          <p className="pt-6 text-center text-lg text-cf-blue-600 sm:text-xl">
             Request an exclusive in-person masterclass and gain the essential
             knowledge to harness the <br /> power of blockchain for your
             organization.
@@ -176,37 +175,37 @@ export default function Masterclass() {
 
       {/* Badges Section */}
       <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
-  <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
-    <Image
-      className="block w-24 h-24 mb-4 lg:hidden"
-      src="/masterclass-partner.svg"
-      alt="Masterclass Partner"
-      priority={true}
-      width={96}
-      height={96}
-    />
-    <h2 className="mb-6 text-center text-4xl font-bold text-white lg:text-left">
-      Are you ready to revolutionize your business with blockchain
-      technology?
-    </h2>
-    <Link target="_blank" href="/partner">
-      <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
-        Partner with us
-      </Button>
-    </Link>
-  </div>
-  <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
-    <Image
-      className="hidden lg:block"
-      src="/masterclass-partner.svg"
-      alt="Masterclass Partner"
-      priority={true}
-      width={350}
-      height={350}
-    />
-  </div>
-</div>
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
+          <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
+            <Image
+              className="mb-4 block h-24 w-24 lg:hidden"
+              src="/masterclass-partner.svg"
+              alt="Masterclass Partner"
+              priority={true}
+              width={96}
+              height={96}
+            />
+            <h2 className="mb-6 text-center text-4xl font-bold text-white lg:text-left">
+              Are you ready to revolutionize your business with blockchain
+              technology?
+            </h2>
+            <Link target="_blank" href="/partner">
+              <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
+                Partner with us
+              </Button>
+            </Link>
+          </div>
+          <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
+            <Image
+              className="hidden lg:block"
+              src="/masterclass-partner.svg"
+              alt="Masterclass Partner"
+              priority={true}
+              width={350}
+              height={350}
+            />
+          </div>
+        </div>
 
         {/* Background gradient shapes  */}
         <div
