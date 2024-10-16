@@ -251,36 +251,44 @@ export default function Home() {
 
       {/* CBCA Certification Section */}
       <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
-          <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
-            <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
-              CBCA Certification
-            </h2>
-            <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
-              The Cardano Foundation is pleased to announce that certification
-              for the Cardano Blockchain Certified Associate (CBCA) Course is
-              live. To make a booking, and get certified, click below
-            </p>
-            <Link
-              target="_blank"
-              href="https://www.pearsonvue.com/us/en/cardanofoundation.html"
-            >
-              <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
-                Get Certified
-              </Button>
-            </Link>
-          </div>
-          <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
-            <Image
-              className="hidden lg:block"
-              src="/certified_cbca.svg"
-              alt="Certified CBCA"
-              priority={true}
-              width={450}
-              height={450}
-            />
-          </div>
-        </div>
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
+  <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
+    <Image
+      className="block w-24 h-24 mb-4 lg:hidden"
+      src="/certified_cbca.svg"
+      alt="Certified CBCA"
+      priority={true}
+      width={96}
+      height={96}
+    />
+    <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
+      CBCA Certification
+    </h2>
+    <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
+      The Cardano Foundation is pleased to announce that certification
+      for the Cardano Blockchain Certified Associate (CBCA) Course is
+      live. To make a booking, and get certified, click below
+    </p>
+    <Link
+      target="_blank"
+      href="https://www.pearsonvue.com/us/en/cardanofoundation.html"
+    >
+      <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
+        Get Certified
+      </Button>
+    </Link>
+  </div>
+  <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
+    <Image
+      className="hidden lg:block"
+      src="/certified_cbca.svg"
+      alt="Certified CBCA"
+      priority={true}
+      width={450}
+      height={450}
+    />
+  </div>
+</div>
 
         {/* Background gradient shapes  */}
         <div
