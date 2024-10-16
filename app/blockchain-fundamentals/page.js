@@ -138,15 +138,15 @@ export default function blockchainFundamentals() {
         <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
       </section>
 
-{/* Coming soon section */}
-<section className="relative flex items-center justify-center bg-cf-yellow-600 py-4 md:py-8">
-  <span className="text-md text-center font-bold md:hidden">
-    COMING SOON • COMING SOON
-  </span>
-  <span className="hidden text-md text-center font-bold md:block md:text-4xl">
-    COMING SOON • COMING SOON • COMING SOON
-  </span>
-</section>
+      {/* Coming soon section */}
+      <section className="relative flex items-center justify-center bg-cf-yellow-600 py-4 md:py-8">
+        <span className="text-md text-center font-bold md:hidden">
+        COMING SOON
+        </span>
+        <span className="text-md hidden text-center font-bold md:block md:text-4xl">
+          COMING SOON • COMING SOON • COMING SOON
+        </span>
+      </section>
 
       {/* Module overview description from carousel section */}
       <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center space-y-8 px-6 py-12 pb-12 sm:space-y-36 sm:px-8 sm:pb-32 sm:pt-32 lg:px-12">
