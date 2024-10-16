@@ -105,11 +105,11 @@ export default function Accelerator() {
       <section className="bg-cf-green-900 relative isolate flex items-center justify-center overflow-hidden py-36 pb-16 sm:pb-44 sm:pt-48">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-center text-5xl font-bold text-cf-offwhite sm:text-black sm:text-[90px] ">
+            <h1 className="text-center text-5xl font-bold text-cf-offwhite sm:text-[90px] ">
               Cardano Accelerator <br />
               Pilot Program
             </h1>
-            <p className="text-center mt-8 text-xl text-cf-offwhite sm:text-black sm:mt-12 sm:text-2xl">
+            <p className="mt-8 text-center text-xl text-cf-offwhite sm:mt-12 sm:text-2xl">
               Supercharge your Cardano blockchain enterprise venture
             </p>
             <Link href="/partner">
@@ -133,7 +133,7 @@ export default function Accelerator() {
           className="mix-blend-plus-lighten safari-fix absolute right-[-32rem] top-[15rem] -z-10 h-[72rem] w-[82rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05153D] to-[#0033AD] opacity-100 blur-[206px]"
           aria-hidden="true"
         />
-                <div
+        <div
           className="mix-blend-plus-lighten safari-fix absolute right-[-32rem] top-[-50rem] -z-10 h-[52rem] w-[80rem] overflow-hidden rounded-full bg-gradient-to-bl from-[#05153D] to-[#0033AD] opacity-100 blur-[206px]"
           aria-hidden="true"
         />
@@ -141,7 +141,7 @@ export default function Accelerator() {
       </section>
 
       {/* Module overview description from carousel section */}
-      <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center space-y-8 px-6 py-12 pb-12 sm:space-y-36 sm:px-8 sm:pb-32 sm:pt-28 lg:px-12">
+      <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center space-y-8 px-6 pb-12 sm:space-y-36 sm:px-8 sm:pb-32 sm:pt-28 lg:px-12">
         {/* Floating Levels Box */}
         <div className="bg-cf-green-900 absolute left-1/2 -mt-44 hidden w-full max-w-5xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl p-4 shadow-lg sm:p-8 lg:flex">
           <div className="my-6 grid w-full max-w-4xl grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4">
@@ -160,15 +160,21 @@ export default function Accelerator() {
       {/* Accelerator Pilot Program section */}
       <section className="relative pb-12 sm:pb-40">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <h2 className="mb-6 text-4xl font-bold sm:text-cf-blue-600 sm:text-center sm:text-6xl">
+          <h2 className="mb-6 hidden text-4xl font-bold sm:block sm:text-center sm:text-6xl sm:text-cf-blue-600">
             Cardano Accelerator Pilot Program
           </h2>
-          <p className="pt-6 text-lg text-cf-blue-600 sm:text-center sm:text-xl">
+          <p className="text-lg text-cf-blue-600 sm:pt-6 sm:text-center sm:text-xl">
             Are you a business building on Cardano? The Cardano Accelerator
-            Pilot Program is designed to <br /> close the gap between proof of
-            concept and product-market fit. Empower yourself and your team{' '}
-            <br /> with knowledge, and access to a network of experts and
-            opportunity.
+            Pilot Program is designed to
+            <span className="hidden sm:inline">
+              <br />
+            </span>
+            close the gap between proof of concept and product-market fit.
+            Empower yourself and your team
+            <span className="hidden sm:inline">
+              <br />
+            </span>
+            with knowledge, and access to a network of experts and opportunity.
           </p>
         </div>
 
