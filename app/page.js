@@ -136,7 +136,7 @@ const features = [
     alt: 'Icon depicting a cube seen through a magnifying glass',
     title: 'get certified',
     description:
-      'Enhance your profile by becoming an accredited associate or expert. Coming soon.',
+      'Learn to earn digital badges and get certified to validate your skills and accelerate your career.',
   },
 ]
 
