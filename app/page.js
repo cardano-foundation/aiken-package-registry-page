@@ -229,7 +229,7 @@ export default function Home() {
           <h1 className="border-cf-green-900 mb-10 rounded-full border-2 border-dotted px-4 py-2 text-2xl font-bold text-cf-blue-600 sm:text-center">
             Featured course
           </h1>
-          <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 sm:text-center sm:text-6xl">
+          <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 text-center sm:text-6xl">
             Cardano Blockchain Certified
             <br /> Associate (CBCA)
           </h2>
@@ -291,7 +291,7 @@ export default function Home() {
             </p>
             <Link
               target="_blank"
-              href="https://home.pearsonvue.com/cardanofoundation"
+              href="https://www.pearsonvue.com/us/en/cardanofoundation.html"
             >
               <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
                 Get Certified
@@ -332,7 +332,7 @@ export default function Home() {
           <h1 className="mb-10 rounded-full bg-cf-blue-600 px-6 py-3 text-4xl font-bold text-white sm:text-center">
             Coming soon!
           </h1>
-          <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 sm:text-center sm:text-6xl">
+          <h2 className="mb-6 text-4xl font-bold text-cf-blue-600 text-center sm:text-6xl">
             Blockchain Fundamentals
           </h2>
           <div className="my-6 grid w-full max-w-2xl grid-cols-1 gap-9 lg:grid-cols-3">

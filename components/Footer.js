@@ -8,6 +8,7 @@ const footerNav = [
   { name: 'Cardano Blockchain Certified Associate', href: '/cbca' },
   { name: 'Blockchain Fundamentals', href: '/blockchain-fundamentals' },
   { name: 'Accelerator ', href: '/accelerator ' },
+  { name: 'Masterclass ', href: '/blockchain-masterclass ' },
   { name: 'Partner With Us', href: '/partner' },
   { name: 'Terms & Conditions', href: '/terms-and-conditions' },
   { name: 'Privacy Policy', href: '/privacy-policy' },
