@@ -195,34 +195,6 @@ export default function Home() {
         <div className="absolute right-0 top-0 -z-10 h-full w-full bg-[url('/noise-light.png')] bg-repeat mix-blend-overlay"></div>
       </section>
 
-      {/* About section / will be uncommented */}
-      {/* <section className="bg-cf-blue-600 py-12 sm:py-40">
-        <div className="flex justify-center items-center mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="flex flex-col justify-center items-start lg:pr-24">
-            <h2 className="text-5xl sm:text-6xl text-white font-bold mb-6">
-              About the Academy
-            </h2>
-            <p className="text-white text-lg sm:text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br /><br />
-
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br />
-
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br />
-
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-          <Image
-            className="hidden lg:block"
-            src="/landing_mockup2.png"
-            alt="Cardano Academy Mobile Dashboard"
-            priority={true}
-            width={490}
-            height={500}
-          />
-        </div>
-      </section> */}
-
       {/* Course section */}
       <section className="bg-white pb-32 pt-12 sm:pt-32">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
@@ -425,9 +397,6 @@ export default function Home() {
           <h2 className="mt-16 text-center text-5xl font-bold text-white sm:mb-2 sm:mt-0 sm:text-6xl">
             Learn blockchain, your way
           </h2>
-          {/* <p className="pt-2 text-center text-xl text-white">
-            Interested in learning about Blockchain?
-          </p> */}
           <div className="mt-12 grid w-full grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-9">
             {features.map((feature, index) => (
               <FeatureCard
