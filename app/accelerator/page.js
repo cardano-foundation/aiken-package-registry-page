@@ -143,7 +143,7 @@ export default function Accelerator() {
       {/* Module overview description from carousel section */}
       <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center space-y-8 px-6 py-12 pb-12 sm:space-y-36 sm:px-8 sm:pb-32 sm:pt-28 lg:px-12">
         {/* Floating Levels Box */}
-        <div className="bg-cf-green-900 absolute bottom-12 left-1/2 -mt-32 hidden w-full max-w-5xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl p-4 shadow-lg sm:p-8 md:flex">
+        <div className="bg-cf-green-900 absolute left-1/2 -mt-44 hidden w-full max-w-5xl -translate-x-1/2 transform flex-col items-center justify-center rounded-3xl p-4 shadow-lg sm:p-8 lg:flex">
           <div className="my-6 grid w-full max-w-4xl grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4">
             {summary.map((level, index) => (
               <LevelOverviewCard

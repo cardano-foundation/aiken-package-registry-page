@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
@@ -23,6 +22,11 @@ const Navigation = () => {
       name: 'Accelerator ',
       href: '/accelerator ',
       current: pathname === '/accelerator ',
+    },
+    {
+      name: 'Masterclass',
+      href: '/blockchain-masterclass ',
+      current: pathname === '/blockchain-masterclass ',
     },
   ]
 
@@ -175,6 +179,13 @@ const Navigation = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Accelerator
+            </Link>
+            <Link
+              href="/blockchain-masterclass"
+              className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white hover:text-cf-blue-600"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Masterclass
             </Link>
             <Link
               href="/partner"
