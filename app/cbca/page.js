@@ -221,6 +221,14 @@ export default function Cbca() {
       <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
+            <Image
+              className="mb-4 block h-24 w-24 lg:hidden"
+              src="/certified_cbca.svg"
+              alt="Certified CBCA"
+              priority={true}
+              width={96}
+              height={96}
+            />
             <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
               CBCA Certification
             </h2>

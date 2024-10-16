@@ -141,7 +141,7 @@ export default function blockchainFundamentals() {
       {/* Coming soon section */}
       <section className="relative flex items-center justify-center bg-cf-yellow-600 py-4 md:py-8">
         <span className="text-md text-center font-bold md:hidden">
-        COMING SOON
+          COMING SOON
         </span>
         <span className="text-md hidden text-center font-bold md:block md:text-4xl">
           COMING SOON • COMING SOON • COMING SOON
@@ -201,6 +201,14 @@ export default function blockchainFundamentals() {
       <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
+            <Image
+              className="mb-4 block h-24 w-24 lg:hidden"
+              src="/business_learn_fundamentals.svg"
+              alt="Business Learn Fundamentals"
+              priority={true}
+              width={96}
+              height={96}
+            />
             <h2 className="mb-6 text-center text-5xl font-bold text-white lg:text-left">
               Learn and share badges
             </h2>

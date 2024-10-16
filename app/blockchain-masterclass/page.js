@@ -176,29 +176,37 @@ export default function Masterclass() {
 
       {/* Badges Section */}
       <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
-          <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
-            <h2 className="mb-6 text-center text-4xl font-bold text-white lg:text-left">
-              Are you ready to revolutionize your business with blockchain
-              technology?
-            </h2>
-            <Link target="_blank" href="/partner">
-              <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
-                Partner with us
-              </Button>
-            </Link>
-          </div>
-          <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
-            <Image
-              className="hidden lg:block"
-              src="/masterclass-partner.svg"
-              alt="Masterclass Partner"
-              priority={true}
-              width={350}
-              height={350}
-            />
-          </div>
-        </div>
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
+  <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
+    <Image
+      className="block w-24 h-24 mb-4 lg:hidden"
+      src="/masterclass-partner.svg"
+      alt="Masterclass Partner"
+      priority={true}
+      width={96}
+      height={96}
+    />
+    <h2 className="mb-6 text-center text-4xl font-bold text-white lg:text-left">
+      Are you ready to revolutionize your business with blockchain
+      technology?
+    </h2>
+    <Link target="_blank" href="/partner">
+      <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
+        Partner with us
+      </Button>
+    </Link>
+  </div>
+  <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
+    <Image
+      className="hidden lg:block"
+      src="/masterclass-partner.svg"
+      alt="Masterclass Partner"
+      priority={true}
+      width={350}
+      height={350}
+    />
+  </div>
+</div>
 
         {/* Background gradient shapes  */}
         <div
