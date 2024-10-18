@@ -19,13 +19,20 @@ function formFieldsToHSJSON(form) {
   let fieldArray = []
 
   for (const property of Object.keys(form)) {
-    fieldArray.push({
-      "name": property,
-      "value": form[property]
-    })
+    if (property === 'documentation_files') {
+      fieldArray.push({
+        "name": property,
+        "value": form[property].name
+      })
+    } else {
+      fieldArray.push({
+        "name": property,
+        "value": form[property]
+      })
+    }
   }
 
-  return {fields: fieldArray}
+  return { fields: fieldArray }
 }
 
 export async function POST(request) {
@@ -33,7 +40,12 @@ export async function POST(request) {
   const portalId = searchParams.get('portalId')
   const formGuid = searchParams.get('formGuid')
 
-  const form = await request.json()
+  const formData = await request.formData()
+  const form = {}
+
+  formData.forEach((value, key) => {
+    form[key] = value
+  })
 
   const formSubmission = await postForm(form, portalId, formGuid)
 

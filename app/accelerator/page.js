@@ -112,7 +112,7 @@ export default function Accelerator() {
             <p className="mt-8 text-center text-xl text-cf-offwhite sm:mt-12 sm:text-2xl">
               Supercharge your Cardano blockchain enterprise venture
             </p>
-            <Link href="/partner">
+            <Link href="/accelerator-form">
               <Button className="mt-14 w-60 bg-black py-5 text-3xl text-cf-offwhite sm:text-[1.75rem] xl:w-80">
                 Apply Now
               </Button>
@@ -197,7 +197,7 @@ export default function Accelerator() {
               Access the business and technical expertise you need to accelerate
               your business
             </h2>
-            <a href="/Academy-Overview.pdf" target="_blank">
+            <a href="/accelerator-form" target="_blank">
               <Button className="mt-8 bg-cf-offwhite px-8 py-5 text-3xl sm:text-[1.75rem]">
                 Apply now
               </Button>
