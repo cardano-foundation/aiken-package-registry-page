@@ -5,6 +5,7 @@ import LevelCard from '@/components/LevelCard'
 import StatCard from '@/components/StatCard'
 import FundamentalStatCard from '@/components/FundamentalStatCard'
 import FeatureCard from '@/components/FeatureCard'
+import { SignUpHubspot } from '@/lib/hubspot-integration/SignUpHubspot.component'
 
 export const metadata = {
   title: 'Blockchain Course',
@@ -371,6 +372,9 @@ export default function Home() {
             <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
               Validate your skills and accelerate your career progression.
             </p>
+            <div className="rounded-3xl bg-cf-offwhite p-4 sm:p-6">
+            <SignUpHubspot />
+             </div>
             <Link
               target="_blank"
               href="https://home.pearsonvue.com/cardanofoundation"
