@@ -1,11 +1,14 @@
 import React from 'react'
 
 const Input = React.forwardRef(
-    ({ disabled = false, className, ...props }, ref) => (
+    ({ disabled = false, className, description, ...props }, ref) => (
       <div className="flex flex-col">
         <label htmlFor={props.name} className="text-cf-blue-600 font-semibold text-xl mb-3">
           {props.label}
         </label>
+        {description && (
+        <p className="text-sm font-semibold  text-cf-blue-600 mb-3">{description}</p>
+      )}
         <div className="relative rounded-[0.875rem] shadow-sm">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-6">
             {props.icon}

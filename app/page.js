@@ -5,6 +5,7 @@ import LevelCard from '@/components/LevelCard'
 import StatCard from '@/components/StatCard'
 import FundamentalStatCard from '@/components/FundamentalStatCard'
 import FeatureCard from '@/components/FeatureCard'
+import { SignUpHubspot } from '@/lib/hubspot-integration/SignUpHubspot.component'
 
 export const metadata = {
   title: 'Blockchain Course',
@@ -354,7 +355,7 @@ export default function Home() {
       </section>
 
       {/* Badges Section */}
-      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-8">
+      <section className="relative isolate flex items-center justify-center overflow-hidden bg-cf-blue-900 py-20">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between px-6 sm:px-8 lg:flex-row lg:px-12">
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
             <Image
@@ -371,14 +372,9 @@ export default function Home() {
             <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
               Validate your skills and accelerate your career progression.
             </p>
-            <Link
-              target="_blank"
-              href="https://home.pearsonvue.com/cardanofoundation"
-            >
-              <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
-                Sign up
-              </Button>
-            </Link>
+            <div className="p-4 sm:p-6">
+              <SignUpHubspot />
+            </div>
           </div>
           <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
             <Image
@@ -386,8 +382,8 @@ export default function Home() {
               src="/business_learn_fundamentals.svg"
               alt="Business Learn Fundamentals"
               priority={true}
-              width={450}
-              height={450}
+              width={470}
+              height={470}
             />
           </div>
         </div>

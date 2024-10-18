@@ -179,7 +179,7 @@ export default function blockchainFundamentals() {
 
         <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
           <Link
-            href="https://learn.academy.cardanofoundation.org/register"
+            href="https://ucarecdn.com/986e842e-ba2c-43be-866e-5d3457f8fab5/"
             className="flex items-center sm:justify-center"
           >
             <Button className="w-62 mb-2 bg-cf-blue-600 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-4 sm:text-[1.75rem]">

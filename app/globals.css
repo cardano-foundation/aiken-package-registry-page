@@ -121,10 +121,257 @@
 .contactForm .submitted-message {
     @apply text-gray-900;
 }
+
 .contactForm .hs-form-field>.hs-error-msgs,
 .hs-error-msg.hs-main-font-element,
 .legal-consent-container .hs-error-msgs label,
 .contactForm .hs_error_rollup .hs-main-font-element {
+    color: #d64a2e !important;
+    @apply text-xs font-medium leading-5 tracking-tighter;
+}
+
+
+
+/* SignUpForm */
+.signUpForm input:not([type='checkbox']),
+.signUpForm textarea,
+.signUpForm select {
+    @apply px-5 py-3 mb-6 mt-1 block w-full border-none bg-gray-200 rounded-lg text-base text-cf-blue-900 placeholder-gray-600 ring-0 ring-transparent transition focus:border-gray-600 focus:outline-none focus:ring-black;
+}
+
+.signUpForm label {
+    @apply text-base text-cf-offwhite transition-all duration-200;
+}
+
+.signUpForm .hs-fieldtype-checkbox {
+    @apply mb-6;
+}
+
+.signUpForm .hs-field-desc {
+    @apply mt-0.5 text-[0.8125rem] text-cf-offwhite;
+}
+
+.signUpForm .hs-fieldtype-checkbox .hs-form-checkbox {
+    @apply mb-1;
+}
+
+.signUpForm .hs-fieldtype-checkbox .multi-container {
+    @apply py-2;
+}
+
+.signUpForm .hs-form-booleancheckbox label[for='newsletter_checkbox-e0bc51e9-ec22-4bbc-829a-9dad9416e38b'] {
+    @apply mb-2 flex items-center;
+}
+
+.signUpForm .hs-fieldtype-checkbox .hs-form-checkbox-display {
+    @apply flex items-center;
+}
+
+.signUpForm .hs-fieldtype-booleancheckbox .hs-form-booleancheckbox-display {
+    @apply flex items-center;
+}
+
+.signUpForm .legal-consent-container span {
+    margin-left: 0.75rem !important;
+}
+
+.signUpForm label.hs-form-booleancheckbox-display input[type='checkbox'],
+.signUpForm label.hs-form-checkbox-display input[type='checkbox'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    @apply mr-3 cursor-pointer border-none rounded-lg;
+}
+
+.signUpForm label.hs-form-booleancheckbox-display input[type='checkbox']::before,
+.signUpForm label.hs-form-checkbox-display input[type='checkbox']::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    @apply border-none rounded-lg bg-gray-200;
+}
+
+.signUpForm label.hs-form-booleancheckbox-display input[type='checkbox']:focus::l,
+.signUpForm label.hs-form-checkbox-display input[type='checkbox']:focus::before {
+    @apply border-none outline-none;
+}
+
+.signUpForm label.hs-form-booleancheckbox-display input[type='checkbox']:invalid::before,
+.signUpForm label.hs-form-checkbox-display input[type='checkbox']:invalid::before {
+    @apply border-none border-gray-100;
+}
+
+.signUpForm label.hs-form-booleancheckbox-display input[type='checkbox']:checked::before,
+.signUpForm label.hs-form-checkbox-display input[type='checkbox']:checked::before {
+    transition: background-color 0.3s ease;
+    @apply border-none bg-gray-900;
+}
+
+.signUpForm label.hs-form-booleancheckbox-display input[type='checkbox']::after,
+.signUpForm label.hs-form-checkbox-display input[type='checkbox']::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    transform: rotate(-45deg);
+    left: 6px;
+    top: 8px;
+    color: white;
+}
+
+.signUpForm label.hs-form-booleancheckbox-display input[type='checkbox']::after,
+.signUpForm label.hs-form-checkbox-display input[type='checkbox']::after {
+    content: '';
+    visibility: hidden;
+}
+
+.signUpForm label.hs-form-booleancheckbox-display input[type='checkbox']:checked::after,
+.signUpForm label.hs-form-checkbox-display input[type='checkbox']:checked::after {
+    visibility: visible;
+}
+
+.signUpForm input[type='submit'] {
+    @apply mt-12 mb-0 flex h-16 w-32 items-center justify-center whitespace-nowrap rounded-lg border-none bg-cf-offwhite px-6 py-5 text-xl font-bold text-gray-900 shadow-none transition-colors hover:bg-cf-blue-900 hover:text-cf-offwhite cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 mx-auto sm:mx-0;
+}
+
+.signUpForm .submitted-message {
+    @apply text-cf-offwhite;
+}
+
+.signUpForm .hs-form-field>.hs-error-msgs,
+.hs-error-msg.hs-main-font-element,
+.legal-consent-container .hs-error-msgs label,
+.signUpForm .hs_error_rollup .hs-main-font-element {
+    color: #d64a2e !important;
+    @apply text-xs font-medium leading-5 tracking-tighter;
+}
+
+/* AcceleratorForm */
+.acceleratorForm input:not([type='checkbox']),
+.acceleratorForm textarea,
+.acceleratorForm select {
+    @apply px-5 py-3 mb-6 mt-1 block w-full border-none bg-gray-200 rounded-lg text-base text-cf-blue-900 placeholder-gray-600 ring-0 ring-transparent transition focus:border-gray-600 focus:outline-none focus:ring-black;
+}
+
+.acceleratorForm label {
+    @apply text-base text-cf-offwhite transition-all duration-200;
+}
+
+.acceleratorForm .hs-fieldtype-checkbox {
+    @apply mb-6;
+}
+
+.acceleratorForm .hs-field-desc {
+    @apply mt-0.5 text-[0.8125rem] text-cf-offwhite;
+}
+
+.acceleratorForm .hs-fieldtype-checkbox .hs-form-checkbox {
+    @apply mb-1;
+}
+
+.acceleratorForm .hs-fieldtype-checkbox .multi-container {
+    @apply py-2;
+}
+
+.acceleratorForm .hs-form-booleancheckbox label[for='newsletter_checkbox-e0bc51e9-ec22-4bbc-829a-9dad9416e38b'] {
+    @apply mb-2 flex items-center;
+}
+
+.acceleratorForm .hs-fieldtype-checkbox .hs-form-checkbox-display {
+    @apply flex items-center;
+}
+
+.acceleratorForm .hs-fieldtype-booleancheckbox .hs-form-booleancheckbox-display {
+    @apply flex items-center;
+}
+
+.acceleratorForm .legal-consent-container span {
+    margin-left: 0.75rem !important;
+}
+
+.acceleratorForm label.hs-form-booleancheckbox-display input[type='checkbox'],
+.acceleratorForm label.hs-form-checkbox-display input[type='checkbox'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    @apply mr-3 cursor-pointer border-none rounded-lg;
+}
+
+.acceleratorForm label.hs-form-booleancheckbox-display input[type='checkbox']::before,
+.acceleratorForm label.hs-form-checkbox-display input[type='checkbox']::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    @apply border-none rounded-lg bg-gray-200;
+}
+
+.acceleratorForm label.hs-form-booleancheckbox-display input[type='checkbox']:focus::l,
+.acceleratorForm label.hs-form-checkbox-display input[type='checkbox']:focus::before {
+    @apply border-none outline-none;
+}
+
+.acceleratorForm label.hs-form-booleancheckbox-display input[type='checkbox']:invalid::before,
+.acceleratorForm label.hs-form-checkbox-display input[type='checkbox']:invalid::before {
+    @apply border-none border-gray-100;
+}
+
+.acceleratorForm label.hs-form-booleancheckbox-display input[type='checkbox']:checked::before,
+.acceleratorForm label.hs-form-checkbox-display input[type='checkbox']:checked::before {
+    transition: background-color 0.3s ease;
+    @apply border-none bg-gray-900;
+}
+
+.acceleratorForm label.hs-form-booleancheckbox-display input[type='checkbox']::after,
+.acceleratorForm label.hs-form-checkbox-display input[type='checkbox']::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    transform: rotate(-45deg);
+    left: 6px;
+    top: 8px;
+    color: white;
+}
+
+.acceleratorForm label.hs-form-booleancheckbox-display input[type='checkbox']::after,
+.acceleratorForm label.hs-form-checkbox-display input[type='checkbox']::after {
+    content: '';
+    visibility: hidden;
+}
+
+.acceleratorForm label.hs-form-booleancheckbox-display input[type='checkbox']:checked::after,
+.acceleratorForm label.hs-form-checkbox-display input[type='checkbox']:checked::after {
+    visibility: visible;
+}
+
+.acceleratorForm input[type='submit'] {
+    @apply mt-12 mb-0 flex h-16 w-32 items-center justify-center whitespace-nowrap rounded-lg border-none bg-cf-offwhite px-6 py-5 text-xl font-bold text-gray-900 shadow-none transition-colors hover:bg-cf-blue-900 hover:text-cf-offwhite cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 mx-auto sm:mx-0;
+}
+
+.acceleratorForm .submitted-message {
+    @apply text-cf-offwhite;
+}
+
+.acceleratorForm .hs-form-field>.hs-error-msgs,
+.hs-error-msg.hs-main-font-element,
+.legal-consent-container .hs-error-msgs label,
+.acceleratorForm .hs_error_rollup .hs-main-font-element {
     color: #d64a2e !important;
     @apply text-xs font-medium leading-5 tracking-tighter;
 }
