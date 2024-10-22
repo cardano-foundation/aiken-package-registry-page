@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
@@ -8,13 +8,16 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Select({ className, label, options, selected, onChange }) {
+export default function Select({ className, label, description, options, selected, onChange }) {
   return (
     <Listbox value={selected} onChange={onChange}>
       {({ open }) => (
         <>
           <div className="relative">
             <Listbox.Label className="text-cf-blue-600 font-semibold text-xl">{label}</Listbox.Label>
+            {description && (
+                <p className="text-sm font-semibold  text-cf-blue-600 mt-3">{description}</p>
+            )}
             <Listbox.Button className="relative w-full mt-3 cursor-default rounded-[0.875rem] bg-white p-6 pr-10 text-left text-cf-blue-900 shadow-sm ring-1 ring-inset ring-cf-gray-50 focus:outline-none focus:ring-2 focus:ring-cf-blue-600 text-lg sm:leading-6">
               <span className="block truncate">{selected.name}</span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -30,6 +33,16 @@ export default function Select({ className, label, options, selected, onChange }
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-[0.875rem] bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-lg">
+                {/*default please selection option*/}
+                <Listbox.Option value={{ id: 'Please Select', name: 'Please Select' }} disabled hidden className="relative cursor-default select-none py-2 pl-8 pr-4">
+                    {({ active }) => (
+                        <>
+                            <span className={classNames('block truncate', 'font-normal')}>
+                            Please select
+                            </span>
+                        </>
+                        )}
+                </Listbox.Option>
                 {options.map((option) => (
                   <Listbox.Option
                     key={option.id}

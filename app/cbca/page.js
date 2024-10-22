@@ -199,7 +199,8 @@ export default function Cbca() {
 
         <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
           <Link
-            href="https://learn.academy.cardanofoundation.org/register"
+            target="_blank"
+            href="https://ucarecdn.com/169dbd24-b9d1-4a00-a8b7-0e4302b8a82f/"
             className="flex items-center sm:justify-center"
           >
             <Button className="w-62 mb-2 bg-cf-blue-600 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-4 sm:text-[1.75rem]">
@@ -309,16 +310,16 @@ export default function Cbca() {
                 training plans
               </div>
               <div className="flex flex-col sm:flex-row sm:space-x-4">
-                <a href="/Academy-Overview.pdf" target="_blank">
+                <Link href="https://ucarecdn.com/218901af-0411-4b70-b144-8524ee669e4a/" target="_blank">
                   <Button className="mb-2 w-11/12 whitespace-nowrap bg-cf-blue-900 px-8 py-5 text-2xl text-white sm:mb-0 lg:text-[1.75rem]">
                     Download course material
                   </Button>
-                </a>
-                <a href="/Academy-Overview.pdf" target="_blank">
+                </Link>
+                <Link href="https://github.com/cardano-foundation/cardano-academy/" target="_blank">
                   <Button className="mb-2 w-11/12 whitespace-nowrap bg-cf-blue-900 px-8 py-5 text-2xl text-white sm:mb-0 lg:text-[1.75rem]">
                     Github repository
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
