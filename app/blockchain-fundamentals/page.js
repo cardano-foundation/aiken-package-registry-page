@@ -6,6 +6,7 @@ import Link from 'next/link'
 import TargetCard from '@/components/TargetCard'
 import LevelOverviewCard from '@/components/LevelOverviewCard'
 import 'react-multi-carousel/lib/styles.css'
+import {SignUpHubspot} from "@/lib/hubspot-integration/SignUpHubspot.component";
 
 export default function blockchainFundamentals() {
   // Levels cards
@@ -179,6 +180,7 @@ export default function blockchainFundamentals() {
 
         <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
           <Link
+            target="_blank"
             href="https://ucarecdn.com/986e842e-ba2c-43be-866e-5d3457f8fab5/"
             className="flex items-center sm:justify-center"
           >
@@ -213,20 +215,15 @@ export default function blockchainFundamentals() {
               Learn and share badges
             </h2>
             <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
-              Validate your skills and accelerate your career progression.
+              Sign up to receive the latest course and badge updates.
             </p>
-            <Link
-              target="_blank"
-              href="https://home.pearsonvue.com/cardanofoundation"
-            >
-              <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
-                Sign up
-              </Button>
-            </Link>
+            <div className="p-4 sm:p-6">
+              <SignUpHubspot/>
+            </div>
           </div>
           <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
             <Image
-              className="hidden lg:block"
+                className="hidden lg:block"
               src="/business_learn_fundamentals.svg"
               alt="Business Learn Fundamentals"
               priority={true}
