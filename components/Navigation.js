@@ -142,7 +142,7 @@ const Navigation = () => {
           </div>
           <div className="hidden items-center sm:flex">
             <div className="flex-shrink-0">
-              <Link href="https://learn.academy.cardanofoundation.org/register">
+              <Link target="_blank" href="https://learn.academy.cardanofoundation.org/register">
                 <Button className="bg-white text-cf-blue-600">
                   Start Learning
                 </Button>

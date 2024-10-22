@@ -163,7 +163,7 @@ export default function Home() {
                   Partner with Us
                 </Button>
               </Link>
-              <Link href="https://learn.academy.cardanofoundation.org/register">
+              <Link target="_blank" href="https://learn.academy.cardanofoundation.org/register">
                 <Button className="w-48 bg-white py-4 text-2xl text-cf-blue-600 sm:text-[1.5rem] xl:w-60">
                   Start Learning
                 </Button>
@@ -237,7 +237,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-8 flex flex-col items-center sm:mt-16 sm:flex-row sm:justify-center">
-          <Link href="https://learn.academy.cardanofoundation.org/register">
+          <Link target="_blank" href="https://learn.academy.cardanofoundation.org/register">
             <Button className="mb-2 w-72 bg-cf-blue-900 px-8 py-5 text-3xl text-white sm:mb-0 sm:mr-8 sm:text-[1.75rem]">
               Start learning
             </Button>
@@ -370,7 +370,7 @@ export default function Home() {
               Learn and share badges
             </h2>
             <p className="max-w-4xl text-center text-xl text-cf-offwhite lg:text-left">
-              Validate your skills and accelerate your career progression.
+              Sign up to receive the latest course and badge updates.
             </p>
             <div className="p-4 sm:p-6">
               <SignUpHubspot />

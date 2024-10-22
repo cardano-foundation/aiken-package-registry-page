@@ -189,7 +189,7 @@ export default function Masterclass() {
               Are you ready to revolutionize your business with blockchain
               technology?
             </h2>
-            <Link target="_blank" href="/partner">
+            <Link href="/partner">
               <Button className="mt-8 bg-white px-8 py-5 text-3xl sm:text-[1.75rem]">
                 Partner with us
               </Button>
