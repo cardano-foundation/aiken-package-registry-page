@@ -18,11 +18,11 @@ const Navigation = () => {
   const [closeTimeout, setCloseTimeout] = useState(null)
 
   const navigation = [
-    {
-      name: 'Accelerator ',
-      href: '/accelerator ',
-      current: pathname === '/accelerator ',
-    },
+    // {
+    //   name: 'Accelerator ',
+    //   href: '/accelerator ',
+    //   current: pathname === '/accelerator ',
+    // },
     {
       name: 'Masterclass',
       href: '/blockchain-masterclass ',
