@@ -179,7 +179,7 @@ export default function Masterclass() {
           <div className="flex flex-col items-center lg:w-1/2 lg:items-start">
             <Image
               className="mb-4 block h-24 w-24 lg:hidden"
-              src="/masterclass-partner.svg"
+              src="/masterclass-partner.png"
               alt="Masterclass Partner"
               priority={true}
               width={96}
@@ -198,7 +198,7 @@ export default function Masterclass() {
           <div className="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
             <Image
               className="hidden lg:block"
-              src="/masterclass-partner.svg"
+              src="/masterclass-partner.png"
               alt="Masterclass Partner"
               priority={true}
               width={350}
