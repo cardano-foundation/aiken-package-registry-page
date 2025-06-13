@@ -31,55 +31,82 @@ export async function fetchPackageData(owner, name) {
     }),
   }
 
-  // Fetch repository data
-  const repoRes = await fetch(`https://api.github.com/repos/${owner}/${name}`, {
-    headers,
-  })
-  if (!repoRes.ok) {
-    throw new Error(`Failed to fetch repository: ${repoRes.statusText}`)
-  }
-  const repoData = await repoRes.json()
-  console.log('Repository data:', repoData)
-
-  // Fetch README content
-  const readmeRes = await fetch(
-    `https://api.github.com/repos/${owner}/${name}/readme`,
-    { headers },
-  )
-  if (!readmeRes.ok) {
-    throw new Error(`Failed to fetch README: ${readmeRes.statusText}`)
-  }
-  const readmeData = await readmeRes.json()
-  console.log('README data received')
-  const readmeContent = Buffer.from(readmeData.content, 'base64').toString()
-
-  // Fetch contributors
-  const contributorsRes = await fetch(
-    `https://api.github.com/repos/${owner}/${name}/contributors`,
-    { headers },
-  )
-  if (!contributorsRes.ok) {
-    throw new Error(
-      `Failed to fetch contributors: ${contributorsRes.statusText}`,
+  try {
+    // Fetch repository data
+    const repoRes = await fetch(
+      `https://api.github.com/repos/${owner}/${name}`,
+      {
+        headers,
+      },
     )
-  }
-  const contributors = await contributorsRes.json()
+    if (!repoRes.ok) {
+      if (repoRes.status === 404) {
+        throw new Error(`Repository ${owner}/${name} not found`)
+      }
+      throw new Error(`Failed to fetch repository: ${repoRes.statusText}`)
+    }
+    const repoData = await repoRes.json()
+    console.log('Repository data:', repoData)
 
-  // Fetch releases
-  const releasesRes = await fetch(
-    `https://api.github.com/repos/${owner}/${name}/releases`,
-    { headers },
-  )
-  if (!releasesRes.ok) {
-    throw new Error(`Failed to fetch releases: ${releasesRes.statusText}`)
-  }
-  const releases = await releasesRes.json()
+    // Fetch README content
+    const readmeRes = await fetch(
+      `https://api.github.com/repos/${owner}/${name}/readme`,
+      { headers },
+    )
+    if (!readmeRes.ok) {
+      // If README is not found, use an empty string
+      if (readmeRes.status === 404) {
+        console.log('README not found, using empty string')
+        return {
+          repo: repoData,
+          readme: '',
+          contributors: [],
+          releases: [],
+        }
+      }
+      throw new Error(`Failed to fetch README: ${readmeRes.statusText}`)
+    }
+    const readmeData = await readmeRes.json()
+    console.log('README data received')
+    const readmeContent = Buffer.from(readmeData.content, 'base64').toString()
 
-  return {
-    repo: repoData,
-    readme: readmeContent,
-    contributors,
-    releases,
+    // Fetch contributors
+    const contributorsRes = await fetch(
+      `https://api.github.com/repos/${owner}/${name}/contributors`,
+      { headers },
+    )
+    const contributors = contributorsRes.ok ? await contributorsRes.json() : []
+
+    // Fetch releases
+    const releasesRes = await fetch(
+      `https://api.github.com/repos/${owner}/${name}/releases`,
+      { headers },
+    )
+    const releases = releasesRes.ok ? await releasesRes.json() : []
+
+    return {
+      repo: repoData,
+      readme: readmeContent,
+      contributors,
+      releases,
+    }
+  } catch (error) {
+    console.error('Error fetching package data:', error)
+    // Return a minimal response for not found repositories
+    if (error.message.includes('not found')) {
+      return {
+        repo: {
+          name,
+          owner: { login: owner },
+          description: 'Repository not found',
+          html_url: `https://github.com/${owner}/${name}`,
+        },
+        readme: 'Repository not found or is private.',
+        contributors: [],
+        releases: [],
+      }
+    }
+    throw error
   }
 }
 
