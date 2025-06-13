@@ -1,32 +1,31 @@
 import './globals.css'
-import { Chivo } from 'next/font/google'
-import { Toaster } from "react-hot-toast";
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import { Inter } from 'next/font/google'
+import { Toaster } from 'react-hot-toast'
+import Navigation from './components/Navigation'
+import Footer from './components/Footer'
 import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
 
-const chivo = Chivo({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 
 export const metadata = {
-  title: 'Blockchain Course',
-  description: 'In-depth training course to get you from beginner to advanced blockchain knowledge. Free access to high-quality, up-to-date, and self-paced learning material. Register Today! Cardano Academy, powered by the Cardano Foundation',
-  openGraph: {
-    title: 'Blockchain Course',
-    description: 'In-depth training course to get you from beginner to advanced blockchain knowledge. Free access to high-quality, up-to-date, and self-paced learning material. Register Today! Cardano Academy, powered by the Cardano Foundation',
-  },
+  title: 'Aiken Package Registry',
+  description:
+    'Discover and explore Aiken packages for your Cardano smart contracts',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="antialiased">
-      <body className={chivo.className}>
+    <html lang="en" className={inter.variable}>
+      <body className="bg-window-bg text-text min-h-screen">
         <Navigation />
-        <Toaster position="bottom-center " />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
-      <GoogleTagManager gtmId="GTM-PQN3C6FS" />
     </html>
   )
 }
