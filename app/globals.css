@@ -2,9 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --window-bg: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: rgba(26, 26, 26, 0.9);
+    --link: #2563eb;
+    --link-bg: rgba(37, 99, 235, 0.15);
+    --code-bg: #f1f5f9;
+    --code-text: #1e293b;
+  }
+
+  .dark {
+    --window-bg: #1E2127;
+    --text: #f2f2f2;
+    --text-muted: rgba(242, 242, 242, 0.9);
+    --link: #f0a5e7;
+    --link-bg: rgba(240, 165, 231, 0.3);
+    --code-bg: #2d3748;
+    --code-text: #e2e8f0;
+  }
+}
+
 @layer components {
     .safari-fix {
         transform: translate3d(0, 0, 0);
+    }
+
+    .prose {
+        @apply text-text;
+    }
+
+    .prose p {
+        @apply text-text-muted;
+    }
+
+    .prose li {
+        @apply text-text-muted;
+    }
+
+    .prose code {
+        @apply bg-code-bg text-code-text px-1.5 py-0.5 rounded text-sm;
+    }
+
+    .prose pre {
+        @apply bg-code-bg text-code-text;
+    }
+
+    .prose pre code {
+        @apply bg-transparent p-0 text-code-text;
+    }
+
+    .prose a {
+        @apply text-link no-underline hover:underline;
+    }
+
+    .prose strong {
+        @apply text-text font-semibold;
+    }
+
+    .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+        @apply text-text font-bold;
+    }
+
+    .tag {
+        @apply rounded-full px-3 py-1 font-medium;
+        background-color: var(--link-bg);
+        color: var(--text);
     }
 }
 

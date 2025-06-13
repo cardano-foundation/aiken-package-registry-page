@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -125,12 +126,15 @@ module.exports = {
           800: '#1F2937',
           900: '#111827',
         },
-        'window-bg': '#1E2127',
+        'window-bg': 'var(--window-bg)',
         hr: '#292929',
         border: '#604185',
-        link: '#f0a5e7',
-        text: '#f2f2f2',
+        link: 'var(--link)',
+        text: 'var(--text)',
         'border-text': '#f2f2f2',
+        'text-muted': 'var(--text-muted)',
+        'code-bg': 'var(--code-bg)',
+        'code-text': 'var(--code-text)',
       },
       typography: {
         DEFAULT: {

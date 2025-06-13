@@ -111,11 +111,6 @@ function PackageCard({ pkg }) {
           <span className="rounded-full bg-link/10 px-3 py-1 font-medium text-link">
             {pkg.category}
           </span>
-          {isCollection && (
-            <span className="rounded-full bg-window-bg/50 px-3 py-1 font-medium text-text/60">
-              Collection
-            </span>
-          )}
         </div>
       </div>
       <div className="text-text/50 transition-colors group-hover:text-link">
