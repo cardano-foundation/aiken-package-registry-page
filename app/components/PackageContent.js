@@ -4,6 +4,16 @@ import { marked } from 'marked'
 import DOMPurify from 'dompurify'
 import { useEffect, useState } from 'react'
 
+// Helper function to format dates consistently
+function formatDate(dateString) {
+  const date = new Date(dateString)
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  })
+}
+
 export function PackageContent({ data }) {
   const { repo, readme, contributors, releases } = data
   const [sanitizedContent, setSanitizedContent] = useState('')
@@ -103,7 +113,7 @@ export function PackageContent({ data }) {
                   >
                     <div className="font-medium">{release.tag_name}</div>
                     <div className="text-sm text-text/60">
-                      {new Date(release.published_at).toLocaleDateString()}
+                      {formatDate(release.published_at)}
                     </div>
                   </a>
                 ))}
@@ -119,24 +129,26 @@ export function PackageContent({ data }) {
             <dl className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <dt className="text-text/60">Language</dt>
-                <dd className="font-medium text-text">{repo.language}</dd>
+                <dd className="font-medium text-text">
+                  {repo?.language || 'N/A'}
+                </dd>
               </div>
               <div className="flex justify-between">
                 <dt className="text-text/60">License</dt>
                 <dd className="font-medium text-text">
-                  {repo.license?.name || 'N/A'}
+                  {repo?.license?.name || 'N/A'}
                 </dd>
               </div>
               <div className="flex justify-between">
                 <dt className="text-text/60">Created</dt>
                 <dd className="font-medium text-text">
-                  {new Date(repo.created_at).toLocaleDateString()}
+                  {repo?.created_at ? formatDate(repo.created_at) : 'N/A'}
                 </dd>
               </div>
               <div className="flex justify-between">
                 <dt className="text-text/60">Last updated</dt>
                 <dd className="font-medium text-text">
-                  {new Date(repo.updated_at).toLocaleDateString()}
+                  {repo?.updated_at ? formatDate(repo.updated_at) : 'N/A'}
                 </dd>
               </div>
             </dl>
@@ -146,7 +158,7 @@ export function PackageContent({ data }) {
           <div className="rounded-lg border border-border bg-window-bg p-6">
             <h2 className="mb-4 text-lg font-semibold text-text">Watching</h2>
             <a
-              href={`${repo.html_url}/watchers`}
+              href={`${repo?.html_url}/watchers`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-text transition-colors hover:text-link"
@@ -159,7 +171,7 @@ export function PackageContent({ data }) {
               >
                 <path d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.62-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 5a2 2 0 100 4 2 2 0 000-4z" />
               </svg>
-              <span>{repo.watchers_count.toLocaleString()} watching</span>
+              <span>{repo?.subscribers_count.toLocaleString()} watching</span>
             </a>
           </div>
         </div>
