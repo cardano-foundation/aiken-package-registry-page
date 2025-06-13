@@ -1,3 +1,5 @@
+'use server'
+
 const GITHUB_RAW_URL =
   'https://raw.githubusercontent.com/aiken-lang/awesome-aiken/main/README.md'
 
@@ -9,6 +11,7 @@ export async function fetchAwesomeAikenPackages() {
       throw new Error('Failed to fetch README content')
     }
     const markdown = await response.text()
+    console.log('GitHub: README fetched, length:', markdown.length)
     const packages = parseMarkdownPackages(markdown)
     console.log('GitHub: Parsed packages:', packages)
     return packages

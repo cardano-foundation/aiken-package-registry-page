@@ -1,8 +1,19 @@
+'use client'
+
 import { marked } from 'marked'
 import DOMPurify from 'dompurify'
+import { useEffect, useState } from 'react'
 
 export function PackageContent({ data }) {
   const { repo, readme, contributors, releases } = data
+  const [sanitizedContent, setSanitizedContent] = useState('')
+
+  useEffect(() => {
+    // Sanitize the content on the client side
+    const html = marked(readme)
+    const clean = DOMPurify.sanitize(html)
+    setSanitizedContent(clean)
+  }, [readme])
 
   return (
     <div className="container mx-auto max-w-6xl px-4 py-12">
@@ -37,7 +48,7 @@ export function PackageContent({ data }) {
                 [&>ul>li>*:first-child]:mt-0
                 [&>ul>li]:mt-0"
               dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(marked(readme)),
+                __html: sanitizedContent,
               }}
             />
           </div>
