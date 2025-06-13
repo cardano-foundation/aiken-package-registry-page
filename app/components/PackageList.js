@@ -10,6 +10,11 @@ export default function PackageList({ initialPackages }) {
     ? searchPackages(initialPackages, searchQuery)
     : initialPackages
 
+  const isRepositoryUrl = (url) => {
+    // Check if URL has more than 4 segments (e.g., github.com/owner/repo)
+    return url.split('/').length > 4
+  }
+
   return (
     <main className="min-h-screen bg-window-bg">
       {/* Hero Section */}
@@ -92,7 +97,7 @@ export default function PackageList({ initialPackages }) {
 // Package Card Component
 function PackageCard({ pkg }) {
   // For collections, we want to use the URL directly from the package data
-  const isCollection = pkg.name.endsWith('/*')
+  const isCollection = pkg.name === '*' || pkg.name.endsWith('/*')
   const displayName = isCollection ? pkg.name.replace('/*', '') : pkg.name
 
   const CardContent = () => (

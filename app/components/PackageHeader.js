@@ -12,52 +12,73 @@ export function PackageHeader({ data }) {
             <p className="mb-6 text-lg text-text/80">{repo.description}</p>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-4">
-              <a
-                href={`${repo.html_url}/stargazers`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-text transition-colors hover:text-link"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+            <div className="flex items-center gap-4">
+              {/* If URL is a repository (contains /), show package stats, otherwise just link to org/user */}
+              {repo.html_url.includes('/') ? (
+                <>
+                  <a
+                    href={`${repo.html_url}/stargazers`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-text transition-colors hover:text-link"
+                  >
+                    <svg
+                      className="h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 .25a.75.75 0 01.673.418l3.058 6.197 6.839.994a.75.75 0 01.415 1.279l-4.948 4.823 1.168 6.811a.75.75 0 01-1.088.791L8 18.347l-6.116 3.215a.75.75 0 01-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 01.416-1.28l6.838-.993L7.327.668A.75.75 0 018 .25z" />
+                    </svg>
+                    <span>{repo.stargazers_count.toLocaleString()} stars</span>
+                  </a>
+                  <a
+                    href={`${repo.html_url}/watchers`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-text transition-colors hover:text-link"
+                  >
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <span>
+                      {repo.subscribers_count.toLocaleString()} watching
+                    </span>
+                  </a>
+                  <a
+                    href={`${repo.html_url}/network/members`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-text transition-colors hover:text-link"
+                  >
+                    <svg
+                      className="h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M5.559 8.855c.166 1.183.789 3.207 3.087 4.079C11 13.829 11 14.534 11 15v.163c-1.44.434-2.5 1.757-2.5 3.337 0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5c0-1.58-1.06-2.903-2.5-3.337V15c0-.466 0-1.171 2.354-2.065 2.298-.872 2.921-2.896 3.087-4.079C19.912 8.441 21 7.102 21 5.5 21 3.57 19.43 2 17.5 2S14 3.57 14 5.5c0 1.552 1.022 2.855 2.424 3.313-.215.978-.872 2.586-3.062 3.373C10.356 11.515 10 10.846 10 10c0-1.102.898-2 2-2s2 .898 2 2c0 .846-.356 1.515-1.362 2.186-2.19-.787-2.847-2.395-3.062-3.373C9.978 8.355 11 7.052 11 5.5 11 3.57 9.43 2 7.5 2S4 3.57 4 5.5c0 1.602 1.088 2.941 2.559 3.355zM17.5 4c.827 0 1.5.673 1.5 1.5S18.327 7 17.5 7 16 6.327 16 5.5 16.673 4 17.5 4zm-10 0C8.327 4 9 4.673 9 5.5S8.327 7 7.5 7 6 6.327 6 5.5 6.673 4 7.5 4zm5.5 6.5c0-.275.225-.5.5-.5s.5.225.5.5-.225.5-.5.5-.5-.225-.5-.5zM12 19c0 .827-.673 1.5-1.5 1.5S9 19.827 9 19s.673-1.5 1.5-1.5 1.5.673 1.5 1.5z" />
+                    </svg>
+                    <span>{repo.forks_count.toLocaleString()} forks</span>
+                  </a>
+                </>
+              ) : (
+                <a
+                  href={repo.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text transition-colors hover:text-link"
                 >
-                  <path d="M12 .25a.75.75 0 01.673.418l3.058 6.197 6.839.994a.75.75 0 01.415 1.279l-4.948 4.823 1.168 6.811a.75.75 0 01-1.088.791L12 18.347l-6.117 3.216a.75.75 0 01-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 01.416-1.28l6.838-.993L11.327.668A.75.75 0 0112 .25z" />
-                </svg>
-                <span>{repo.stargazers_count.toLocaleString()} stars</span>
-              </a>
-              <a
-                href={`${repo.html_url}/network/members`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-text transition-colors hover:text-link"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 21a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zm-3.25-1.75a3.25 3.25 0 106.5 0 3.25 3.25 0 00-6.5 0zm-3-12.75a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM2.5 4.75a3.25 3.25 0 106.5 0 3.25 3.25 0 00-6.5 0zM18.25 6.5a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM15 4.75a3.25 3.25 0 106.5 0 3.25 3.25 0 00-6.5 0z" />
-                </svg>
-                <span>{repo.forks_count.toLocaleString()} forks</span>
-              </a>
-              <a
-                href={`${repo.html_url}/watchers`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-text transition-colors hover:text-link"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.62-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 5a2 2 0 100 4 2 2 0 000-4z" />
-                </svg>
-                <span>{repo.subscribers_count.toLocaleString()} watching</span>
-              </a>
+                  View on GitHub
+                </a>
+              )}
             </div>
           </div>
           <a
