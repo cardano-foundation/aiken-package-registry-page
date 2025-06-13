@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <footer className="bg-window-bg border-border border-t">
+    <footer className="border-t border-border bg-window-bg">
       <div className="container mx-auto max-w-6xl px-4 py-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           {/* Logo section */}
@@ -22,12 +22,12 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-text mb-4 font-medium">Quick Links</h3>
+            <h3 className="mb-4 font-medium text-text">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
-                  className="text-text hover:text-link transition-colors"
+                  className="text-text transition-colors hover:text-link"
                 >
                   Prelude
                 </Link>
@@ -35,7 +35,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-text hover:text-link transition-colors"
+                  className="text-text transition-colors hover:text-link"
                 >
                   Standard library
                 </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-text hover:text-link transition-colors"
+                  className="text-text transition-colors hover:text-link"
                 >
                   Playground
                 </Link>
@@ -53,24 +53,24 @@ const Footer = () => {
 
           {/* Community */}
           <div>
-            <h3 className="text-text mb-4 font-medium">Community</h3>
+            <h3 className="mb-4 font-medium text-text">Community</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="https://discord.com/invite/ub6atE94v4"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text hover:text-link transition-colors"
+                  className="text-text transition-colors hover:text-link"
                 >
                   Discord
                 </Link>
               </li>
               <li>
                 <Link
-                  href="https://twitter.com/aiken_lang"
+                  href="https://twitter.com/aiken_eng"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text hover:text-link transition-colors"
+                  className="text-text transition-colors hover:text-link"
                 >
                   Twitter
                 </Link>
@@ -80,7 +80,7 @@ const Footer = () => {
                   href="https://github.com/aiken-lang/awesome-aiken"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text hover:text-link transition-colors"
+                  className="text-text transition-colors hover:text-link"
                 >
                   Awesome list
                 </Link>
@@ -90,14 +90,14 @@ const Footer = () => {
 
           {/* Partners */}
           <div>
-            <h3 className="text-text mb-4 font-medium">Partners</h3>
+            <h3 className="mb-4 font-medium text-text">Partners</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="https://pragmatic.software"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text hover:text-link transition-colors"
+                  className="text-text transition-colors hover:text-link"
                 >
                   PRAGMA
                 </Link>
@@ -107,7 +107,7 @@ const Footer = () => {
                   href="https://cardanofoundation.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text hover:text-link transition-colors"
+                  className="text-text transition-colors hover:text-link"
                 >
                   Cardano Foundation
                 </Link>
@@ -117,7 +117,7 @@ const Footer = () => {
                   href="https://txpipe.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text hover:text-link transition-colors"
+                  className="text-text transition-colors hover:text-link"
                 >
                   TxPipe
                 </Link>
