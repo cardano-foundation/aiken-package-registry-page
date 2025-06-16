@@ -63,7 +63,6 @@ export async function fetchPackageData(owner, name) {
       throw new Error(`Failed to fetch README: ${readmeRes.statusText}`)
     }
     const readmeData = await readmeRes.json()
-    console.log('README data received')
     const readmeContent = Buffer.from(readmeData.content, 'base64').toString()
 
     // Fetch contributors
