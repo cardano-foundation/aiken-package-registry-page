@@ -18,14 +18,14 @@
     "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10",
+    "braces": "^3.0.3",
     "eslint": "^8",
-    "eslint-config-next": "13.5.4",
+    "eslint-config-next": "^14.1.0",
     "postcss": "^8",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.5",
-    "tailwindcss": "^3"
+    "tailwindcss": "^3.4.1"
   }
 }
