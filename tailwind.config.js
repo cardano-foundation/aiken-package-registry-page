@@ -26,25 +26,17 @@ module.exports = {
       colors: {
         // Aiken's primary colors
         aiken: {
-          // Dark blue background
           dark: '#0F172A',
-          // Accent blue
           blue: '#3B82F6',
-          // Light blue for hover states
           'blue-light': '#60A5FA',
-          // Darker blue for text
           'blue-dark': '#1E40AF',
-          // Background colors
           'bg-light': '#F8FAFC',
           'bg-dark': '#0F172A',
-          // Text colors
           'text-light': '#F8FAFC',
           'text-dark': '#1E293B',
           'text-muted': '#64748B',
-          // Border colors
           'border-light': '#E2E8F0',
           'border-dark': '#334155',
-          // Card colors
           'card-bg': '#FFFFFF',
           'card-hover': '#F1F5F9',
         },
