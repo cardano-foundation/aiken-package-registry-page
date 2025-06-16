@@ -1,0 +1,32 @@
+{
+  "name": "aiken-packages",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/third-parties": "^14.1.0",
+    "dompurify": "^3.2.6",
+    "marked": "^15.0.12",
+    "next": "^14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10",
+    "braces": "^3.0.3",
+    "eslint": "^8",
+    "eslint-config-next": "^14.1.0",
+    "postcss": "^8",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.5",
+    "tailwindcss": "^3.4.1"
+  }
+}
