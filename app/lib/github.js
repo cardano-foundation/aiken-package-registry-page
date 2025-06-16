@@ -4,16 +4,13 @@ const GITHUB_RAW_URL =
   'https://raw.githubusercontent.com/aiken-lang/awesome-aiken/main/README.md'
 
 export async function fetchAwesomeAikenPackages() {
-  console.log('GitHub: Fetching README from:', GITHUB_RAW_URL)
   try {
     const response = await fetch(GITHUB_RAW_URL)
     if (!response.ok) {
       throw new Error('Failed to fetch README content')
     }
     const markdown = await response.text()
-    console.log('GitHub: README fetched, length:', markdown.length)
     const packages = parseMarkdownPackages(markdown)
-    console.log('GitHub: Parsed packages:', packages)
     return packages
   } catch (error) {
     console.error('GitHub: Error fetching packages:', error)
@@ -46,7 +43,6 @@ export async function fetchPackageData(owner, name) {
       throw new Error(`Failed to fetch repository: ${repoRes.statusText}`)
     }
     const repoData = await repoRes.json()
-    console.log('Repository data:', repoData)
 
     // Fetch README content
     const readmeRes = await fetch(
@@ -111,13 +107,11 @@ export async function fetchPackageData(owner, name) {
 }
 
 function parseMarkdownPackages(markdown) {
-  console.log('GitHub: Starting to parse markdown...')
   const packages = []
   let currentCategory = ''
 
   // Split the markdown into lines and process each line
   const lines = markdown.split('\n')
-  console.log('GitHub: Found', lines.length, 'lines in markdown')
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim()
@@ -125,7 +119,6 @@ function parseMarkdownPackages(markdown) {
     // Check for category headers (#### Category Name)
     if (line.startsWith('#### ')) {
       currentCategory = line.replace('#### ', '').trim()
-      console.log('GitHub: Found category:', currentCategory)
       continue
     }
 
@@ -135,12 +128,6 @@ function parseMarkdownPackages(markdown) {
       if (match) {
         const [_, fullName, url, description] = match
         const [owner, name] = fullName.split('/')
-        console.log('GitHub: Found package:', {
-          owner,
-          name,
-          url,
-          description: description.trim(),
-        })
 
         // Only add if we have a category and valid package info
         if (currentCategory && owner && name) {

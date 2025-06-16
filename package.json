@@ -6,26 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "cypress": "cypress open"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18",
     "@next/third-parties": "^14.1.0",
     "dompurify": "^3.2.6",
     "marked": "^15.0.12",
     "next": "^14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-hot-toast": "^2.4.1",
-    "react-multi-carousel": "^2.8.4"
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10",
-    "cypress": "^13",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
     "postcss": "^8",
