@@ -10,11 +10,6 @@ export default function PackageList({ initialPackages }) {
     ? searchPackages(initialPackages, searchQuery)
     : initialPackages
 
-  const isRepositoryUrl = (url) => {
-    // Check if URL has more than 4 segments (e.g., github.com/owner/repo)
-    return url.split('/').length > 4
-  }
-
   return (
     <main className="min-h-screen bg-window-bg">
       {/* Hero Section */}
