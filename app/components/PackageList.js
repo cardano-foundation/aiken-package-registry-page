@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { searchPackages } from '../lib/packages'
 import Link from 'next/link'
+import { searchPackages } from '../lib/packages'
 
 export default function PackageList({ initialPackages }) {
   const [searchQuery, setSearchQuery] = useState('')
@@ -18,17 +18,17 @@ export default function PackageList({ initialPackages }) {
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-text md:text-6xl">
             Aiken Package Registry
           </h1>
-          <p className="mb-12 text-xl text-text opacity-80 md:text-2xl">
+          <p className="mb-12 text-xl text-text/80 md:text-2xl">
             Discover and explore Aiken packages for your Cardano smart contracts
           </p>
 
-          {/* Search Bar */}
-          <div className="max-w-2xl">
-            <div className="relative">
+          {/* Search Bar with shadow */}
+          <div className="relative max-w-2xl">
+            <div className="relative rounded-lg bg-window-bg/50 shadow-lg ring-1 ring-border/20 backdrop-blur-sm">
               <input
                 type="text"
                 placeholder="Search packages by name, category, or description..."
-                className="w-full rounded-lg border border-border bg-window-bg px-4 py-3 text-text placeholder-text/50 focus:border-link focus:outline-none focus:ring-2 focus:ring-link/20"
+                className="w-full rounded-lg border border-border bg-transparent px-4 py-3 text-text placeholder-text/50 focus:border-link focus:outline-none focus:ring-2 focus:ring-link/20"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -53,13 +53,25 @@ export default function PackageList({ initialPackages }) {
         </div>
       </div>
 
+      {/* Divider with label */}
+      <div className="relative -mt-8 mb-12">
+        <div className="absolute inset-0 flex items-center" aria-hidden="true">
+          <div className="w-full border-t border-border/30" />
+        </div>
+        <div className="relative flex justify-center">
+          <span className="bg-window-bg px-4 text-sm font-medium text-text/60">
+            {searchQuery ? 'Search Results' : 'Available Packages'}
+          </span>
+        </div>
+      </div>
+
       {/* Packages List */}
-      <div className="container mx-auto max-w-6xl px-4 py-16">
+      <div className="container mx-auto max-w-6xl px-4 pb-16">
         {searchQuery ? (
           // Search Results
           <div>
-            <h2 className="mb-8 text-3xl font-bold text-text">
-              Search Results for "{searchQuery}"
+            <h2 className="mb-8 text-2xl font-semibold text-text">
+              Results for "{searchQuery}"
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
               {filteredPackages.map((pkg) => (
@@ -72,7 +84,7 @@ export default function PackageList({ initialPackages }) {
           <div className="space-y-16">
             {initialPackages.map((category) => (
               <div key={category.category}>
-                <h2 className="mb-8 text-3xl font-bold text-text">
+                <h2 className="mb-8 text-2xl font-semibold text-text">
                   {category.category}
                 </h2>
                 <div className="grid gap-6 md:grid-cols-2">
@@ -91,17 +103,16 @@ export default function PackageList({ initialPackages }) {
 
 // Package Card Component
 function PackageCard({ pkg }) {
-  // For collections, we want to use the URL directly from the package data
   const isCollection = pkg.name === '*' || pkg.name.endsWith('/*')
   const displayName = isCollection ? pkg.name.replace('/*', '') : pkg.name
 
   const CardContent = () => (
     <div className="flex items-start justify-between">
       <div>
-        <h3 className="mb-2 font-mono text-xl font-medium text-text group-hover:text-link">
+        <h3 className="mb-2 font-mono text-lg font-medium text-text group-hover:text-link">
           {pkg.owner}/{displayName}
         </h3>
-        <p className="mb-4 text-text/80">{pkg.description}</p>
+        <p className="mb-4 line-clamp-2 text-text/80">{pkg.description}</p>
         <div className="flex items-center gap-2 text-sm">
           <span className="rounded-full bg-link/10 px-3 py-1 font-medium text-link">
             {pkg.category}
@@ -131,25 +142,23 @@ function PackageCard({ pkg }) {
     </div>
   )
 
-  // For collections, use the URL from the package data
   if (isCollection) {
     return (
       <a
         href={pkg.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block rounded-xl border border-border bg-window-bg p-6 transition-all hover:bg-link/5"
+        className="group block rounded-xl border border-border bg-window-bg/50 p-6 transition-all hover:border-link hover:bg-link/5 hover:shadow-md"
       >
         <CardContent />
       </a>
     )
   }
 
-  // For regular packages, use the internal route
   return (
     <Link
       href={`/packages/${pkg.owner}/${pkg.name}`}
-      className="group block rounded-xl border border-border bg-window-bg p-6 transition-all hover:bg-link/5"
+      className="group block rounded-xl border border-border bg-window-bg/50 p-6 transition-all hover:border-link hover:bg-link/5 hover:shadow-md"
     >
       <CardContent />
     </Link>
