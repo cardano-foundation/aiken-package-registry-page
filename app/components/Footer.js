@@ -94,7 +94,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="https://pragmatic.software"
+                  href="https://pragma.builders"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-text transition-colors hover:text-link"
