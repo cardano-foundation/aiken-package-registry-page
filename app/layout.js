@@ -8,7 +8,34 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import { ThemeProvider } from './components/ThemeProvider'
 import { ThemeToggle } from './components/ThemeToggle'
 import { fetchAwesomeAikenPackages } from './lib/github'
-import { metadata } from './metadata'
+
+export const metadata = {
+  title: 'Aiken Package Registry',
+  description:
+    'Discover and explore Aiken packages for your Cardano smart contracts',
+  openGraph: {
+    title: 'Aiken Package Registry',
+    description:
+      'Discover and explore Aiken packages for your Cardano smart contracts',
+    type: 'website',
+    url: 'https://packages.aiken-lang.org',
+    images: [
+      {
+        url: '/social_card.png',
+        width: 1200,
+        height: 630,
+        alt: 'Aiken Package Registry',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Aiken Package Registry',
+    description:
+      'Discover and explore Aiken packages for your Cardano smart contracts',
+    images: ['/social_card.png'],
+  },
+}
 
 const inter = Inter({
   subsets: ['latin'],

@@ -2,8 +2,11 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useTheme } from './ThemeProvider'
 
 const Footer = () => {
+  const { theme } = useTheme()
+
   return (
     <footer className="border-t border-border bg-window-bg">
       <div className="container mx-auto max-w-6xl px-4 py-12">
@@ -11,12 +14,12 @@ const Footer = () => {
           {/* Logo section */}
           <div className="flex items-start">
             <Image
-              src="/logo-light.png"
+              src={theme === 'dark' ? '/logo-light.png' : '/logo-dark.png'}
               alt="Aiken Logo"
               width={130}
               height={130}
               quality={100}
-              className="h-12 w-auto opacity-50"
+              className="h-12 w-auto "
             />
           </div>
 

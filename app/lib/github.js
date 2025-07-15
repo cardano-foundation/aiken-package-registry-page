@@ -1,5 +1,3 @@
-'use server'
-
 const GITHUB_RAW_URL =
   'https://raw.githubusercontent.com/aiken-lang/awesome-aiken/main/README.md'
 
