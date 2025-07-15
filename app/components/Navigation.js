@@ -4,9 +4,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SearchBar } from './SearchBar'
 import { useState } from 'react'
+import { useTheme } from './ThemeProvider'
 
 export const Navigation = ({ packages }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { theme } = useTheme()
 
   return (
     <nav className="border-b border-border bg-window-bg">
@@ -16,7 +18,7 @@ export const Navigation = ({ packages }) => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo-light.png"
+                src={theme === 'dark' ? '/logo-light.png' : '/logo-dark.png'}
                 alt="Aiken Logo"
                 width={130}
                 height={130}
@@ -85,7 +87,7 @@ export const Navigation = ({ packages }) => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-text hover:bg-window-bg/80 hover:text-link md:hidden"
+              className="hover:bg-window-bg/80 inline-flex items-center justify-center rounded-md p-2 text-text hover:text-link md:hidden"
               aria-expanded={isMobileMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
@@ -133,7 +135,7 @@ export const Navigation = ({ packages }) => {
               {/* Mobile Navigation Links */}
               <Link
                 href="/"
-                className="block rounded-md px-3 py-2 text-base font-medium text-text hover:bg-window-bg/80 hover:text-link"
+                className="hover:bg-window-bg/80 block rounded-md px-3 py-2 text-base font-medium text-text hover:text-link"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Packages
@@ -142,7 +144,7 @@ export const Navigation = ({ packages }) => {
                 href="https://aiken-lang.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block rounded-md px-3 py-2 text-base font-medium text-text hover:bg-window-bg/80 hover:text-link"
+                className="hover:bg-window-bg/80 block rounded-md px-3 py-2 text-base font-medium text-text hover:text-link"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Discover Aiken

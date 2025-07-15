@@ -72,10 +72,10 @@ export function SearchBar({ packages }) {
           onKeyDown={handleKeyDown}
           onFocus={() => query.trim() && setIsOpen(true)}
           placeholder="Search packages..."
-          className="w-full rounded-lg border border-border bg-window-bg px-3 py-1.5 pr-8 text-sm text-text placeholder:text-text/40 focus:border-link focus:outline-none"
+          className="placeholder:text-text/40 w-full rounded-lg border border-border bg-window-bg px-3 py-1.5 pr-8 text-sm text-text focus:border-link focus:outline-none"
         />
         <svg
-          className="absolute right-2 top-1/2 h-4 w-4 -translate-y-1/2 text-text/40"
+          className="text-text/40 absolute right-2 top-1/2 h-4 w-4 -translate-y-1/2"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -90,42 +90,49 @@ export function SearchBar({ packages }) {
       </div>
 
       {/* Results dropdown */}
-      {isOpen && results.length > 0 && (
+      {isOpen && (
         <div className="absolute z-50 mt-1 w-full rounded-lg border border-border bg-window-bg shadow-lg">
-          <div className="max-h-96 overflow-auto py-1">
-            {results.map((pkg, index) => {
-              const isCollection = pkg.name.endsWith('*')
-              const displayName = isCollection
-                ? pkg.name.replace('/*', '')
-                : pkg.name
-              const isLast = index === results.length - 1
+          {results.length > 0 ? (
+            <div className="max-h-96 overflow-auto py-1">
+              {results.map((pkg, index) => {
+                const isCollection = pkg.name.endsWith('*')
+                const displayName = isCollection
+                  ? pkg.name.replace('/*', '')
+                  : pkg.name
+                const isLast = index === results.length - 1
 
-              const itemContent = (
-                <>
-                  <div className="font-medium text-text">
-                    {pkg.owner}/{displayName}
-                  </div>
-                  {pkg.description && (
-                    <div className="mt-0.5 line-clamp-2 text-xs text-text/60">
-                      {pkg.description}
+                const itemContent = (
+                  <>
+                    <div className="font-medium text-text">
+                      {pkg.owner}/{displayName}
                     </div>
-                  )}
-                </>
-              )
+                    {pkg.description && (
+                      <div className="text-text/60 mt-0.5 line-clamp-2 text-xs">
+                        {pkg.description}
+                      </div>
+                    )}
+                  </>
+                )
 
-              return (
-                <button
-                  key={`${pkg.owner}/${pkg.name}`}
-                  onClick={() => handleSelect(pkg)}
-                  className={`w-full px-3 py-2 text-left hover:bg-window-bg/80 ${
-                    !isLast ? 'border-b border-border/50' : ''
-                  }`}
-                >
-                  {itemContent}
-                </button>
-              )
-            })}
-          </div>
+                return (
+                  <button
+                    key={`${pkg.owner}/${pkg.name}`}
+                    onClick={() => handleSelect(pkg)}
+                    className={`hover:bg-window-bg/80 w-full px-3 py-2 text-left ${
+                      !isLast ? 'border-b border-border/50' : ''
+                    }`}
+                  >
+                    {itemContent}
+                  </button>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="text-text/60 px-3 py-4 text-center text-sm">
+              <div className="mb-1">No packages found</div>
+              <div className="text-xs">Try a different search term</div>
+            </div>
+          )}
         </div>
       )}
     </div>
