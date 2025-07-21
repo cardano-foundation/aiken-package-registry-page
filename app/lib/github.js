@@ -178,6 +178,25 @@ export async function fetchPackageData(owner, name) {
       },
     )
 
+    // Fix relative links in markdown to point to GitHub repository
+    readmeContent = readmeContent.replace(
+      /\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g,
+      (match, linkText, href) => {
+        // Skip if already absolute URL
+        if (href.startsWith('http')) return match
+
+        // Skip anchor links
+        if (href.startsWith('#')) return match
+
+        // Clean up the path (remove ./ prefix and leading slash)
+        const cleanHref = href.replace(/^(\.\/|\/)?/, '')
+
+        // Convert to GitHub blob URL (for files like CONTRIBUTING.md, LICENSE, etc.)
+        const githubUrl = `https://github.com/${owner}/${name}/blob/main/${cleanHref}`
+        return `[${linkText}](${githubUrl})`
+      },
+    )
+
     // Fetch contributors
     const contributorsRes = await fetch(
       `https://api.github.com/repos/${owner}/${name}/contributors`,
