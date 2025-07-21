@@ -1,3 +1,5 @@
+import { ReportButton } from './ReportButton'
+
 export function PackageHeader({ data }) {
   const { repo } = data
 
@@ -8,7 +10,7 @@ export function PackageHeader({ data }) {
           <div className="flex items-center gap-2">
             <span className="tag">{data.category}</span>
           </div>
-          <div className="flex items-start justify-between">
+          <div className="flex flex-col-reverse items-start justify-between gap-6 sm:flex-row sm:items-start">
             <div>
               <h1 className="mb-2 text-4xl font-bold text-text">
                 {repo.full_name}
@@ -87,28 +89,31 @@ export function PackageHeader({ data }) {
                 )}
               </div>
             </div>
-            <a
-              href={repo.html_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-text transition-colors hover:text-link"
-            >
-              <span>View on GitHub</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            <div className="flex flex-row gap-4 sm:flex-col sm:gap-2">
+              <ReportButton owner={repo.owner.login} packageName={repo.name} />
+              <a
+                href={repo.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-text transition-colors hover:text-link"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </a>
+                <span>View on GitHub</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
