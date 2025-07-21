@@ -29,7 +29,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/"
+                  href="https://aiken-lang.github.io/prelude/"
                   className="text-text transition-colors hover:text-link"
                 >
                   Prelude
@@ -37,7 +37,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="https://aiken-lang.github.io/stdlib/"
                   className="text-text transition-colors hover:text-link"
                 >
                   Standard library
@@ -45,7 +45,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="https://play.aiken-lang.org/"
                   className="text-text transition-colors hover:text-link"
                 >
                   Playground

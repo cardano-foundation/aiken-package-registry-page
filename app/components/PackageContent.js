@@ -21,7 +21,11 @@ export function PackageContent({ data }) {
   useEffect(() => {
     // Sanitize the content on the client side
     const html = marked(readme)
-    const clean = DOMPurify.sanitize(html)
+    const clean = DOMPurify.sanitize(html, {
+      ADD_ATTR: ['style'], // Allow style attributes
+      ADD_TAGS: ['img'], // Ensure img tags are allowed
+      ALLOW_DATA_ATTR: false,
+    })
     setSanitizedContent(clean)
   }, [readme])
 
@@ -33,30 +37,32 @@ export function PackageContent({ data }) {
           {/* README */}
           <div className="rounded-lg border border-border bg-window-bg p-6">
             <div
-              className="prose prose-invert max-w-none 
+              className="prose-p:text-text/80 prose-code:bg-window-bg/50 prose-pre:bg-window-bg/50 
+                prose 
+                prose-invert 
+                max-w-none 
                 prose-headings:text-text 
-                prose-p:text-text/80 
                 prose-a:text-link 
-                prose-strong:text-text 
-                prose-code:rounded 
-                prose-code:bg-window-bg/50
+                prose-strong:text-text
+                prose-code:rounded
                 prose-code:px-1
                 prose-code:py-0.5
                 prose-code:text-text
                 prose-code:before:content-none
                 prose-code:after:content-none
-                prose-pre:overflow-x-auto
-                prose-pre:rounded-lg 
+                prose-pre:overflow-x-auto 
+                prose-pre:rounded-lg
                 prose-pre:border
                 prose-pre:border-border
-                prose-pre:bg-window-bg/50
                 prose-img:mx-auto
-                prose-img:max-h-[400px]
                 prose-img:max-w-full
                 prose-img:rounded-lg
-                prose-img:object-contain
                 [&>ul>li>*:first-child]:mt-0
-                [&>ul>li]:mt-0"
+                [&>ul>li]:mt-0
+                [&_p_a_img]:!mx-1
+                [&_p_a_img]:!my-0
+                [&_p_a_img]:!inline
+                [&_p_a_img]:!align-middle"
               dangerouslySetInnerHTML={{
                 __html: sanitizedContent,
               }}
@@ -89,7 +95,7 @@ export function PackageContent({ data }) {
                 </a>
               ))}
               {contributors.length > 10 && (
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-window-bg text-text/60">
+                <div className="text-text/60 flex h-8 w-8 items-center justify-center rounded-full bg-window-bg">
                   +{contributors.length - 10}
                 </div>
               )}
@@ -112,7 +118,7 @@ export function PackageContent({ data }) {
                     className="block text-text transition-colors hover:text-link"
                   >
                     <div className="font-medium">{release.tag_name}</div>
-                    <div className="text-sm text-text/60">
+                    <div className="text-text/60 text-sm">
                       {formatDate(release.published_at)}
                     </div>
                   </a>
