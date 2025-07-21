@@ -61,7 +61,122 @@ export async function fetchPackageData(owner, name) {
       throw new Error(`Failed to fetch README: ${readmeRes.statusText}`)
     }
     const readmeData = await readmeRes.json()
-    const readmeContent = Buffer.from(readmeData.content, 'base64').toString()
+    let readmeContent = Buffer.from(readmeData.content, 'base64').toString()
+
+    // Fix relative URLs in markdown content
+    readmeContent = readmeContent.replace(
+      /!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g,
+      (match, alt, src) => {
+        // Skip if already absolute URL
+        if (src.startsWith('http')) return match
+
+        // Clean up the path (remove ./ prefix and leading slash)
+        const cleanSrc = src.replace(/^(\.\/|\/)?/, '')
+
+        // Convert to raw GitHub URL
+        const absoluteUrl = `https://raw.githubusercontent.com/${owner}/${name}/main/${cleanSrc}`
+        return `![${alt}](${absoluteUrl})`
+      },
+    )
+
+    // Fix relative URLs in HTML img tags while preserving all attributes
+    readmeContent = readmeContent.replace(
+      /<img([^>]*)\s+src=["'](?!https?:\/\/)([^"']+)["']([^>]*)>/g,
+      (match, beforeSrc, src, afterSrc) => {
+        // Skip if already absolute URL
+        if (src.startsWith('http')) return match
+
+        // Clean up the path (remove ./ prefix and leading slash)
+        const cleanSrc = src.replace(/^(\.\/|\/)?/, '')
+
+        // Convert to raw GitHub URL
+        const absoluteUrl = `https://raw.githubusercontent.com/${owner}/${name}/main/${cleanSrc}`
+
+        // Extract and convert HTML attributes to CSS styles
+        const fullAttributes = beforeSrc + afterSrc
+        let styleAttr = ''
+        let otherAttrs = fullAttributes
+
+        // Extract existing style attribute
+        const styleMatch = fullAttributes.match(/style=["']([^"']*)["']/i)
+        let existingStyles = styleMatch ? styleMatch[1] : ''
+
+        // Remove style attribute from other attributes to avoid duplication
+        otherAttrs = otherAttrs.replace(/\s*style=["'][^"']*["']/gi, '')
+
+        // Convert height attribute to CSS
+        const heightMatch = fullAttributes.match(/height=["']?(\d+)["']?/i)
+        if (heightMatch) {
+          const heightValue = heightMatch[1]
+          existingStyles += existingStyles ? '; ' : ''
+          existingStyles += `height: ${heightValue}px`
+          // Remove height attribute since we're converting it to CSS
+          otherAttrs = otherAttrs.replace(/\s*height=["']?\d+["']?/gi, '')
+        }
+
+        // Convert width attribute to CSS
+        const widthMatch = fullAttributes.match(/width=["']?(\d+)["']?/i)
+        if (widthMatch) {
+          const widthValue = widthMatch[1]
+          existingStyles += existingStyles ? '; ' : ''
+          existingStyles += `width: ${widthValue}px`
+          // Remove width attribute since we're converting it to CSS
+          otherAttrs = otherAttrs.replace(/\s*width=["']?\d+["']?/gi, '')
+        }
+
+        // Build the final style attribute
+        if (existingStyles) {
+          styleAttr = ` style="${existingStyles}"`
+        }
+
+        return `<img${otherAttrs} src="${absoluteUrl}"${styleAttr}>`
+      },
+    )
+
+    // Convert HTML attributes to CSS for ALL img tags (including absolute URLs)
+    readmeContent = readmeContent.replace(
+      /<img([^>]*?)(\s*\/?>)/g,
+      (match, attributes, closing) => {
+        let styleAttr = ''
+        let otherAttrs = attributes
+
+        // Extract existing style attribute
+        const styleMatch = attributes.match(/style=["']([^"']*)["']/i)
+        let existingStyles = styleMatch ? styleMatch[1] : ''
+
+        // Remove style attribute from other attributes to avoid duplication
+        otherAttrs = otherAttrs.replace(/\s*style=["'][^"']*["']/gi, '')
+
+        // Convert height attribute to CSS
+        const heightMatch = attributes.match(/height=["']?(\d+)["']?/i)
+        if (heightMatch) {
+          const heightValue = heightMatch[1]
+          existingStyles +=
+            existingStyles && !existingStyles.endsWith(';') ? '; ' : ''
+          existingStyles += `height: ${heightValue}px`
+          // Remove height attribute since we're converting it to CSS
+          otherAttrs = otherAttrs.replace(/\s*height=["']?\d+["']?/gi, '')
+        }
+
+        // Convert width attribute to CSS
+        const widthMatch = attributes.match(/width=["']?(\d+)["']?/i)
+        if (widthMatch) {
+          const widthValue = widthMatch[1]
+          existingStyles +=
+            existingStyles && !existingStyles.endsWith(';') ? '; ' : ''
+          existingStyles += `width: ${widthValue}px`
+          // Remove width attribute since we're converting it to CSS
+          otherAttrs = otherAttrs.replace(/\s*width=["']?\d+["']?/gi, '')
+        }
+
+        // Build the final style attribute
+        if (existingStyles) {
+          styleAttr = ` style="${existingStyles}"`
+        }
+
+        return `<img${otherAttrs}${styleAttr}${closing}`
+      },
+    )
 
     // Fetch contributors
     const contributorsRes = await fetch(
