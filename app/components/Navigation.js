@@ -11,8 +11,8 @@ export const Navigation = ({ packages }) => {
   const { theme } = useTheme()
 
   return (
-    <nav className="border-b border-border bg-window-bg">
-      <div className="container mx-auto max-w-6xl px-4">
+    <nav className="bg-window-bg/80 sticky top-0 z-50 w-full border-b border-border backdrop-blur-lg">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
         <div className="flex h-16 items-center justify-between">
           {/* Left side - Logo and main nav */}
           <div className="flex items-center">
@@ -87,7 +87,7 @@ export const Navigation = ({ packages }) => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="hover:bg-window-bg/80 inline-flex items-center justify-center rounded-md p-2 text-text hover:text-link md:hidden"
+              className="hover:bg-window-bg/50 relative inline-flex items-center justify-center rounded-md p-2 text-text transition-colors hover:text-link md:hidden"
               aria-expanded={isMobileMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
@@ -126,7 +126,7 @@ export const Navigation = ({ packages }) => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="border-t border-border bg-window-bg md:hidden">
+          <div className="animate-in slide-in-from-top-2 bg-window-bg/90 border-t border-border backdrop-blur-lg duration-200 md:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {/* Mobile Search */}
               <div className="px-2 py-2">
