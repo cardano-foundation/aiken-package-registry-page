@@ -24,7 +24,6 @@ export async function generatePackagePaths() {
         name: pkg.name,
       })),
   )
-  // Log the final paths
   console.log(
     'Static paths:',
     allPackages.map((p) => `${p.owner}/${p.name}`),

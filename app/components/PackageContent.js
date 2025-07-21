@@ -23,8 +23,8 @@ export function PackageContent({ data }) {
     // Sanitize the content on the client side
     const html = marked(readme)
     const clean = DOMPurify.sanitize(html, {
-      ADD_ATTR: ['style'], // Allow style attributes
-      ADD_TAGS: ['img'], // Ensure img tags are allowed
+      ADD_ATTR: ['style'],
+      ADD_TAGS: ['img'],
       ALLOW_DATA_ATTR: false,
     })
     setSanitizedContent(clean)

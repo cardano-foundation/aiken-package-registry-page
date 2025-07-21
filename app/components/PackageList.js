@@ -53,7 +53,6 @@ export default function PackageList({ initialPackages }) {
         </div>
       </div>
 
-      {/* Divider with label */}
       <div className="relative -mt-8 mb-12">
         <div className="absolute inset-0 flex items-center" aria-hidden="true">
           <div className="w-full border-t border-border/30" />

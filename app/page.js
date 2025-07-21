@@ -5,7 +5,6 @@ import PackageList from './components/PackageList'
 export const dynamic = 'force-static'
 
 export default async function Home() {
-  // Fetch data at build time
   const packages = await fetchAwesomeAikenPackages()
 
   return <PackageList initialPackages={packages} />
