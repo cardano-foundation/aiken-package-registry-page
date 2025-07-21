@@ -58,7 +58,11 @@ export function PackageContent({ data }) {
                 prose-img:max-w-full
                 prose-img:rounded-lg
                 [&>ul>li>*:first-child]:mt-0
-                [&>ul>li]:mt-0"
+                [&>ul>li]:mt-0
+                [&_p_a_img]:!mx-1
+                [&_p_a_img]:!my-0
+                [&_p_a_img]:!inline
+                [&_p_a_img]:!align-middle"
               dangerouslySetInnerHTML={{
                 __html: sanitizedContent,
               }}
