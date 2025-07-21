@@ -14,25 +14,25 @@ export default function PackageList({ initialPackages }) {
     <main className="min-h-screen bg-window-bg">
       {/* Hero Section */}
       <div className="bg-window-bg py-24 text-text">
-        <div className="container mx-auto max-w-6xl px-4">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-text md:text-6xl">
             Aiken Package Registry
           </h1>
-          <p className="mb-12 text-xl text-text/80 md:text-2xl">
+          <p className="text-text/80 mb-12 text-xl md:text-2xl">
             Discover and explore Aiken packages for your Cardano smart contracts
           </p>
 
           {/* Search Bar with shadow */}
-          <div className="relative max-w-2xl">
-            <div className="relative rounded-lg bg-window-bg/50 shadow-lg ring-1 ring-border/20 backdrop-blur-sm">
+          <div className="relative max-w-3xl">
+            <div className="bg-window-bg/50 relative rounded-lg shadow-lg ring-1 ring-border/20 backdrop-blur-sm">
               <input
                 type="text"
                 placeholder="Search packages by name, category, or description..."
-                className="w-full rounded-lg border border-border bg-transparent px-4 py-3 text-text placeholder-text/50 focus:border-link focus:outline-none focus:ring-2 focus:ring-link/20"
+                className="placeholder-text/50 focus:ring-link/20 w-full rounded-lg border border-border bg-transparent px-4 py-3 text-text focus:border-link focus:outline-none focus:ring-2"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <div className="absolute right-3 top-3 text-text/50">
+              <div className="text-text/50 absolute right-3 top-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -59,21 +59,21 @@ export default function PackageList({ initialPackages }) {
           <div className="w-full border-t border-border/30" />
         </div>
         <div className="relative flex justify-center">
-          <span className="bg-window-bg px-4 text-sm font-medium text-text/60">
+          <span className="text-text/60 bg-window-bg px-4 text-sm font-medium">
             {searchQuery ? 'Search Results' : 'Available Packages'}
           </span>
         </div>
       </div>
 
       {/* Packages List */}
-      <div className="container mx-auto max-w-6xl px-4 pb-16">
+      <div className="container mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-0">
         {searchQuery ? (
           // Search Results
           <div>
             <h2 className="mb-8 text-2xl font-semibold text-text">
               Results for "{searchQuery}"
             </h2>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {filteredPackages.map((pkg) => (
                 <PackageCard key={`${pkg.owner}/${pkg.name}`} pkg={pkg} />
               ))}
@@ -87,7 +87,7 @@ export default function PackageList({ initialPackages }) {
                 <h2 className="mb-8 text-2xl font-semibold text-text">
                   {category.category}
                 </h2>
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                   {category.packages.map((pkg) => (
                     <PackageCard key={`${pkg.owner}/${pkg.name}`} pkg={pkg} />
                   ))}
@@ -112,9 +112,9 @@ function PackageCard({ pkg }) {
         <h3 className="mb-2 font-mono text-lg font-medium text-text group-hover:text-link">
           {pkg.owner}/{displayName}
         </h3>
-        <p className="mb-4 line-clamp-2 text-text/80">{pkg.description}</p>
+        <p className="text-text/80 mb-4 line-clamp-2">{pkg.description}</p>
         <div className="flex items-center gap-2 text-sm">
-          <span className="rounded-full bg-link/10 px-3 py-1 font-medium text-link">
+          <span className="bg-link/10 rounded-full px-3 py-1 font-medium text-link">
             {pkg.category}
           </span>
         </div>
@@ -148,7 +148,7 @@ function PackageCard({ pkg }) {
         href={pkg.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block rounded-xl border border-border bg-window-bg/50 p-6 transition-all hover:border-link hover:bg-link/5 hover:shadow-md"
+        className="bg-window-bg/50 hover:bg-link/5 group block rounded-xl border border-border p-6 transition-all hover:border-link hover:shadow-md"
       >
         <CardContent />
       </a>
@@ -158,7 +158,7 @@ function PackageCard({ pkg }) {
   return (
     <Link
       href={`/packages/${pkg.owner}/${pkg.name}`}
-      className="group block rounded-xl border border-border bg-window-bg/50 p-6 transition-all hover:border-link hover:bg-link/5 hover:shadow-md"
+      className="bg-window-bg/50 hover:bg-link/5 group block rounded-xl border border-border p-6 transition-all hover:border-link hover:shadow-md"
     >
       <CardContent />
     </Link>

@@ -3,7 +3,7 @@ export function PackageHeader({ data }) {
 
   return (
     <div className="border-b border-border bg-window-bg">
-      <div className="container mx-auto max-w-6xl px-4 py-8">
+      <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-0">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <span className="tag">{data.category}</span>
@@ -13,7 +13,7 @@ export function PackageHeader({ data }) {
               <h1 className="mb-2 text-4xl font-bold text-text">
                 {repo.full_name}
               </h1>
-              <p className="mb-6 text-lg text-text/80">{repo.description}</p>
+              <p className="text-text/80 mb-6 text-lg">{repo.description}</p>
 
               {/* Stats */}
               <div className="flex items-center gap-4">

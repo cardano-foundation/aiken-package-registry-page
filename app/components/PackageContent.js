@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { marked } from 'marked'
 import DOMPurify from 'dompurify'
 import { useEffect, useState } from 'react'
@@ -30,7 +31,7 @@ export function PackageContent({ data }) {
   }, [readme])
 
   return (
-    <div className="container mx-auto max-w-6xl px-4 py-12">
+    <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-0">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
         {/* Main Content */}
         <div className="lg:col-span-2">
@@ -86,9 +87,11 @@ export function PackageContent({ data }) {
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <img
+                  <Image
                     src={contributor.avatar_url}
                     alt={contributor.login}
+                    width={32}
+                    height={32}
                     className="h-8 w-8 rounded-full transition-transform group-hover:scale-110"
                     title={contributor.login}
                   />
