@@ -7,7 +7,7 @@ A modern, static website showcasing Aiken packages for Cardano smart contracts. 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/aiken-package-page.git
+git clone https://github.com/aiken-lang/aiken-package-registry-page.git
 cd aiken-package-page
 ```
 
