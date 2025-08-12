@@ -43,8 +43,7 @@ export function CodeHighlighter({ children }) {
       }
     }
 
-    const timer = setTimeout(highlightCodeBlocks, 100)
-    return () => clearTimeout(timer)
+    highlightCodeBlocks()
   }, [children])
 
   return null
