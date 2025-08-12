@@ -128,7 +128,6 @@ const aikenGrammar = {
 
 async function createShikiHighlighter() {
   if (typeof window === 'undefined') {
-    // Return null on server-side
     return null
   }
 
@@ -152,14 +151,12 @@ async function createShikiHighlighter() {
         'clojure',
         'elm',
         'purescript',
-        // Config/data languages
         'json',
         'yaml',
         'toml',
         'xml',
         'ini',
         'csv',
-        // Shell/command line
         'bash',
         'shell',
         'sh',
@@ -167,28 +164,22 @@ async function createShikiHighlighter() {
         'fish',
         'powershell',
         'cmd',
-        // Markup/text
         'markdown',
         'html',
         'css',
         'scss',
         'less',
         'tex',
-        // Query languages
         'sql',
         'graphql',
-        // Docker/infrastructure
         'dockerfile',
         'docker',
         'makefile',
         'nginx',
-        // Version control
         'diff',
-        // Generic/plaintext
         'text',
         'plaintext',
         'txt',
-        // Functional languages
         'gleam',
         // Custom Aiken grammar
         {
@@ -216,23 +207,21 @@ export async function getShikiHighlighter() {
 
 export async function highlightCode(code, lang, theme = 'dark-plus') {
   const highlighter = await getShikiHighlighter()
-  
+
   if (!highlighter) {
     return `<pre class="bg-window-bg/50 border border-border rounded-lg p-4 overflow-x-auto"><code class="text-text">${escapeHtml(code)}</code></pre>`
-  }  // Comprehensive language mapping
+  }
   const langMap = {
     // Aiken aliases
     ak: 'aiken',
     aiken: 'aiken',
 
-    // JavaScript/TypeScript aliases
     js: 'javascript',
     jsx: 'javascript',
     ts: 'typescript',
     tsx: 'typescript',
     node: 'javascript',
 
-    // Shell aliases
     sh: 'bash',
     bash: 'bash',
     shell: 'bash',
@@ -241,7 +230,6 @@ export async function highlightCode(code, lang, theme = 'dark-plus') {
     ps1: 'powershell',
     cmd: 'cmd',
 
-    // Config/data aliases
     yml: 'yaml',
     yaml: 'yaml',
     json: 'json',
@@ -251,7 +239,6 @@ export async function highlightCode(code, lang, theme = 'dark-plus') {
     css: 'css',
     scss: 'scss',
 
-    // Programming language aliases
     py: 'python',
     python: 'python',
     rs: 'rust',
@@ -273,39 +260,34 @@ export async function highlightCode(code, lang, theme = 'dark-plus') {
     purescript: 'purescript',
     gleam: 'gleam',
 
-    // Markup/text aliases
     md: 'markdown',
     markdown: 'markdown',
     tex: 'tex',
     latex: 'tex',
 
-    // Query languages
     sql: 'sql',
     gql: 'graphql',
     graphql: 'graphql',
 
-    // Infrastructure
     dockerfile: 'dockerfile',
     docker: 'dockerfile',
     makefile: 'makefile',
     make: 'makefile',
     nginx: 'nginx',
 
-    // Version control
     diff: 'diff',
     patch: 'diff',
     git: 'diff',
 
-    // Blockchain specific (fallback to similar languages)
-    plutus: 'haskell', // Plutus is essentially Haskell
-    marlowe: 'json', // Marlowe often represented as JSON
+    plutus: 'haskell',
+    marlowe: 'json',
 
     // Fallbacks
     text: 'text',
     txt: 'text',
     plain: 'text',
     plaintext: 'text',
-    '': 'text', // Empty string fallback
+    '': 'text',
   }
 
   const normalizedLang = langMap[lang?.toLowerCase()] || lang || 'text'
