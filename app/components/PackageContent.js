@@ -1,9 +1,10 @@
 'use client'
 
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { marked } from 'marked'
 import DOMPurify from 'dompurify'
-import { useEffect, useState } from 'react'
+import { CodeHighlighter } from './CodeHighlighter.js'
 
 // Helper function to format dates consistently
 function formatDate(dateString) {
@@ -18,16 +19,36 @@ function formatDate(dateString) {
 export function PackageContent({ data }) {
   const { repo, readme, contributors, releases } = data
   const [sanitizedContent, setSanitizedContent] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Sanitize the content on the client side
-    const html = marked(readme)
-    const clean = DOMPurify.sanitize(html, {
-      ADD_ATTR: ['style'],
-      ADD_TAGS: ['img'],
-      ALLOW_DATA_ATTR: false,
-    })
-    setSanitizedContent(clean)
+    async function processContent() {
+      if (!readme) {
+        setSanitizedContent('')
+        setIsLoading(false)
+        return
+      }
+
+      try {
+        setIsLoading(true)
+
+        const html = marked(readme)
+        const clean = DOMPurify.sanitize(html, {
+          ADD_ATTR: ['style', 'class'],
+          ADD_TAGS: ['span', 'div'],
+          ALLOW_DATA_ATTR: false,
+        })
+
+        setSanitizedContent(clean)
+      } catch (error) {
+        console.error('Failed to process markdown:', error)
+        setSanitizedContent('<p>Error loading content.</p>')
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    processContent()
   }, [readme])
 
   return (
@@ -37,37 +58,56 @@ export function PackageContent({ data }) {
         <div className="lg:col-span-2">
           {/* README */}
           <div className="rounded-lg border border-border bg-window-bg p-6">
-            <div
-              className="prose-p:text-text/80 prose-code:bg-window-bg/50 prose-pre:bg-window-bg/50 
-                prose 
-                prose-invert 
-                max-w-none 
-                prose-headings:text-text 
-                prose-a:text-link 
-                prose-strong:text-text
-                prose-code:rounded
-                prose-code:px-1
-                prose-code:py-0.5
-                prose-code:text-text
-                prose-code:before:content-none
-                prose-code:after:content-none
-                prose-pre:overflow-x-auto 
-                prose-pre:rounded-lg
-                prose-pre:border
-                prose-pre:border-border
-                prose-img:mx-auto
-                prose-img:max-w-full
-                prose-img:rounded-lg
-                [&>ul>li>*:first-child]:mt-0
-                [&>ul>li]:mt-0
-                [&_p_a_img]:!mx-1
-                [&_p_a_img]:!my-0
-                [&_p_a_img]:!inline
-                [&_p_a_img]:!align-middle"
-              dangerouslySetInnerHTML={{
-                __html: sanitizedContent,
-              }}
-            />
+            {isLoading ? (
+              <div className="flex items-center justify-center p-8">
+                <div className="text-text/60">Loading content...</div>
+              </div>
+            ) : (
+              <>
+                <div
+                  className="prose-p:text-text/80 
+                    prose-code:bg-window-bg/50 
+                    prose-pre:bg-window-bg/50 
+                    prose 
+                    prose-invert 
+                    max-w-none 
+                    prose-headings:text-text
+                    prose-a:text-link
+                    prose-strong:text-text
+                    prose-code:rounded
+                    prose-code:px-1
+                    prose-code:py-0.5
+                    prose-code:text-text
+                    prose-code:before:content-none
+                    prose-code:after:content-none
+                    prose-pre:overflow-x-auto
+                    prose-pre:rounded-lg
+                    prose-pre:border
+                    prose-pre:border-border
+                    prose-img:mx-auto
+                    prose-img:max-w-full
+                    prose-img:rounded-lg
+                    [&>ul>li>*:first-child]:mt-0
+                    [&>ul>li]:mt-0
+                    [&_.shiki]:!mb-4
+                    [&_.shiki]:!overflow-x-auto
+                    [&_.shiki]:!rounded-lg
+                    [&_.shiki]:!border
+                    [&_.shiki]:!border-border
+                    [&_.shiki_pre]:!m-0
+                    [&_.shiki_pre]:!bg-transparent
+                    [&_.shiki_pre]:!p-4
+                    [&_p_a_img]:!mx-1
+                    [&_p_a_img]:!my-0
+                    [&_p_a_img]:!inline
+                    [&_p_a_img]:!align-middle"
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizedContent,
+                  }}
+                />
+                <CodeHighlighter key={sanitizedContent} />
+              </>
+            )}
           </div>
         </div>
 
